@@ -1,0 +1,12 @@
+---
+strategy: polling
+no_screen_padding: 'yes'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: latest
+polling_url: https://wenkaijie27-rgb.github.io/trmnl-ep-cards/current.json
+polling_headers: ''
+name: Cardiac EP Knowledge Cards
+description: Illustrated cardiac electrophysiology learning cards for medical students (multi-screen 1-bit/2-bit/4-bit/BWRY e-ink).
+refresh_interval: 60

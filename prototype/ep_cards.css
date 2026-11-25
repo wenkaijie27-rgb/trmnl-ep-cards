@@ -1,0 +1,639 @@
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("file:///Users/wenkaijie/Documents/Trmnl/reference/upstream/trmnl-framework/public/fonts/Inter.ttf") format("truetype");
+}
+
+/* =========================================================
+   EP Cards — Semantic Theme & Multi-Screen Mode Variables
+   ========================================================= */
+.trmnl .screen {
+  --ep-ink: #000000;
+  --ep-paper: #ffffff;
+  --ep-muted: #4a4a4a;
+  --ep-accent: #000000;
+  --ep-border: #000000;
+  --ep-surface: #f4f4f4;
+  --ep-surface-alt: #eaeaea;
+  --ep-badge-bg: #000000;
+  --ep-badge-fg: #ffffff;
+  --ep-hl-bg: #eaeaea;
+  --ep-grid: #dddddd;
+}
+
+.trmnl .screen--1bit {
+  --ep-ink: #000000;
+  --ep-muted: #000000;
+  --ep-accent: #000000;
+  --ep-border: #000000;
+  --ep-surface: #ffffff;
+  --ep-surface-alt: #ffffff;
+  --ep-badge-bg: #000000;
+  --ep-badge-fg: #ffffff;
+  --ep-hl-bg: #ffffff;
+  --ep-grid: #bdbdbd;
+}
+
+.trmnl .screen--2bit {
+  --ep-ink: #000000;
+  --ep-muted: #4d4d4d;
+  --ep-accent: #000000;
+  --ep-border: #1a1a1a;
+  --ep-surface: #f0f0f0;
+  --ep-surface-alt: #e4e4e4;
+  --ep-badge-bg: #000000;
+  --ep-badge-fg: #ffffff;
+  --ep-hl-bg: #e6e6e6;
+  --ep-grid: #d4d4d4;
+}
+
+.trmnl .screen--4bit {
+  --ep-ink: #000000;
+  --ep-muted: #525252;
+  --ep-accent: #111111;
+  --ep-border: #2b2b2b;
+  --ep-surface: #f2f2f2;
+  --ep-surface-alt: #e6e6e6;
+  --ep-badge-bg: #111111;
+  --ep-badge-fg: #ffffff;
+  --ep-hl-bg: #e2e2e2;
+  --ep-grid: #dcdcdc;
+}
+
+.trmnl .screen--color-4bwry,
+.trmnl .screen--color-6a {
+  --ep-ink: #000000;
+  --ep-muted: #3d3d3d;
+  --ep-accent: #B81D1D;
+  --ep-border: #000000;
+  --ep-surface: #ffffff;
+  --ep-surface-alt: #F2DF4A;
+  --ep-badge-bg: #B81D1D;
+  --ep-badge-fg: #ffffff;
+  --ep-hl-bg: #F2DF4A;
+  --ep-grid: #d8d8d8;
+}
+
+/* =========================================================
+   Semantic SVG Classes
+   ========================================================= */
+.ep-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: "Inter Variable", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
+}
+
+.ep-ink-stroke { stroke: var(--ep-ink); }
+.ep-ink-fill { fill: var(--ep-ink); }
+.ep-paper-fill { fill: var(--ep-paper); }
+.ep-muted-stroke { stroke: var(--ep-muted); }
+.ep-muted-fill { fill: var(--ep-muted); }
+.ep-accent-stroke { stroke: var(--ep-accent); }
+.ep-accent-fill { fill: var(--ep-accent); }
+.ep-grid-line { stroke: var(--ep-grid); }
+.ep-hatch-line { stroke: var(--ep-ink); }
+
+.ep-svg-label {
+  font-family: "Inter Variable", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+}
+
+.screen--4bit .ep-hl-area {
+  fill: #e0e0e0 !important;
+}
+
+.screen--color-4bwry .ep-hl-area,
+.screen--color-6a .ep-hl-area {
+  fill: #F2DF4A !important;
+}
+
+/* =========================================================
+   Card Shell & Typography (800x480 md baseline + lg TRMNL X)
+   ========================================================= */
+.ep-screen-card {
+  font-family: "Inter Variable", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
+  color: var(--ep-ink);
+  background: var(--ep-paper);
+}
+
+.ep-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 18px 8px 18px;
+  box-sizing: border-box;
+  background: var(--ep-paper);
+}
+
+.ep-layout {
+  width: 100% !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 10px;
+  overflow: hidden;
+  padding: 0 !important;
+  margin-bottom: 6px !important;
+}
+
+/* Override framework title_bar for crisp CJK + Latin mix */
+.ep-title-bar {
+  height: 30px !important;
+  min-height: 30px !important;
+  padding: 0 10px !important;
+  border-top: 1.5px solid var(--ep-border);
+  border-radius: 0 !important;
+  font-family: "Inter Variable", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", sans-serif !important;
+  background: transparent !important;
+}
+
+.ep-title-bar::before,
+.ep-title-bar::after {
+  display: none !important;
+}
+
+.ep-title-bar .title {
+  font-family: inherit !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: var(--ep-ink) !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+.ep-title-bar .instance {
+  font-family: inherit !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: var(--ep-muted) !important;
+  margin-left: auto;
+}
+
+.ep-title-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: var(--ep-accent);
+}
+
+/* Header Block */
+.ep-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ep-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ep-title-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.ep-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--ep-badge-bg);
+  color: var(--ep-badge-fg);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ep-title {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.18;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--ep-ink);
+}
+
+.ep-metrics {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.ep-metric-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  padding: 3px 9px;
+  border: 1.5px solid var(--ep-border);
+  border-radius: 5px;
+  background: var(--ep-hl-bg);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.ep-metric-name {
+  font-weight: 600;
+  color: var(--ep-ink);
+}
+
+.ep-metric-value {
+  font-weight: 800;
+  color: var(--ep-ink);
+}
+
+.ep-insight {
+  padding: 6px 10px;
+  border-left: 4px solid var(--ep-accent);
+  border-top: 1px solid var(--ep-border);
+  border-right: 1px solid var(--ep-border);
+  border-bottom: 1px solid var(--ep-border);
+  border-radius: 0 5px 5px 0;
+  background: var(--ep-surface);
+  font-size: 15.5px;
+  line-height: 1.38;
+  font-weight: 700;
+  color: var(--ep-ink);
+}
+
+/* Bullets & Pitfall/Pearl */
+.ep-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ep-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1.2px solid var(--ep-border);
+  border-radius: 6px;
+  background: var(--ep-surface);
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--ep-ink);
+}
+
+.ep-split-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ep-mini-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 6px 10px;
+  border: 1px dashed var(--ep-border);
+  border-radius: 5px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ep-ink);
+}
+
+.ep-leg-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ep-leg-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 0;
+}
+
+.ep-leg-solid {
+  border-top: 2.5px solid var(--ep-ink);
+}
+
+.ep-leg-accent {
+  border-top: 2.5px dashed var(--ep-accent);
+}
+
+.ep-leg-hl {
+  height: 10px;
+  border: 1px solid var(--ep-ink);
+  background: var(--ep-hl-bg);
+}
+
+.screen--1bit .ep-leg-hl,
+.screen--2bit .ep-leg-hl {
+  background: repeating-linear-gradient(
+    -45deg,
+    #ffffff,
+    #ffffff 2px,
+    #000000 2px,
+    #000000 3.2px
+  );
+}
+
+.ep-bullet-label {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 1px 6px;
+  margin-top: 1px;
+  border: 1.3px solid var(--ep-border);
+  border-radius: 4px;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  background: var(--ep-paper);
+  color: var(--ep-ink);
+}
+
+.ep-bullet-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.ep-callout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1.5px solid var(--ep-border);
+  border-radius: 5px;
+  background: var(--ep-surface-alt);
+  font-size: 14px;
+  line-height: 1.36;
+  font-weight: 600;
+  color: var(--ep-ink);
+}
+
+.ep-callout-badge {
+  flex-shrink: 0;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--ep-accent);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   Template 1: split_left (Koch Triangle)
+   ========================================================= */
+.ep-tpl--split_left {
+  display: grid;
+  grid-template-columns: 46% 1fr;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.ep-diagram-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--ep-border);
+  border-radius: 8px;
+  background: #ffffff;
+  overflow: hidden;
+  padding: 4px;
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+.ep-split-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.ep-split-main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =========================================================
+   Template 2: top_banner (AH & HV)
+   ========================================================= */
+.ep-tpl--top_banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  height: 100%;
+  min-height: 0;
+}
+
+.ep-banner-diagram {
+  height: 214px;
+  flex-shrink: 0;
+  padding: 2px 4px;
+}
+
+.ep-banner-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.ep-bullets--row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+}
+
+/* =========================================================
+   Template 3: compare_two (Orthodromic vs Antidromic AVRT)
+   ========================================================= */
+.ep-tpl--compare_two {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  height: 100%;
+  min-height: 0;
+}
+
+.ep-compare-diagram {
+  height: 224px;
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+}
+
+.ep-compare-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* =========================================================
+   TRMNL X (10.3" screen--lg 1040x780) Progressive Disclosure
+   ========================================================= */
+.ep-x-section {
+  display: none;
+}
+
+.screen--lg .ep-view {
+  padding: 18px 24px 10px 24px;
+}
+
+.screen--lg .ep-layout {
+  gap: 14px;
+}
+
+.screen--lg .ep-kicker {
+  font-size: 14.5px;
+  padding: 3px 10px;
+}
+
+.screen--lg .ep-title {
+  font-size: 29px;
+}
+
+.screen--lg .ep-insight {
+  font-size: 18px;
+  padding: 9px 13px;
+}
+
+.screen--lg .ep-bullet {
+  font-size: 17.5px;
+  line-height: 1.48;
+}
+
+.screen--lg .ep-bullet-label {
+  font-size: 14px;
+  padding: 2px 8px;
+}
+
+.screen--lg .ep-callout {
+  font-size: 16.5px;
+  padding: 8px 12px;
+}
+
+.screen--lg .ep-callout-badge {
+  font-size: 13.5px;
+}
+
+.screen--lg .ep-metric-pill {
+  font-size: 15px;
+  padding: 4px 11px;
+}
+
+.screen--lg .ep-banner-diagram {
+  height: 268px;
+}
+
+.screen--lg .ep-compare-diagram {
+  height: 286px;
+}
+
+.screen--lg .ep-tpl--split_left {
+  grid-template-columns: 44% 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 16px 20px;
+}
+
+.screen--lg .ep-tpl--split_left .ep-diagram-box {
+  max-height: 410px;
+}
+
+.screen--lg .ep-x-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1.5px dashed var(--ep-border);
+}
+
+.screen--lg .ep-tpl--split_left .ep-x-section {
+  grid-column: 1 / -1;
+}
+
+.ep-x-context {
+  font-size: 16px;
+  line-height: 1.48;
+  font-weight: 500;
+  color: var(--ep-ink);
+  background: var(--ep-surface);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--ep-border);
+}
+
+.ep-x-context strong {
+  font-weight: 800;
+}
+
+.ep-x-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.ep-x-table th,
+.ep-x-table td {
+  border: 1.2px solid var(--ep-border);
+  padding: 6px 10px;
+  text-align: left;
+  line-height: 1.35;
+}
+
+.ep-x-table th {
+  background: var(--ep-hl-bg);
+  font-weight: 800;
+}
+
+.ep-x-table td {
+  background: #ffffff;
+  font-weight: 500;
+}
+
+.ep-x-ref {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ep-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.screen--lg .ep-title-bar {
+  height: 36px !important;
+  min-height: 36px !important;
+}
+
+.screen--lg .ep-title-bar .title {
+  font-size: 15.5px !important;
+}
+
+.screen--lg .ep-title-bar .instance {
+  font-size: 14px !important;
+}

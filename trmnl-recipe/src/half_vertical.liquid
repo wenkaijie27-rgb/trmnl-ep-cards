@@ -1,0 +1,21 @@
+<div class="ep-subview">
+  <div class="ep-subview-body">
+    <div class="ep-header">
+      <div class="ep-title-row">
+        <span class="ep-kicker">{{ kicker }}</span>
+      </div>
+      <h1 class="ep-title" style="font-size:21px;">{{ title }}</h1>
+      <div class="ep-insight" style="font-size:14.5px;">{{ core_insight }}</div>
+    </div>
+    <ul class="ep-bullets">
+      {% for b in bullets limit:2 %}
+        <li class="ep-bullet"><span class="ep-bullet-label">{{ b.label }}</span><span class="ep-bullet-text">{{ b.text }}</span></li>
+      {% endfor %}
+    </ul>
+    <div class="ep-callout"><span class="ep-callout-badge">{{ callout_badge }}</span><span>{{ callout_text }}</span></div>
+  </div>
+  <div class="title_bar ep-title-bar">
+    <span class="title">心脏电生理 · {{ category_label }}</span>
+    <span class="instance">{{ card_index }}/{{ card_total }}</span>
+  </div>
+</div>

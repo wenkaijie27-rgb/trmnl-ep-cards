@@ -1,0 +1,675 @@
+/* =========================================================
+   EP Knowledge Cards - Terminus-Sanitizer-Proof Stylesheet
+   Explicit per-mode overrides without custom CSS variables.
+   ========================================================= */
+
+/* Base / Default (2-bit / neutral e-ink baseline) */
+.ep-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: "Inter Variable", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
+}
+
+.ep-ink-stroke { stroke: #000000; }
+.ep-ink-fill { fill: #000000; }
+.ep-paper-fill { fill: #ffffff; }
+.ep-muted-stroke { stroke: #4d4d4d; }
+.ep-muted-fill { fill: #4d4d4d; }
+.ep-accent-stroke { stroke: #000000; }
+.ep-accent-fill { fill: #000000; }
+.ep-grid-line { stroke: #d4d4d4; }
+.ep-hatch-line { stroke: #000000; }
+.ep-hl-area { fill: #ffffff; }
+.ep-hl-label-bg { fill: #ffffff; }
+
+.ep-svg-label {
+  font-family: "Inter Variable", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
+}
+
+.ep-screen-card,
+.ep-view {
+  font-family: "Inter Variable", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
+  color: #000000;
+  background: #ffffff;
+}
+
+.ep-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 18px 8px 18px;
+  box-sizing: border-box;
+}
+
+.ep-layout {
+  width: 100% !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 10px;
+  overflow: hidden;
+  padding: 0 !important;
+  margin-bottom: 6px !important;
+}
+
+.ep-title-bar {
+  height: 30px !important;
+  min-height: 30px !important;
+  padding: 0 10px !important;
+  border-top: 1.5px solid #000000;
+  border-radius: 0 !important;
+  font-family: "Inter Variable", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", sans-serif !important;
+  background: transparent !important;
+}
+
+.ep-title-bar::before,
+.ep-title-bar::after {
+  display: none !important;
+}
+
+.ep-title-bar .title {
+  font-family: inherit !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+.ep-title-bar .instance {
+  font-family: inherit !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: #4d4d4d !important;
+  margin-left: auto;
+}
+
+.ep-title-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: #000000;
+}
+
+/* Header Block */
+.ep-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ep-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ep-title-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.ep-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ep-title {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.18;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.ep-metrics {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.ep-metric-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  padding: 3px 9px;
+  border: 1.5px solid #000000;
+  border-radius: 5px;
+  background: #e6e6e6;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.ep-metric-name {
+  font-weight: 600;
+  color: #000000;
+}
+
+.ep-metric-value {
+  font-weight: 800;
+  color: #000000;
+}
+
+.ep-insight {
+  padding: 6px 10px;
+  border-left: 4px solid #000000;
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-radius: 0 5px 5px 0;
+  background: #f2f2f2;
+  font-size: 15.5px;
+  line-height: 1.38;
+  font-weight: 700;
+  color: #000000;
+}
+
+/* Bullets & Callout */
+.ep-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ep-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1.2px solid #000000;
+  border-radius: 6px;
+  background: #f2f2f2;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #000000;
+}
+
+.ep-bullet-label {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 1px 6px;
+  margin-top: 1px;
+  border: 1.3px solid #000000;
+  border-radius: 4px;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  background: #ffffff;
+  color: #000000;
+}
+
+.ep-bullet-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.ep-split-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ep-mini-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 6px 10px;
+  border: 1px dashed #000000;
+  border-radius: 5px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #000000;
+  background: #ffffff;
+}
+
+.ep-leg-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ep-leg-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 0;
+}
+
+.ep-leg-solid {
+  border-top: 2.5px solid #000000;
+}
+
+.ep-leg-accent {
+  border-top: 2.5px dashed #000000;
+}
+
+.ep-leg-hl {
+  height: 10px;
+  border: 1px solid #000000;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ffffff,
+    #ffffff 2px,
+    #000000 2px,
+    #000000 3.2px
+  );
+}
+
+.ep-callout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1.5px solid #000000;
+  border-radius: 5px;
+  background: #e6e6e6;
+  font-size: 14px;
+  line-height: 1.36;
+  font-weight: 600;
+  color: #000000;
+}
+
+.ep-callout-badge {
+  flex-shrink: 0;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   Layout Templates (Full View)
+   ========================================================= */
+.ep-tpl--split_left {
+  display: grid;
+  grid-template-columns: 46% 1fr;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.ep-diagram-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #000000;
+  border-radius: 8px;
+  background: #ffffff;
+  overflow: hidden;
+  padding: 4px;
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+.ep-split-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.ep-split-main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ep-tpl--top_banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  height: 100%;
+  min-height: 0;
+}
+
+.ep-banner-diagram {
+  height: 214px;
+  flex-shrink: 0;
+  padding: 2px 4px;
+}
+
+.ep-banner-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.ep-bullets--row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+}
+
+.ep-tpl--compare_two {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  height: 100%;
+  min-height: 0;
+}
+
+.ep-compare-diagram {
+  height: 224px;
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+}
+
+.ep-compare-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* =========================================================
+   Mode Overrides: 1-bit Monochrome (strict pure B&W)
+   ========================================================= */
+.screen--1bit .ep-muted-stroke { stroke: #000000; }
+.screen--1bit .ep-muted-fill { fill: #000000; }
+.screen--1bit .ep-grid-line { stroke: #bdbdbd; }
+.screen--1bit .ep-metric-pill,
+.screen--1bit .ep-insight,
+.screen--1bit .ep-bullet,
+.screen--1bit .ep-callout {
+  background: #ffffff;
+}
+.screen--1bit .ep-title-bar .instance {
+  color: #000000 !important;
+}
+
+/* =========================================================
+   Mode Overrides: 4-bit Grayscale (TRMNL X 1040x780)
+   ========================================================= */
+.screen--4bit .ep-hatch-group {
+  display: none;
+}
+.screen--4bit .ep-hl-area,
+.screen--4bit .ep-hl-label-bg {
+  fill: #e0e0e0 !important;
+}
+.screen--4bit .ep-leg-hl {
+  background: #e0e0e0;
+}
+
+/* =========================================================
+   Mode Overrides: 4-Color (B/W/R/Y) & 6-Color Spectra
+   ========================================================= */
+.screen--color-4bwry .ep-accent-stroke,
+.screen--color-6a .ep-accent-stroke {
+  stroke: #B81D1D;
+}
+.screen--color-4bwry .ep-accent-fill,
+.screen--color-6a .ep-accent-fill {
+  fill: #B81D1D;
+}
+.screen--color-4bwry .ep-hatch-group,
+.screen--color-6a .ep-hatch-group {
+  display: none;
+}
+.screen--color-4bwry .ep-hl-area,
+.screen--color-4bwry .ep-hl-label-bg,
+.screen--color-6a .ep-hl-area,
+.screen--color-6a .ep-hl-label-bg {
+  fill: #F2DF4A !important;
+}
+.screen--color-4bwry .ep-title-icon,
+.screen--color-6a .ep-title-icon {
+  stroke: #B81D1D;
+}
+.screen--color-4bwry .ep-kicker,
+.screen--color-6a .ep-kicker {
+  background: #B81D1D;
+  color: #ffffff;
+}
+.screen--color-4bwry .ep-insight,
+.screen--color-6a .ep-insight {
+  border-left-color: #B81D1D;
+  background: #ffffff;
+}
+.screen--color-4bwry .ep-bullet,
+.screen--color-6a .ep-bullet {
+  background: #ffffff;
+}
+.screen--color-4bwry .ep-metric-pill,
+.screen--color-4bwry .ep-callout,
+.screen--color-4bwry .ep-leg-hl,
+.screen--color-6a .ep-metric-pill,
+.screen--color-6a .ep-callout,
+.screen--color-6a .ep-leg-hl {
+  background: #F2DF4A;
+}
+.screen--color-4bwry .ep-callout-badge,
+.screen--color-6a .ep-callout-badge {
+  background: #B81D1D;
+}
+.screen--color-4bwry .ep-leg-accent,
+.screen--color-6a .ep-leg-accent {
+  border-top-color: #B81D1D;
+}
+
+/* =========================================================
+   TRMNL X (10.3" screen--lg 1040x780) Progressive Disclosure
+   ========================================================= */
+.ep-x-section {
+  display: none;
+}
+
+.screen--lg .ep-view {
+  padding: 18px 24px 10px 24px;
+}
+
+.screen--lg .ep-layout {
+  gap: 14px;
+}
+
+.screen--lg .ep-kicker {
+  font-size: 14.5px;
+  padding: 3px 10px;
+}
+
+.screen--lg .ep-title {
+  font-size: 29px;
+}
+
+.screen--lg .ep-insight {
+  font-size: 18px;
+  padding: 9px 13px;
+}
+
+.screen--lg .ep-bullet {
+  font-size: 17.5px;
+  line-height: 1.48;
+}
+
+.screen--lg .ep-bullet-label {
+  font-size: 14px;
+  padding: 2px 8px;
+}
+
+.screen--lg .ep-callout {
+  font-size: 16.5px;
+  padding: 8px 12px;
+}
+
+.screen--lg .ep-callout-badge {
+  font-size: 13.5px;
+}
+
+.screen--lg .ep-metric-pill {
+  font-size: 15px;
+  padding: 4px 11px;
+}
+
+.screen--lg .ep-banner-diagram {
+  height: 268px;
+}
+
+.screen--lg .ep-compare-diagram {
+  height: 286px;
+}
+
+.screen--lg .ep-tpl--split_left {
+  grid-template-columns: 44% 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 16px 20px;
+}
+
+.screen--lg .ep-tpl--split_left .ep-diagram-box {
+  max-height: 410px;
+}
+
+.screen--lg .ep-x-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1.5px dashed #000000;
+}
+
+.screen--lg .ep-tpl--split_left .ep-x-section {
+  grid-column: 1 / -1;
+}
+
+.ep-x-context {
+  font-size: 16px;
+  line-height: 1.48;
+  font-weight: 500;
+  color: #000000;
+  background: #f2f2f2;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+}
+
+.ep-x-context strong {
+  font-weight: 800;
+}
+
+.ep-x-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.ep-x-table th,
+.ep-x-table td {
+  border: 1.2px solid #000000;
+  padding: 6px 10px;
+  text-align: left;
+  line-height: 1.35;
+}
+
+.ep-x-table th {
+  background: #e6e6e6;
+  font-weight: 800;
+}
+
+.ep-x-table td {
+  background: #ffffff;
+  font-weight: 500;
+}
+
+.screen--color-4bwry .ep-x-table th,
+.screen--color-6a .ep-x-table th {
+  background: #F2DF4A;
+}
+
+.ep-x-ref {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #4d4d4d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.screen--lg .ep-title-bar {
+  height: 36px !important;
+  min-height: 36px !important;
+}
+
+.screen--lg .ep-title-bar .title {
+  font-size: 15.5px !important;
+}
+
+.screen--lg .ep-title-bar .instance {
+  font-size: 14px !important;
+}
+
+/* =========================================================
+   Half & Quadrant Views (TRMNL Recipe Mashup Support)
+   ========================================================= */
+.ep-subview {
+  font-family: "Inter Variable", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
+  color: #000000;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 14px 6px 14px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.ep-subview-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 6px;
+}
+
+.ep-quad-summary {
+  font-size: 16px;
+  line-height: 1.42;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-left: 4px solid #000000;
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  background: #f2f2f2;
+  border-radius: 0 5px 5px 0;
+}
+
+.screen--color-4bwry .ep-quad-summary,
+.screen--color-6a .ep-quad-summary {
+  border-left-color: #B81D1D;
+  background: #ffffff;
+}

@@ -1,0 +1,18 @@
+<div class="ep-subview">
+  <div class="ep-subview-body">
+    <div class="ep-header">
+      <div class="ep-header-top">
+        <span class="ep-kicker">{{ kicker }}</span>
+        {% if key_metrics.size > 0 %}
+          <span class="ep-metric-pill" style="font-size:12px;"><span class="ep-metric-value">{{ key_metrics[0].value }}</span></span>
+        {% endif %}
+      </div>
+      <h1 class="ep-title" style="font-size:19px;">{{ title }}</h1>
+    </div>
+    <div class="ep-quad-summary">{{ quadrant_summary }}</div>
+  </div>
+  <div class="title_bar ep-title-bar">
+    <span class="title">EP 卡片</span>
+    <span class="instance">{{ card_index }}/{{ card_total }}</span>
+  </div>
+</div>

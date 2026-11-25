@@ -1,0 +1,3147 @@
+{
+  "schema_version": "1.0.0",
+  "deck_id": "ep-cards-batch-01",
+  "generated_at": "2026-11-24T00:00:00Z",
+  "cards": [
+    {
+      "id": "anatomy-koch-triangle",
+      "schema_version": "1.0.0",
+      "category": "conduction_anatomy",
+      "difficulty": "intro",
+      "tags": [
+        "Koch三角",
+        "右房地标",
+        "房室传导轴"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "传导解剖",
+          "title": "Koch三角怎么找",
+          "core_insight": "从右房腔认出三条边，就能找到房室传导轴邻域。",
+          "bullets": [
+            {
+              "label": "两条侧边",
+              "text": "沿Todaro腱与三尖瓣隔瓣的附着线。"
+            },
+            {
+              "label": "找底部",
+              "text": "冠状窦口标出三角底部。"
+            },
+            {
+              "label": "找尖端",
+              "text": "两条侧边汇向膜部室间隔。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "紧密房室结和His的位置随个体变化。"
+          },
+          "quadrant_summary": "右房三地标围出Koch三角",
+          "expanded": {
+            "clinical_context": "三角尖附近的三维传导轴与膜部室间隔相邻。His电位的记录区与三角尖的相对位置有变异。",
+            "reference_note": "Cabrera 2020 Results及图3"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "split_left",
+        "diagram_aspect_ratio": "square_1_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "anatomy_sketch",
+        "production_route": "sketch_to_svg",
+        "svg_id": "anatomy-koch-triangle-diagram",
+        "visual_goal": "从右房腔面迅速辨认两侧边、底部和尖端。",
+        "must_show_elements": [
+          "注明右房腔内观",
+          "标三尖瓣隔瓣铰链线和Todaro腱",
+          "保留冠状窦开口轮廓",
+          "在尖端近旁标传导轴邻域"
+        ],
+        "labels": [
+          {
+            "zh": "右房腔内观",
+            "en": "Right atrial endocardial view",
+            "role": "muted"
+          },
+          {
+            "zh": "Todaro腱",
+            "en": "Tendon of Todaro",
+            "role": "accent_red"
+          },
+          {
+            "zh": "隔瓣附着线",
+            "en": "Septal leaflet hinge",
+            "role": "primary"
+          },
+          {
+            "zh": "冠状窦口",
+            "en": "Coronary sinus ostium",
+            "role": "primary"
+          },
+          {
+            "zh": "三角尖",
+            "en": "Triangle apex",
+            "role": "primary"
+          },
+          {
+            "zh": "传导轴邻域",
+            "en": "Conduction axis region",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "黑色实线画瓣叶附着、窦口和右房轮廓。",
+          "red_accent": "Todaro腱用红线，黑白用加粗断续线。",
+          "yellow_highlight": "三角尖传导轴邻域用浅黄带，黑白改为间距清晰的斜线网纹。"
+        },
+        "medical_accuracy_checks": [
+          "从右房腔观察核对腱和隔瓣附着线，尖端朝膜部室间隔。",
+          "冠状窦口位于底部，保留开口轮廓与边界提示。",
+          "显示紧密结与穿入束的邻域和变异，避免给出固定点。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Cabrera 等，2020，JACC Clin Electrophysiol 6:362–377，Results及图3（本地PDF第5–6页）",
+          "identifier": "doi:10.1016/j.jacep.2019.12.004",
+          "reading_scope": "full_text",
+          "supporting_quote": "从右房腔面辨认Todaro腱与三尖瓣隔瓣铰链线两侧边、底部冠状窦口和朝膜部室间隔的尖端。紧密房室结及穿入束和这些地标的关系存在个体差异。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": true,
+        "uncertainties": [
+          "缩简原图时需核对右房腔面方位、膜部室间隔侧的尖端和传导轴变异。"
+        ]
+      }
+    },
+    {
+      "id": "anatomy-his-purkinje",
+      "schema_version": "1.0.0",
+      "category": "conduction_anatomy",
+      "difficulty": "intro",
+      "tags": [
+        "希浦系统",
+        "束支",
+        "浦肯野网"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "传导解剖",
+          "title": "希浦系统怎样分支",
+          "core_insight": "His穿入纤维体后分出左右束支，再接内膜下浦肯野网。",
+          "bullets": [
+            {
+              "label": "共同主干",
+              "text": "穿入段跨过房室间的纤维组织。"
+            },
+            {
+              "label": "走向心室",
+              "text": "左右束支分别顺室间隔走行。"
+            },
+            {
+              "label": "铺向内膜",
+              "text": "远端细分成浦肯野网。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pearl",
+            "text": "从共同主干一路追到左右室内膜。"
+          },
+          "quadrant_summary": "His分左右束支，再入浦肯野网",
+          "expanded": {
+            "clinical_context": "左束支近端常呈扇形分布，分支数和走行有变异。图中以连续主干接两侧室内膜的简化示意帮助辨认。",
+            "reference_note": "Ho 与 Ernst 1e 第5章，pp.70–71，图5.3–5.4"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "split_right",
+        "diagram_aspect_ratio": "portrait_4_5",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "anatomy_sketch",
+        "production_route": "sketch_to_svg",
+        "svg_id": "anatomy-his-purkinje-diagram",
+        "visual_goal": "沿连续传导轴追踪从房室结至两侧室内膜的分流。",
+        "must_show_elements": [
+          "房室结与连续His主干",
+          "中央纤维体",
+          "室间隔两侧束支",
+          "两侧心室内膜下浦肯野网"
+        ],
+        "labels": [
+          {
+            "zh": "房室结",
+            "en": "Atrioventricular node",
+            "role": "primary"
+          },
+          {
+            "zh": "纤维体",
+            "en": "Fibrous body",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "His",
+            "en": "His bundle",
+            "role": "primary"
+          },
+          {
+            "zh": "右束支",
+            "en": "Right bundle branch",
+            "role": "accent_red"
+          },
+          {
+            "zh": "左束支",
+            "en": "Left bundle branch",
+            "role": "accent_red"
+          },
+          {
+            "zh": "浦肯野网",
+            "en": "Purkinje network",
+            "role": "primary"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "心室轮廓、室间隔和末梢网用黑色实线。",
+          "red_accent": "双侧束支用红线，黑白用粗虚线并保留箭头。",
+          "yellow_highlight": "穿入段经过的纤维体用黄底，黑白用稀疏斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "穿入束与房室结、分支段保持连续。",
+          "左右束支在室间隔相应侧通向两室，末梢置于内膜下。",
+          "左束支画成扇形示意并注明分支结构可变。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Ho 与 Ernst，Anatomy for Cardiac Electrophysiologists: A Practical Handbook，第1版（2012），第5章，pp.70–71，图5.3–5.4（本地PDF第86–87页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "His穿入纤维组织后经分支段接左右束支，远端希浦成分延伸为室内膜下浦肯野网。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Massing 与 James，1976，Circulation 53:609–621，Results，pp.609–621",
+          "identifier": "doi:10.1161/01.CIR.53.4.609",
+          "reading_scope": "full_text",
+          "supporting_quote": "连续组织学重建显示左束支近端分支的数目及走行有变异，常呈宽散形态。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "左束支分支数与形态存在个体变异，图稿用扇形概括。"
+        ]
+      }
+    },
+    {
+      "id": "anatomy-cs-mitral-annulus",
+      "schema_version": "1.0.0",
+      "category": "conduction_anatomy",
+      "difficulty": "intro",
+      "tags": [
+        "冠状窦",
+        "二尖瓣环",
+        "左房室沟"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "CS"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "传导解剖",
+          "title": "冠状窦为何靠近瓣环",
+          "core_insight": "CS走在左房室沟，可作二尖瓣环的邻近标志。",
+          "bullets": [
+            {
+              "label": "看沟",
+              "text": "左房与左室之间的沟容纳CS。"
+            },
+            {
+              "label": "看入口",
+              "text": "导管可经右房的CS口进入。"
+            },
+            {
+              "label": "看关系",
+              "text": "静脉与瓣环的距离沿走行而变。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "CS电极位置提供邻近信息，精确定位还须结合标测。"
+          },
+          "quadrant_summary": "CS沿左房室沟邻近二尖瓣环",
+          "expanded": {
+            "clinical_context": "冠状窦导管可记录邻近的房、室电位。示意图用两条分离的轮廓表达静脉与瓣环的相对位置。",
+            "reference_note": "Issa 3e 第4章，pp.106–107"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "split_left",
+        "diagram_aspect_ratio": "landscape_4_3",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "anatomy_sketch",
+        "production_route": "sketch_to_svg",
+        "svg_id": "anatomy-cs-mitral-annulus-diagram",
+        "visual_goal": "同时看见二尖瓣环的后侧与邻近静脉路径。",
+        "must_show_elements": [
+          "心脏后面观",
+          "局部二尖瓣环轮廓",
+          "CS开口朝右房",
+          "CS远侧延向大心静脉"
+        ],
+        "labels": [
+          {
+            "zh": "右房",
+            "en": "Right atrium",
+            "role": "primary"
+          },
+          {
+            "zh": "二尖瓣环",
+            "en": "Mitral annulus",
+            "role": "primary"
+          },
+          {
+            "zh": "冠状窦",
+            "en": "Coronary sinus",
+            "role": "accent_red"
+          },
+          {
+            "zh": "冠状窦口",
+            "en": "Coronary sinus ostium",
+            "role": "primary"
+          },
+          {
+            "zh": "左房室沟",
+            "en": "Left atrioventricular groove",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "瓣环轮廓和房室外形为黑色实线。",
+          "red_accent": "CS静脉路径用红色双线，黑白保留黑色双线。",
+          "yellow_highlight": "左房室沟相邻区用黄底，黑白用疏斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "CS开口在右房，静脉向左房室沟延伸。",
+          "静脉和左房室瓣环为分离结构，沿程距离可变。",
+          "CS远端指向大心静脉，保留视角与解剖方向。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第4章，pp.106–107（本地PDF第129–130页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "冠状窦行于房室沟，邻近左房室与二尖瓣环，相对距离沿走行变化。冠状窦电图可同时包含心房和心室成分。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Chauvin 等，2000，Circulation 101:647–652，Methods及图1–2",
+          "identifier": "doi:10.1161/01.cir.101.6.647",
+          "reading_scope": "full_text",
+          "supporting_quote": "显示冠状窦从右房开口沿左房室沟延伸，与二尖瓣相邻，窦肌袖和左房肌之间可有肌束连接。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "人工确认后面观方向及瓣环、静脉和右房开口的相对投影。"
+        ]
+      }
+    },
+    {
+      "id": "intervals-ah-hv",
+      "schema_version": "1.0.0",
+      "category": "basic_intervals",
+      "difficulty": "intro",
+      "tags": [
+        "房室结",
+        "His电位",
+        "间期量法"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AH",
+          "HV",
+          "QRS",
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "基础间期",
+          "title": "AH与HV各量哪段",
+          "core_insight": "AH近似房室结传导时间，HV量His到最早心室激动。",
+          "bullets": [
+            {
+              "label": "量AH",
+              "text": "His导联的局部房波起点量到His起点。"
+            },
+            {
+              "label": "量HV",
+              "text": "His起点量到最早记录的室激动起点。"
+            }
+          ],
+          "key_metrics": [
+            {
+              "name": "正常HV参考",
+              "value": "35–55 ms"
+            }
+          ],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "HV的末点找最早室激动，局部室波可能较迟。"
+          },
+          "quadrant_summary": "AH跨房室结，HV到最早室激动",
+          "expanded": {
+            "clinical_context": "AH起点取His导联局部房波的首个快速偏转。成人无预激时，教材HV参考范围为35–55 ms，量取时优先对照体表QRS起点。",
+            "mini_table": {
+              "headers": [
+                "间期",
+                "起点",
+                "终点"
+              ],
+              "rows": [
+                [
+                  "AH",
+                  "His导联局部房波",
+                  "His电位起点"
+                ],
+                [
+                  "HV",
+                  "His电位起点",
+                  "最早室激动起点"
+                ]
+              ]
+            },
+            "reference_note": "Issa 3e 第4章，pp.107、109，图4.19"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "ultrawide_3_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ecg_egm_waveform",
+        "production_route": "code_generated_svg",
+        "svg_id": "intervals-ah-hv-diagram",
+        "visual_goal": "在同一时间轴读到两段量尺，并找到共有的His边界。",
+        "must_show_elements": [
+          "同步的体表一导和His双极腔内轨迹",
+          "AH和HV在同一His起点首尾相接",
+          "延后的局部室电位作为核查参照"
+        ],
+        "labels": [
+          {
+            "zh": "体表QRS",
+            "en": "Surface QRS",
+            "role": "primary"
+          },
+          {
+            "zh": "局部房波",
+            "en": "Local atrial electrogram",
+            "role": "primary"
+          },
+          {
+            "zh": "His起点",
+            "en": "His onset",
+            "role": "accent_red"
+          },
+          {
+            "zh": "AH",
+            "en": "AH interval",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "HV",
+            "en": "HV interval",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "局部室波",
+            "en": "Local ventricular electrogram",
+            "role": "muted"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "体表和腔内轨迹用黑色实线。",
+          "red_accent": "共有His起点用红色双线游标，黑白保留粗双线。",
+          "yellow_highlight": "两条量尺底带用黄色，黑白用斜纹并以标签划分两段。"
+        },
+        "medical_accuracy_checks": [
+          "AH起点落在His轨局部房波的首个快速偏转，末点为His起点。",
+          "同步示例用最早可辨体表QRS起点作为HV末点。",
+          "若标示持续时间，按同一毫秒标尺绘制，并标明示例与参考范围。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第4章，pp.107、109，图4.19（本地PDF第130、132页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "AH自His导联局部房波首个快速偏转量到His除极起始，近似房室结传导时间。HV量自His起点至所记录的最早室激动起点，正常参考35–55 ms。图4.19以可用的最早体表QRS作终点。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": true,
+        "uncertainties": [
+          "按参考来源和记录方式解读HV范围。卡面采用Issa第3版非预激正常参考，图稿须核对最早室激动。"
+        ]
+      }
+    },
+    {
+      "id": "intervals-his-block",
+      "schema_version": "1.0.0",
+      "category": "basic_intervals",
+      "difficulty": "intro",
+      "tags": [
+        "房室阻滞",
+        "His电位",
+        "腔内定位"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "基础间期",
+          "title": "用His定位漏搏",
+          "core_insight": "未下传房波后有没有His电位，提示阻滞在记录点哪一侧。",
+          "bullets": [
+            {
+              "label": "无His波",
+              "text": "记录可靠时，提示阻滞在该点近侧。"
+            },
+            {
+              "label": "有His波",
+              "text": "后续无室激动时，提示阻滞在该点远侧。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "同一记录位点能在相邻下传搏记录到His，再比较漏搏。"
+          },
+          "quadrant_summary": "漏搏看His，分记录点近侧远侧",
+          "expanded": {
+            "clinical_context": "束内阻滞有时出现分裂His电位。第一成分后缺少第二成分，提示阻滞在两成分之间。",
+            "reference_note": "Narula 1971 pp.149–150、153–154，图2–3"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "compare_two",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "comparison_pair",
+        "production_route": "code_generated_svg",
+        "svg_id": "intervals-his-block-diagram",
+        "visual_goal": "以相邻下传搏为参照，在两个漏搏旁读出His有无。",
+        "must_show_elements": [
+          "两格同时间尺度",
+          "每格保留一次正常下传搏",
+          "一格房后无His与室激动",
+          "另一格有His而无室激动"
+        ],
+        "labels": [
+          {
+            "zh": "局部房波",
+            "en": "Atrial electrogram",
+            "role": "primary"
+          },
+          {
+            "zh": "His电位",
+            "en": "His electrogram",
+            "role": "accent_red"
+          },
+          {
+            "zh": "室激动",
+            "en": "Ventricular activation",
+            "role": "primary"
+          },
+          {
+            "zh": "记录点近侧",
+            "en": "Proximal to recorded His",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "记录点远侧",
+            "en": "Distal to recorded His",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "下传参照",
+            "en": "Conducted reference",
+            "role": "muted"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "真实电位和基线用黑色实线。",
+          "red_accent": "用于对齐的His标记用红色，黑白用粗虚引线。",
+          "yellow_highlight": "漏搏观察窗用黄底，黑白用稀疏斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "两格显示可信的参照His波，保留同一通道和相同增益。",
+          "近侧示例仅保留局部房波，远侧示例保留房波和His。",
+          "可辨识的独立逸搏和分裂His若出现，须用额外标签说明。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Narula 等，1971，Am J Med 50:146–165，pp.149–150、153–154，图2–3",
+          "identifier": "doi:10.1016/0002-9343(71)90144-6",
+          "reading_scope": "full_text",
+          "supporting_quote": "未下传房波后无His时，可提示记录点近侧阻滞。有His而无后继室激动提示记录点远侧阻滞，仍可能位于束内。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第9章，pp.272–273（本地PDF第332–333页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "束内阻滞有时可记录到分裂His。未下传搏在第一成分之后缺失第二成分，可把阻滞定位在两成分之间。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "判读须排除记录漂移或埋藏His。单一His位置可见近侧或远侧现象，精确解剖层次需要更多记录。"
+        ]
+      }
+    },
+    {
+      "id": "intervals-cs-sequence",
+      "schema_version": "1.0.0",
+      "category": "basic_intervals",
+      "difficulty": "intro",
+      "tags": [
+        "冠状窦",
+        "激动顺序",
+        "腔内电图"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "CS"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "基础间期",
+          "title": "冠状窦先看哪一端",
+          "core_insight": "窦律中，若近端电极在CS口，房波通常从近端排到远端。",
+          "bullets": [
+            {
+              "label": "定位近端",
+              "text": "先确认近端电极靠近冠状窦口。"
+            },
+            {
+              "label": "对齐房波",
+              "text": "用共同时间轴比较各通道房波起点。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "各通道还可能记录室波，按波的来源排序。"
+          },
+          "quadrant_summary": "窦口在近端，窦律房波多向远",
+          "expanded": {
+            "clinical_context": "导管深置时近端可离开窦口，近、远端进入接近同时激动的区域。解读异序前先核对导管位置与电位成分。",
+            "reference_note": "Issa 3e 第4章，p.107，图4.20"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ecg_egm_waveform",
+        "production_route": "code_generated_svg",
+        "svg_id": "intervals-cs-sequence-diagram",
+        "visual_goal": "让近端、中段、远端的房波错位一眼可比较。",
+        "must_show_elements": [
+          "三条CS电图轨与共同时间轴",
+          "近端电极在窦口的示意说明",
+          "按次序略错开的房波起点",
+          "保留后续室波"
+        ],
+        "labels": [
+          {
+            "zh": "近端",
+            "en": "Proximal",
+            "role": "primary"
+          },
+          {
+            "zh": "中段",
+            "en": "Mid",
+            "role": "primary"
+          },
+          {
+            "zh": "远端",
+            "en": "Distal",
+            "role": "primary"
+          },
+          {
+            "zh": "首个房波",
+            "en": "First atrial electrogram",
+            "role": "accent_red"
+          },
+          {
+            "zh": "房波时间窗",
+            "en": "Atrial timing window",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "室波",
+            "en": "Ventricular electrogram",
+            "role": "muted"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "三轨腔内曲线用黑色实线。",
+          "red_accent": "近端首个房波用红色引线，黑白用粗虚线。",
+          "yellow_highlight": "近至远的房波时间窗用黄色，黑白用斜线网纹。"
+        },
+        "medical_accuracy_checks": [
+          "近端电极定位在CS口，远端方向朝左侧。",
+          "三轨同一时间轴，统一以各道房波起点排列。",
+          "标明后续室波和房波可并存，幅度本身不作识别标准。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第4章，p.107，图4.20（本地PDF第130页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "窦律中当近端电极在窦口，房激动通常由近端到远端依次记录。深置导管时近远端房波可接近同时，电图亦可含室性波。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "深置导管和所标房波的近远场来源会改变外观，需核对波形与导管位置。"
+        ]
+      }
+    },
+    {
+      "id": "mechanisms-reentry",
+      "schema_version": "1.0.0",
+      "category": "ep_mechanisms",
+      "difficulty": "intro",
+      "tags": [
+        "折返",
+        "单向阻滞",
+        "恢复时间"
+      ],
+      "abbreviations": {
+        "whitelisted": [],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "折返机制",
+          "title": "折返回来为何还能传",
+          "core_insight": "经典折返从单向阻滞起步，波前绕回来时原处已恢复可传。",
+          "bullets": [
+            {
+              "label": "有路可绕",
+              "text": "解剖或功能障碍形成环行通路。"
+            },
+            {
+              "label": "起初单向",
+              "text": "波前在一侧受阻，可沿另一侧绕行。"
+            },
+            {
+              "label": "回来赶上",
+              "text": "绕行留出恢复时间，波前得以再通过。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pearl",
+            "text": "沿箭头走一圈，看原阻滞处是否已经恢复。"
+          },
+          "quadrant_summary": "单向受阻，绕行后赶上恢复",
+          "expanded": {
+            "clinical_context": "慢传导能给前方组织留下恢复时间。环路的路径、传导时间和不应期共同决定折返能否维持。",
+            "reference_note": "Issa 3e 第3章，pp.64–65"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "split_left",
+        "diagram_aspect_ratio": "square_1_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "reentry_circuit",
+        "production_route": "code_generated_svg",
+        "svg_id": "mechanisms-reentry-diagram",
+        "visual_goal": "分清触发时的单向阻断和绕回后能够再次传导的同一位置。",
+        "must_show_elements": [
+          "同一单环的触发与回返两个时相",
+          "一侧单向阻断",
+          "其余通路上的环行箭头",
+          "回返经过原阻滞位置"
+        ],
+        "labels": [
+          {
+            "zh": "环行通路",
+            "en": "Reentry path",
+            "role": "primary"
+          },
+          {
+            "zh": "触发波前",
+            "en": "Initiating wavefront",
+            "role": "primary"
+          },
+          {
+            "zh": "单向阻滞",
+            "en": "Unidirectional block",
+            "role": "primary"
+          },
+          {
+            "zh": "绕行波前",
+            "en": "Circulating wavefront",
+            "role": "accent_red"
+          },
+          {
+            "zh": "恢复位置",
+            "en": "Recovered segment",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "环路和阻断符号用黑色实线。",
+          "red_accent": "环行波前用红箭头，黑白用粗虚线箭头。",
+          "yellow_highlight": "回返时恢复位置用黄底，黑白用斜线网纹。"
+        },
+        "medical_accuracy_checks": [
+          "两时相的原阻滞位置在几何上对齐，触发时保持单向通路。",
+          "回返箭头指向先前阻滞但此刻已经恢复的区段。",
+          "图标注经典单环示意，保持解剖或功能障碍均可成环的表述。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第3章，pp.64–65（本地PDF第81–82页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "经典折返所需的单向传播由一侧阻滞建立。环路可以由解剖或功能障碍形成，绕行时间需让前方组织恢复，慢传导有助于满足这一条件。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "经典单环是教学简化，不必将固定慢径和固定解剖障碍外推到所有折返。"
+        ]
+      }
+    },
+    {
+      "id": "mechanisms-ah-jump",
+      "schema_version": "1.0.0",
+      "category": "ep_mechanisms",
+      "difficulty": "bridge",
+      "tags": [
+        "AH跳跃",
+        "双径路",
+        "房性额外刺激"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AVNRT",
+          "AH",
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "折返机制",
+          "title": "AH为何突然跳长",
+          "core_insight": "房性早搏只提前一点，AH却骤增，提示房室结双径路。",
+          "bullets": [
+            {
+              "label": "轻度提前",
+              "text": "同一测试序列里，缩短房性联律间期。"
+            },
+            {
+              "label": "显著延长",
+              "text": "比较试验间的AH变化，识别跳跃。"
+            }
+          ],
+          "key_metrics": [
+            {
+              "name": "房性联律缩短",
+              "value": "10 ms"
+            },
+            {
+              "name": "AH延长",
+              "value": "≥50 ms"
+            }
+          ],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "跳跃提示双径路生理，是否为AVNRT还要看诱发证据。"
+          },
+          "quadrant_summary": "早搏略提前，AH跳长提示双径",
+          "expanded": {
+            "clinical_context": "教材以房性联律间期缩短10 ms、AH延长至少50 ms为操作定义。快径受阻后慢径接续是传统解释，间期跳跃提供间接证据。",
+            "reference_note": "Issa 3e 第17章，p.572"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ladder_diagram",
+        "production_route": "code_generated_svg",
+        "svg_id": "mechanisms-ah-jump-diagram",
+        "visual_goal": "用同一时标同时看见联律间期的小变化与AH的大变化。",
+        "must_show_elements": [
+          "同一基准下的两次房性额外刺激示意",
+          "上方两个实际房性联律间期量尺",
+          "下方分别标局部房波到His起点",
+          "示意值按定义边界绘制"
+        ],
+        "labels": [
+          {
+            "zh": "前次房波",
+            "en": "Reference atrial onset",
+            "role": "primary"
+          },
+          {
+            "zh": "早搏房波",
+            "en": "Premature atrial onset",
+            "role": "primary"
+          },
+          {
+            "zh": "His电位",
+            "en": "His electrogram",
+            "role": "accent_red"
+          },
+          {
+            "zh": "联律间期",
+            "en": "Coupling interval",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "AH",
+            "en": "AH interval",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "基线、房波、His电位及参考点用黑色。",
+          "red_accent": "AH延长处用红色粗游标，黑白用粗虚线。",
+          "yellow_highlight": "待比较的两个量程用黄底，黑白用疏斜纹并保留端点。"
+        },
+        "medical_accuracy_checks": [
+          "房性联律量尺起止于房波，AH量尺从局部房波到His起点。",
+          "示意两次的房性联律差10 ms和AH差50 ms需与共同轴一致。",
+          "图例把跃变作为操作性测量与双径路线索。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第17章，p.572（本地PDF第705页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "房性额外刺激的房性联律间期缩短10 ms，若AH延长至少50 ms，符合AH跳跃的操作定义，提示双径路生理。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Denes 等，1973，Circulation 48:549–555，Results，pp.550–553",
+          "identifier": "doi:10.1161/01.cir.48.3.549",
+          "reading_scope": "full_text",
+          "supporting_quote": "人体房性额外刺激在某一临界联律间期可出现房室结传导间期突增，支持双径路生理。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Zhang，2024，Front Physiol 15:1367509，Results及Discussion",
+          "identifier": "doi:10.3389/fphys.2024.1367509",
+          "reading_scope": "full_text",
+          "supporting_quote": "离体兔房室结的局部电图显示，快转慢可发生于平滑传导曲线上。部分跳跃伴回返，提醒区分间期指标和单次径路转换。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "快转慢是传统解释。兔离体实验表明局部径路切换与间期跳跃可有不同表现，人体机制仍需独立验证。"
+        ]
+      }
+    },
+    {
+      "id": "mechanisms-excitable-gap",
+      "schema_version": "1.0.0",
+      "category": "ep_mechanisms",
+      "difficulty": "intro",
+      "tags": [
+        "兴奋间隙",
+        "不应期",
+        "折返"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "ERP"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "折返机制",
+          "title": "折返的兴奋间隙",
+          "core_insight": "波前和不应尾之间若有已恢复的组织，适时刺激可能进入环路。",
+          "bullets": [
+            {
+              "label": "追波头",
+              "text": "正在传播的波前沿环路推进。"
+            },
+            {
+              "label": "找恢复段",
+              "text": "不应尾以外的可激动区是兴奋间隙。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "能进入环路的刺激仍要看时机和传入部位。"
+          },
+          "quadrant_summary": "恢复段提供进入折返环的机会",
+          "expanded": {
+            "clinical_context": "ERP是指定组织和刺激条件下仍不能捕获或传播的最长联律间期。兴奋间隙可描述为环上一段组织，也可描述为某点的可激动时间窗。",
+            "mini_table": {
+              "headers": [
+                "量",
+                "读法"
+              ],
+              "rows": [
+                [
+                  "ERP",
+                  "局部测试仍失败的最长联律间期"
+                ],
+                [
+                  "兴奋间隙",
+                  "环上的可激动区或时间窗"
+                ]
+              ]
+            },
+            "reference_note": "Issa 3e 第3章，p.69，图3.12"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "split_right",
+        "diagram_aspect_ratio": "square_1_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "reentry_circuit",
+        "production_route": "code_generated_svg",
+        "svg_id": "mechanisms-excitable-gap-diagram",
+        "visual_goal": "在同一环路截面中找到已恢复区、推进波前与不应尾。",
+        "must_show_elements": [
+          "连续的单波前环路",
+          "已恢复区与不应尾分段",
+          "外来刺激进入已恢复区示意",
+          "明确波前推进方向"
+        ],
+        "labels": [
+          {
+            "zh": "折返环",
+            "en": "Reentry circuit",
+            "role": "primary"
+          },
+          {
+            "zh": "推进波前",
+            "en": "Advancing wavefront",
+            "role": "accent_red"
+          },
+          {
+            "zh": "不应尾",
+            "en": "Refractory tail",
+            "role": "muted"
+          },
+          {
+            "zh": "兴奋间隙",
+            "en": "Excitable gap",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "适时刺激",
+            "en": "Timed stimulus",
+            "role": "primary"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "环路与刺激路径用黑色线，不应尾用稀点。",
+          "red_accent": "推进波前用红色双线箭头，黑白保留粗双线箭头。",
+          "yellow_highlight": "已恢复区用黄色，黑白用与稀点可区分的斜线网纹。"
+        },
+        "medical_accuracy_checks": [
+          "沿推进方向，从波前进入前方可激动区，区段另一端邻接上一波的不应尾。",
+          "进入路径落在兴奋间隙内，以可能进入表达其时相依赖。",
+          "图示以环上范围解释间隙，ERP保留为扩展层的单独测量概念。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第3章，p.69，图3.12（本地PDF第87页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "在折返环上，下一波头之前与上一波的不应尾之后可有已恢复至可激动的组织。适时刺激由此进入后能够扰动原折返。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第4章，pp.110–111，表4.1（本地PDF第133–134页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "有效不应期是指定条件下仍不能引起捕获或传播的最长提前联律间期，终点依被测结构定义。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "间隙可部分或充分恢复。初稿用已恢复至可激动的示例，人工复核区域标注与推进方向。"
+        ]
+      }
+    },
+    {
+      "id": "svt-typical-avnrt-short-va",
+      "schema_version": "1.0.0",
+      "category": "svt_triage",
+      "difficulty": "intro",
+      "tags": [
+        "AVNRT",
+        "VA量法",
+        "快慢径"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AVNRT",
+          "AVRT",
+          "VA",
+          "QRS",
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "室上速鉴别",
+          "title": "典型AVNRT为何短VA",
+          "core_insight": "慢径前传后，快径逆传心房与希浦下传心室几乎同步。",
+          "bullets": [
+            {
+              "label": "上行",
+              "text": "快径逆传，激动心房。"
+            },
+            {
+              "label": "下行",
+              "text": "希浦系统激动心室，与房波时间相近。"
+            },
+            {
+              "label": "体表所见",
+              "text": "逆行P波常藏在QRS内或末段。"
+            }
+          ],
+          "key_metrics": [
+            {
+              "name": "His导联VA分型",
+              "value": "≤60 ms"
+            }
+          ],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "短VA支持典型型，少数房速或AVRT也可出现。"
+          },
+          "quadrant_summary": "房室近同步，典型AVNRT短VA",
+          "expanded": {
+            "clinical_context": "从体表QRS起点量到His导联局部房波起点。典型型分型取≤60 ms，窄波鉴别常以腔内VA≤70 ms作线索。",
+            "reference_note": "欧洲室上速指南2019 §11.2.1.1.1–3及表12，p.684"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ecg_egm_waveform",
+        "production_route": "code_generated_svg",
+        "svg_id": "svt-typical-avnrt-short-va-diagram",
+        "visual_goal": "对齐体表QRS和腔内逆行房波，看到两个起点为何很接近。",
+        "must_show_elements": [
+          "同步体表和His通道",
+          "共同时间轴和QRS起点竖线",
+          "被QRS遮盖的体表逆行P波",
+          "短VA量尺和示意说明"
+        ],
+        "labels": [
+          {
+            "zh": "体表QRS",
+            "en": "Surface QRS",
+            "role": "primary"
+          },
+          {
+            "zh": "His导联",
+            "en": "His channel",
+            "role": "primary"
+          },
+          {
+            "zh": "逆行房波",
+            "en": "Retrograde atrial electrogram",
+            "role": "accent_red"
+          },
+          {
+            "zh": "VA",
+            "en": "VA interval",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "QRS起点",
+            "en": "QRS onset",
+            "role": "muted"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "体表和His通道波形用黑色实线。",
+          "red_accent": "His通道逆行房波的起点用红色，黑白用粗虚引线。",
+          "yellow_highlight": "VA两游标间用轻黄带，黑白用间距清楚的斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "VA由体表QRS起点量至His导联首个局部房波偏转。",
+          "图中用一个短正VA示例并按共同时标计算，区分示例与分型界值。",
+          "若加机制小图，心房和心室画作激动出口，避免把它们画成典型结内环的必需肢。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§11.2.1.1.1–3及表12，p.684",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "慢快型的心房除极与室激动可先后相接或近于同时，逆行P可隐于QRS内或末端。以体表QRS起点至His导联首个房波偏转为VA，典型分型为≤60 ms。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§9.1.1.3，pp.666–667",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "腔内VA≤70 ms是窄波心动过速的鉴别线索，通常提示典型AVNRT，较少见于局灶房速和AVRT。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": true,
+        "uncertainties": [
+          "ESC表12的His导联VA≤60 ms用于AVNRT分型，§9.1.1.3的腔内VA≤70 ms用于窄波鉴别。单凭短VA仍需与其他机制鉴别。",
+          "房波可先于、等于或略迟于体表QRS，蓝图选短正VA例。"
+        ]
+      }
+    },
+    {
+      "id": "svt-rp-first-split",
+      "schema_version": "1.0.0",
+      "category": "svt_triage",
+      "difficulty": "intro",
+      "tags": [
+        "窄波心动过速",
+        "RP",
+        "体表分诊"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AVNRT",
+          "AVRT",
+          "VA",
+          "RP",
+          "PR",
+          "QRS"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "室上速鉴别",
+          "title": "看P波离哪拍近",
+          "core_insight": "规则窄波且房室一一对应时，用RP与PR的长短给读图分流。",
+          "bullets": [
+            {
+              "label": "靠近前拍",
+              "text": "RP短于PR，归入短RP。"
+            },
+            {
+              "label": "居中或靠后",
+              "text": "RP等于或长于PR，归入长RP。"
+            },
+            {
+              "label": "可见再量",
+              "text": "从前一QRS起点经P起点到下一QRS起点。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "短RP内的90 ms是体表次级界值，须看清P波。"
+          },
+          "quadrant_summary": "比较P到前后QRS的距离",
+          "expanded": {
+            "clinical_context": "长RP可见于房速、非典型AVNRT和部分AVRT。欧洲指南鉴别图用RP≥PR，描述非典型AVNRT形态时也用RP>PR。",
+            "reference_note": "欧洲室上速指南2019 §9.1.1.3与图1，pp.666–667"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "compare_two",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "comparison_pair",
+        "production_route": "code_generated_svg",
+        "svg_id": "svt-rp-first-split-diagram",
+        "visual_goal": "在同样周期的两条体表轨迹上，定位同一个P波相对前后两拍的位置。",
+        "must_show_elements": [
+          "同一周期尺度的两格规则窄QRS",
+          "可见P波分别靠前和靠后",
+          "RP与PR两段尺以同一P起点相接"
+        ],
+        "labels": [
+          {
+            "zh": "短RP",
+            "en": "Short RP",
+            "role": "primary"
+          },
+          {
+            "zh": "长RP",
+            "en": "Long RP",
+            "role": "primary"
+          },
+          {
+            "zh": "P波",
+            "en": "P wave",
+            "role": "accent_red"
+          },
+          {
+            "zh": "RP",
+            "en": "RP interval",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "PR",
+            "en": "PR interval",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "两条体表轨迹、QRS起点竖线用黑色。",
+          "red_accent": "P波起点用红色引线，黑白用粗断续引线。",
+          "yellow_highlight": "每格较短的区段用黄色，黑白用斜纹，长段保留量尺。"
+        },
+        "medical_accuracy_checks": [
+          "两例均用P及QRS起点量距，并与相邻的两个QRS对应。",
+          "左格用RP小于PR，右格用RP大于PR，保留相等边界的文字口径。",
+          "若在附注中显示90 ms，仅置于P清楚的短RP组内，禁止映射成腔内VA。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§9.1.1.3与图1，pp.666–667",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "可辨P波的规则窄波中，比较RP与PR。图1与窄波分诊正文将RP≥PR列入长RP。短RP之内再用体表90 ms分支，证据有限。腔内VA另有70 ms鉴别线索。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "ESC图1和§9.1.1.3将RP≥PR列入长RP，§11.2.1.1.1描述非典型AVNRT时用RP>PR。图中用远离边界的示例。",
+          "体表90 ms为短RP内经验分支，依据有限，与腔内70 ms的测量端点及用途有别。"
+        ]
+      }
+    },
+    {
+      "id": "svt-pseudo-r-s",
+      "schema_version": "1.0.0",
+      "category": "svt_triage",
+      "difficulty": "intro",
+      "tags": [
+        "逆行P波",
+        "AVNRT",
+        "体表形态"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AVNRT",
+          "QRS"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "室上速鉴别",
+          "title": "假性波来自逆行P",
+          "core_insight": "逆行P波叠在QRS末端，可在V1或下壁导联留下小波。",
+          "bullets": [
+            {
+              "label": "V1导联",
+              "text": "末端可多出正向假性r′。"
+            },
+            {
+              "label": "下壁导联",
+              "text": "末端可多出负向假性s。"
+            },
+            {
+              "label": "同导联比",
+              "text": "与窦律对照，找发作时新出现的小波。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "这些小波提供鉴别线索，典型AVNRT仍可无明显小波。"
+          },
+          "quadrant_summary": "对照窦律，找QRS末端新小波",
+          "expanded": {
+            "clinical_context": "同一导联对比窦律和快律末段形态，有助于辨认逆行P。V1小正向波和下壁小负向波对典型AVNRT有提示价值。",
+            "reference_note": "Page 2015 指南 §2.3.2，p.e514"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ecg_egm_waveform",
+        "production_route": "code_generated_svg",
+        "svg_id": "svt-pseudo-r-s-diagram",
+        "visual_goal": "在同导联、同增益的窦律与快律对照中认出末端新突起。",
+        "must_show_elements": [
+          "V1和一个下壁导联的同步示意",
+          "两导联各配同导联窦律参照",
+          "两例的QRS起点对齐",
+          "标出各导联发作时的新突起或切迹"
+        ],
+        "labels": [
+          {
+            "zh": "V1",
+            "en": "V1",
+            "role": "primary"
+          },
+          {
+            "zh": "下壁导联",
+            "en": "Inferior lead",
+            "role": "primary"
+          },
+          {
+            "zh": "窦律",
+            "en": "Sinus rhythm",
+            "role": "muted"
+          },
+          {
+            "zh": "快律",
+            "en": "Tachycardia",
+            "role": "primary"
+          },
+          {
+            "zh": "假性r′",
+            "en": "Pseudo r prime",
+            "role": "accent_red"
+          },
+          {
+            "zh": "假性s",
+            "en": "Pseudo s",
+            "role": "accent_red"
+          },
+          {
+            "zh": "末段",
+            "en": "Terminal segment",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "窦律和快律轨迹用黑色实线。",
+          "red_accent": "末端新增的小波用红色引线，黑白用粗虚引线。",
+          "yellow_highlight": "比较的短末段用黄色带，黑白用细斜纹并避开主波形。"
+        },
+        "medical_accuracy_checks": [
+          "V1例新增小波方向向上，下壁例新增切迹向下。",
+          "同导联的窦律与快律采用等增益和同一QRS起点。",
+          "只指示由逆行P波叠加产生的小段，图例注明该征象可以缺如。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Page 等，2015 ACC/AHA/HRS 成人室上速指南，Circulation 2016;133:e506–e574，§2.3.2，p.e514",
+          "identifier": "doi:10.1161/CIR.0000000000000311",
+          "reading_scope": "guideline",
+          "supporting_quote": "典型房室结折返中，近同步的逆行P波可表现为V1导联末端小正向假性r′和下壁导联小负向假性s。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§9.1.1.3、§11.2.1.1.1，pp.667、684",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "可用心动过速时新出现的末端小波作线索。比较研究纳入的房速或非典型房室结折返过少，敏感度有限。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "研究中纳入房速或非典型AVNRT的数量有限，卡面使用提示性表述，不移植敏感性或特异性。"
+        ]
+      }
+    },
+    {
+      "id": "wpw-delta-fusion",
+      "schema_version": "1.0.0",
+      "category": "wpw_preexcitation",
+      "difficulty": "intro",
+      "tags": [
+        "预激",
+        "delta波",
+        "心室融合"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "QRS"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "预激与旁路",
+          "title": "delta波从何而来",
+          "core_insight": "旁路先激动一小片室肌，随后与希浦传入的激动融合。",
+          "bullets": [
+            {
+              "label": "起步",
+              "text": "旁路插入点周围的室肌先除极。"
+            },
+            {
+              "label": "钝斜",
+              "text": "初段靠室肌间扩散，形成delta波。"
+            },
+            {
+              "label": "融合",
+              "text": "正常希浦激动到达后，两路共同激动心室。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pearl",
+            "text": "delta波看QRS起始，体现室肌提前激动。"
+          },
+          "quadrant_summary": "旁路先激动室肌，QRS起段钝斜",
+          "expanded": {
+            "clinical_context": "窦律时，一次房性激动可同时走正常系统和旁路。两路竞争会改变预激程度，也会改变delta波的醒目程度。",
+            "reference_note": "Page 2015 指南 表2，p.e513及§6.2"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ladder_diagram",
+        "production_route": "code_generated_svg",
+        "svg_id": "wpw-delta-fusion-diagram",
+        "visual_goal": "把旁路路径较早到达室肌与体表QRS初段钝斜对齐。",
+        "must_show_elements": [
+          "心房激动源与正常、旁路两条时序通路",
+          "先到的旁路室肌激动",
+          "后到的希浦系统贡献",
+          "下方同轴的预激QRS示意"
+        ],
+        "labels": [
+          {
+            "zh": "心房",
+            "en": "Atrium",
+            "role": "primary"
+          },
+          {
+            "zh": "房室结—希浦",
+            "en": "Node and His–Purkinje",
+            "role": "primary"
+          },
+          {
+            "zh": "旁路",
+            "en": "Accessory pathway",
+            "role": "accent_red"
+          },
+          {
+            "zh": "局部室肌",
+            "en": "Local ventricular myocardium",
+            "role": "primary"
+          },
+          {
+            "zh": "delta波",
+            "en": "Delta wave",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "融合",
+            "en": "Fusion",
+            "role": "primary"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "正常传导路线、体表轨迹和时间轴用黑线。",
+          "red_accent": "旁路提前抵达室肌的路线用红箭头，黑白用粗虚线箭头。",
+          "yellow_highlight": "从预激起点到正常贡献抵达的教学时间窗用黄色，黑白用疏斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "旁路和正常系统起自同一房性激动，旁路先到局部室肌。",
+          "体表标记贴在QRS起段，用钝斜向主波过渡表达预激。",
+          "两股激动共同构成该次QRS，示意不指定固定融合比例。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Page 等，2015 ACC/AHA/HRS 成人室上速指南，Circulation 2016;133:e506–e574，表2，p.e513及§6.2",
+          "identifier": "doi:10.1161/CIR.0000000000000311",
+          "reading_scope": "guideline",
+          "supporting_quote": "可前传的房室旁路让插入点邻近室肌提前激动。随后与正常房室结及希浦所传的激动融合，体表可见QRS起段钝斜，预激程度可变。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "预激量可变，卡片以足够可辨的窦律示例展示机制。"
+        ]
+      }
+    },
+    {
+      "id": "wpw-avrt-directions",
+      "schema_version": "1.0.0",
+      "category": "wpw_preexcitation",
+      "difficulty": "intro",
+      "tags": [
+        "AVRT",
+        "顺向逆向",
+        "预激"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AVRT",
+          "QRS"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "预激与旁路",
+          "title": "顺逆向AVRT看下行",
+          "core_insight": "下行经希浦时QRS通常窄，经旁路时心室完全预激而宽。",
+          "bullets": [
+            {
+              "label": "顺向型",
+              "text": "房室结与希浦下行，旁路逆传回心房。"
+            },
+            {
+              "label": "逆向型",
+              "text": "旁路下行，常经房室结系统逆传回房。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "顺向型遇到差传或束支阻滞，也能出现宽QRS。"
+          },
+          "quadrant_summary": "AVRT看下行路，理解QRS宽窄",
+          "expanded": {
+            "clinical_context": "双图采用同一条房室旁路，逆向型示例经希浦及房室结逆传。部分逆向型可用另一条旁路作为回路的逆传支。",
+            "mini_table": {
+              "headers": [
+                "方向",
+                "下行支",
+                "常见室波"
+              ],
+              "rows": [
+                [
+                  "顺向",
+                  "房室结与希浦",
+                  "窄QRS"
+                ],
+                [
+                  "逆向",
+                  "房室旁路",
+                  "宽且完全预激"
+                ]
+              ]
+            },
+            "reference_note": "Page 2015 指南 表2，p.e513"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "compare_two",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "comparison_pair",
+        "production_route": "code_generated_svg",
+        "svg_id": "wpw-avrt-directions-diagram",
+        "visual_goal": "在同构双图中看清下行支互换和QRS宽窄随之改变。",
+        "must_show_elements": [
+          "两格共用心房心室及两通路的抽象梯形布局",
+          "每格显示闭合回路及下行和返向箭头",
+          "同尺度窄QRS与宽预激QRS示意"
+        ],
+        "labels": [
+          {
+            "zh": "顺向型",
+            "en": "Orthodromic",
+            "role": "primary"
+          },
+          {
+            "zh": "逆向型",
+            "en": "Antidromic",
+            "role": "primary"
+          },
+          {
+            "zh": "房室结—希浦",
+            "en": "Node and His–Purkinje",
+            "role": "primary"
+          },
+          {
+            "zh": "旁路",
+            "en": "Accessory pathway",
+            "role": "accent_red"
+          },
+          {
+            "zh": "窄QRS",
+            "en": "Narrow QRS",
+            "role": "primary"
+          },
+          {
+            "zh": "完全预激",
+            "en": "Fully pre-excited QRS",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "正常系统、房室轨及QRS轮廓用黑色实线。",
+          "red_accent": "旁路走向用红色箭头，黑白用粗虚线箭头并保留箭头方向。",
+          "yellow_highlight": "两格下行到心室的出口用黄色，黑白改斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "顺向格沿正常系统前传、旁路逆传，逆向示例交换上下行。",
+          "两格都回到房部形成闭环，宽格标完全预激。",
+          "短、宽示意共用时标，附上顺向型遇差传可宽的注释。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Page 等，2015 ACC/AHA/HRS 成人室上速指南，Circulation 2016;133:e506–e574，表2，p.e513",
+          "identifier": "doi:10.1161/CIR.0000000000000311",
+          "reading_scope": "guideline",
+          "supporting_quote": "顺向型以下行房室结及希浦系统、逆传旁路成环，通常为窄QRS，差传或束支阻滞时可宽。逆向型经旁路前传，室波完全预激。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§11.3.3–4、图18，pp.688–689",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "典型逆向型示例经旁路前传、房室结系统逆传。部分例可经另一条旁路逆传。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": true,
+        "uncertainties": [
+          "双图采用最常见的逆向回路简化。另一旁路逆传和顺向差传宽波均保留文字说明。"
+        ]
+      }
+    },
+    {
+      "id": "wpw-manifest-concealed",
+      "schema_version": "1.0.0",
+      "category": "wpw_preexcitation",
+      "difficulty": "intro",
+      "tags": [
+        "隐匿旁路",
+        "显性旁路",
+        "AVRT"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AVRT"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "预激与旁路",
+          "title": "隐匿旁路也能折返",
+          "core_insight": "隐匿旁路只向心房逆传，窦律无预激也可参与顺向AVRT。",
+          "bullets": [
+            {
+              "label": "显性",
+              "text": "旁路能前传，窦律可留下预激图形。"
+            },
+            {
+              "label": "隐匿",
+              "text": "旁路只逆传，可将室波送回心房。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "没有delta波还能遇到隐匿旁路或前传预激很轻。"
+          },
+          "quadrant_summary": "隐匿旁路只逆传，可做折返回程",
+          "expanded": {
+            "clinical_context": "显性旁路可以伴或不伴逆传。隐匿旁路提供顺向AVRT的房向返回支，静息时仍可呈普通房室传导图形。",
+            "reference_note": "Page 2015 指南 表2，p.e513及§6"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "compare_two",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "comparison_pair",
+        "production_route": "sketch_to_svg",
+        "svg_id": "wpw-manifest-concealed-diagram",
+        "visual_goal": "并排观察旁路可用的传导方向，以及窦律体表起段的差别。",
+        "must_show_elements": [
+          "同构双图的房室与旁路插入位置",
+          "显性一格实画前传，逆传可变用旁注",
+          "隐匿一格只画旁路逆传",
+          "体表变化用文字标识"
+        ],
+        "labels": [
+          {
+            "zh": "心房",
+            "en": "Atrium",
+            "role": "primary"
+          },
+          {
+            "zh": "心室",
+            "en": "Ventricle",
+            "role": "primary"
+          },
+          {
+            "zh": "正常系统",
+            "en": "Normal conduction",
+            "role": "primary"
+          },
+          {
+            "zh": "能前传",
+            "en": "Antegrade conduction",
+            "role": "accent_red"
+          },
+          {
+            "zh": "仅逆传",
+            "en": "Retrograde only",
+            "role": "accent_red"
+          },
+          {
+            "zh": "可见预激",
+            "en": "Pre-excitation may appear",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "房室边界和正常系统用黑线。",
+          "red_accent": "旁路箭头用红色，黑白用粗虚线箭头。",
+          "yellow_highlight": "显性格的早激动插入点用黄色，黑白用斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "显性格明确可前传，允许逆传能力变化。",
+          "隐匿格无前传旁路箭头，方向指向心房。",
+          "体表标识只说明本旁路前传造成的预激，不以缺少预激直接否定旁路。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Page 等，2015 ACC/AHA/HRS 成人室上速指南，Circulation 2016;133:e506–e574，表2，p.e513及§6",
+          "identifier": "doi:10.1161/CIR.0000000000000311",
+          "reading_scope": "guideline",
+          "supporting_quote": "显性旁路允许前传，可出现体表预激，亦可有或无逆传。隐匿旁路仅逆传，能参加顺向型房室折返。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§11.3、§11.3.7",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "窦律预激是否清楚受旁路到达时间和常规房室传导竞争影响。逆传型旁路在常规窦律体表图中隐匿。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "静息无可见预激同时可见于预激太轻或潜在前传旁路，不能仅靠体表判定旁路方向。"
+        ]
+      }
+    },
+    {
+      "id": "pacing-his-refractory-pvc",
+      "schema_version": "1.0.0",
+      "category": "pacing_maneuvers",
+      "difficulty": "bridge",
+      "tags": [
+        "His不应期",
+        "室早",
+        "旁路逆传"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "起搏手法",
+          "title": "His不应期打一室早",
+          "core_insight": "确认His不应时，室早仍能让房波提前，提示逆传旁路。",
+          "bullets": [
+            {
+              "label": "先确认",
+              "text": "证实室肌捕获与His不应，排除直接房捕获。"
+            },
+            {
+              "label": "再比房波",
+              "text": "将干预后的房波与原节律预计位置对照。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "房波提前提示有旁路，仍须验证它是否维持折返。"
+          },
+          "quadrant_summary": "His不应，室早提早房波提示旁路",
+          "expanded": {
+            "clinical_context": "室早能否进入旁路取决于刺激位置、时相和局部组织状态。没有观察到房波提前时，旁路仍可能存在。",
+            "reference_note": "Miles 1986 引言及讨论，pp.493、499–500"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ladder_diagram",
+        "production_route": "code_generated_svg",
+        "svg_id": "pacing-his-refractory-pvc-diagram",
+        "visual_goal": "看出正常逆行入口暂时受阻时，室早仍可经另一条路线提前激动心房。",
+        "must_show_elements": [
+          "心房、His与心室轨道和共同时轴",
+          "原节律预计房波位置",
+          "室早与其实测提前房波",
+          "His不应窗和绕行箭头"
+        ],
+        "labels": [
+          {
+            "zh": "心房",
+            "en": "Atrium",
+            "role": "primary"
+          },
+          {
+            "zh": "His",
+            "en": "His bundle",
+            "role": "primary"
+          },
+          {
+            "zh": "心室",
+            "en": "Ventricle",
+            "role": "primary"
+          },
+          {
+            "zh": "室早",
+            "en": "Premature ventricular beat",
+            "role": "primary"
+          },
+          {
+            "zh": "预计房波",
+            "en": "Expected atrial activation",
+            "role": "muted"
+          },
+          {
+            "zh": "提前房波",
+            "en": "Advanced atrial activation",
+            "role": "accent_red"
+          },
+          {
+            "zh": "不应窗",
+            "en": "Refractory window",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "未受扰节律与各轨基线用黑色。",
+          "red_accent": "旁路绕行及提前房波用红色，黑白用粗虚箭头和粗断续引线。",
+          "yellow_highlight": "His不应窗用黄色，黑白改为稀疏斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "图上显示实测的室肌捕获，证明室早抵达时His确处于不应状态。",
+          "不把单纯位于His标记之后的室早当作成功验证，图注注明排除直接房捕获。",
+          "提前房波早于同轴上的预计房波，标示支持旁路存在。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Miles 等，1986，Circulation 74:493–500，引言及讨论，pp.493、499–500",
+          "identifier": "doi:10.1161/01.cir.74.3.493",
+          "reading_scope": "full_text",
+          "supporting_quote": "如果His不应期的室性额外刺激提前了心房激动，提示房室旁路。室早产生作用受刺激位置及旁路位置影响。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Ho 等，2013，Circ Arrhythm Electrophysiol 6:597–605，Discussion，His-Refractory Ventricular Premature Depolarizations",
+          "identifier": "doi:10.1161/CIRCEP.113.000187",
+          "reading_scope": "full_text",
+          "supporting_quote": "His不应期室早可进入旁路，提前心房可以见于旁观旁路。判读需确认适当时相和确切室捕获，结合其他征象判断心动过速环路。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "阳性可揭示旁观旁路；阴性受室早部位、原折返环及不应期影响。"
+        ]
+      }
+    },
+    {
+      "id": "pacing-postventricular-sequence",
+      "schema_version": "1.0.0",
+      "category": "pacing_maneuvers",
+      "difficulty": "bridge",
+      "tags": [
+        "超速起搏",
+        "回归序列",
+        "房速"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AVNRT",
+          "AVRT"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "起搏手法",
+          "title": "停室起搏看回归拍",
+          "core_insight": "停起搏后，末个被带快的房波之后再多一房波，常提示房速。",
+          "bullets": [
+            {
+              "label": "室房室",
+              "text": "末个受驱动房波后接室波，支持AVNRT或AVRT。"
+            },
+            {
+              "label": "室房房室",
+              "text": "额外房波若来自房速，再传至心室。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "逆传延迟可多显一个房波，先追认每个房波来源。"
+          },
+          "quadrant_summary": "停室起搏，辨额外房波来源",
+          "expanded": {
+            "clinical_context": "判读前确认室起搏一一加速心房，停后原心动过速继续。先找到末个被加速的房波，延迟逆传和双重逆传可制造相似序列。",
+            "reference_note": "Knight 1999 摘要 摘要的Methods、Results"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "compare_two",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "comparison_pair",
+        "production_route": "code_generated_svg",
+        "svg_id": "pacing-postventricular-sequence-diagram",
+        "visual_goal": "在两格共同时标上追认末次室起搏产生的房波，再看独立房波有无。",
+        "must_show_elements": [
+          "两个示例均保留倒数第二和末次室起搏",
+          "两格标出最后一个被加速的房波",
+          "房速格多一来自房速的回归房波",
+          "每格标下一室波"
+        ],
+        "labels": [
+          {
+            "zh": "末次室起搏",
+            "en": "Last paced ventricular beat",
+            "role": "primary"
+          },
+          {
+            "zh": "末个受驱房波",
+            "en": "Last driven atrial event",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "返回室波",
+            "en": "Returning ventricular beat",
+            "role": "primary"
+          },
+          {
+            "zh": "房速回归房波",
+            "en": "Returning atrial tachycardia",
+            "role": "accent_red"
+          },
+          {
+            "zh": "室房室",
+            "en": "Ventricle–atrium–ventricle",
+            "role": "primary"
+          },
+          {
+            "zh": "室房房室",
+            "en": "Ventricle–atrium–atrium–ventricle",
+            "role": "primary"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "起搏、激动路径及室波用黑色实线。",
+          "red_accent": "房速回归房波用红色，黑白用粗虚引线。",
+          "yellow_highlight": "末个受驱动房波时间窗用黄色，黑白用可辨斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "两组均在室房一一传导下加速心房，停搏后原心动过速继续。",
+          "以末次受驱动的房波为参照，明确额外房波由自主房速回归。",
+          "附注说明延迟或双重逆传造成的假双房波。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Knight 等，1999，J Am Coll Cardiol 33:775–781，摘要的Methods、Results",
+          "identifier": "PMID:10080480",
+          "reading_scope": "abstract_only",
+          "supporting_quote": "室起搏伴室房一一逆传情况下，记录停搏后的腔内事件。该研究中房速组观察到房—房—室，房室折返及房室结折返组观察到房—室。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Ho 等，2013，Circ Arrhythm Electrophysiol 6:597–605，Results与Discussion，A-A-V Patterns",
+          "identifier": "doi:10.1161/CIRCEP.113.000187",
+          "reading_scope": "full_text",
+          "supporting_quote": "延迟逆传会使最后看到的房波并非来自最近的室起搏，双重逆传也可出现假性双房波；因此应追认房波序列归属。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "Knight 1999仅核摘要；Ho 2013全文说明较慢或双重逆传产生的假性双房波。房波归属须先验证。"
+        ]
+      }
+    },
+    {
+      "id": "pacing-para-hisian",
+      "schema_version": "1.0.0",
+      "category": "pacing_maneuvers",
+      "difficulty": "bridge",
+      "tags": [
+        "旁His起搏",
+        "逆传途径",
+        "刺激至房波"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "起搏手法",
+          "title": "旁His起搏看房波",
+          "core_insight": "失去His捕获后，房波若仍按原时距和顺序出现，支持旁路逆传。",
+          "bullets": [
+            {
+              "label": "保室捕获",
+              "text": "同处比较有无His捕获，室肌均被捕获。"
+            },
+            {
+              "label": "看房波",
+              "text": "到房时距与房波次序都不变，支持旁路。"
+            },
+            {
+              "label": "看另一型",
+              "text": "His与房波同量后移，支持经房室结逆传。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "远处或慢逆传旁路可被更快的结逆传盖住。"
+          },
+          "quadrant_summary": "少了His捕获，房波仍准时提示旁路",
+          "expanded": {
+            "clinical_context": "比较需排除直接房捕获。若房波顺序变化，需考虑两路逆传竞争。手法检验该次起搏下的逆传路径。",
+            "reference_note": "Hirao 1996 图1、图5及Discussion"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "compare_two",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "comparison_pair",
+        "production_route": "code_generated_svg",
+        "svg_id": "pacing-para-hisian-diagram",
+        "visual_goal": "以局部室肌持续捕获为锚点，比对失去His捕获前后房波位置。",
+        "must_show_elements": [
+          "两小格分别示典型旁路反应与房室结反应",
+          "每格叠加两种捕获状态的对齐刻度",
+          "确认局部室波固定且His在失捕后延后",
+          "比较刺激至房波的时间和房激动顺序"
+        ],
+        "labels": [
+          {
+            "zh": "刺激",
+            "en": "Stimulus",
+            "role": "primary"
+          },
+          {
+            "zh": "局部室波",
+            "en": "Local ventricular activation",
+            "role": "primary"
+          },
+          {
+            "zh": "His",
+            "en": "His activation",
+            "role": "accent_red"
+          },
+          {
+            "zh": "房波",
+            "en": "Atrial activation",
+            "role": "primary"
+          },
+          {
+            "zh": "旁路型",
+            "en": "Accessory pathway response",
+            "role": "primary"
+          },
+          {
+            "zh": "结型",
+            "en": "Nodal response",
+            "role": "primary"
+          },
+          {
+            "zh": "到房时距",
+            "en": "Stimulus to atrial timing",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "刺激标记、局部室波及各轨用黑线。",
+          "red_accent": "失去His捕获后的His时间用红色，黑白用粗虚引线。",
+          "yellow_highlight": "刺激至房波量程用黄色，黑白用斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "用于比较的两状态均捕获局部室肌，排除直接房捕获。",
+          "失去His直接捕获后His可由室肌传入而变迟，旁路例房波仍同刻，结型例房波同量延迟。",
+          "房激动顺序改变时标为待判定，保留慢或远旁路被结逆传掩盖的限制。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Hirao 等，1996，Circulation 94:1027–1035，图1、图5及Discussion",
+          "identifier": "doi:10.1161/01.CIR.94.5.1027",
+          "reading_scope": "full_text",
+          "supporting_quote": "固定起搏部位并维持室肌捕获。失去His或近端右束支直接捕获后，房波时距和顺序均不变支持旁路；His与房波延后等量且顺序不变支持结逆传。混合逆传、旁路距离和传导速度可影响所见。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "距离和逆传速度影响结反应能否排除旁路；若房激动顺序改变，须评估混合逆传。"
+        ]
+      }
+    },
+    {
+      "id": "vt-precordial-r-to-s",
+      "schema_version": "1.0.0",
+      "category": "wide_qrs_vt",
+      "difficulty": "intro",
+      "tags": [
+        "VT",
+        "宽QRS",
+        "胸导量距"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "QRS",
+          "VT"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "宽波心动过速",
+          "title": "胸导量R起到S谷",
+          "core_insight": "规则宽QRS心动过速中，胸导从R起到S谷超过100 ms支持VT。",
+          "bullets": [
+            {
+              "label": "找胸导",
+              "text": "选有清楚R波接S波的胸导。"
+            },
+            {
+              "label": "定长度",
+              "text": "自R起点量到S谷，有多个时取最长。"
+            }
+          ],
+          "key_metrics": [
+            {
+              "name": "支持VT",
+              "value": ">100 ms"
+            }
+          ],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "测值较短时仍可见VT，继续看其他鉴别征象。"
+          },
+          "quadrant_summary": "胸导R起到S谷过100 ms支持VT",
+          "expanded": {
+            "clinical_context": "部分心肌起源的VT早期沿室肌扩散，激动较慢。差传可保留某侧希浦快速前传，某些VT也会很早进入传导系统。",
+            "reference_note": "Brugada 1991 图6–7"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ecg_egm_waveform",
+        "production_route": "code_generated_svg",
+        "svg_id": "vt-precordial-r-to-s-diagram",
+        "visual_goal": "在一个可量的胸导上，游标清楚停在R波起点和S谷。",
+        "must_show_elements": [
+          "一条示意胸导宽QRS波形",
+          "清楚的R起始和其后S谷",
+          "同轴双游标和毫秒标尺",
+          "规则宽波适用说明"
+        ],
+        "labels": [
+          {
+            "zh": "胸导",
+            "en": "Precordial lead",
+            "role": "primary"
+          },
+          {
+            "zh": "R起点",
+            "en": "R onset",
+            "role": "accent_red"
+          },
+          {
+            "zh": "S谷",
+            "en": "S nadir",
+            "role": "accent_red"
+          },
+          {
+            "zh": "测量区段",
+            "en": "Measured interval",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "毫秒",
+            "en": "Milliseconds",
+            "role": "muted"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "胸导波形、实线基线和时标用黑色。",
+          "red_accent": "两端测量游标用红色，黑白用粗双线。",
+          "yellow_highlight": "R起点至S谷的区段用黄色带，黑白用稀斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "量取同一胸导中R波起始到随后S波最深处，末端不延至QRS结束。",
+          "多个有可辨R后接S的胸导中比较最长者，严格大于100 ms才符合此条。",
+          "若画数值示例，用共同毫秒标尺定位并标为教学示意。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Brugada（Pedro）等，1991，Circulation 83:1649–1659，Results，RS Complex and Interval in the Precordial Leads，图6–7",
+          "identifier": "doi:10.1161/01.cir.83.5.1649",
+          "reading_scope": "full_text",
+          "supporting_quote": "规则宽波中有可辨R接S的胸导，取最长的R起始至S最深点间隔，严格大于100 ms作为室速支持征。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§9.2.1及表9",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "规则宽波鉴别表列胸前导联中的起始缓慢和R至S波谷间隔延长作为支持室速的征象。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第21章，pp.730、733–735（本地PDF第880、883–885页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "室肌起源可先沿肌间传导，室上激动伴束支差传仍可由未阻滞侧快速下传。部分VT早期可接入传导系统。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "原算法中所有胸导均缺少可辨R后接S者属于另一判断分支。阈值用于规则宽波时的支持征。"
+        ]
+      }
+    },
+    {
+      "id": "vt-av-dissociation",
+      "schema_version": "1.0.0",
+      "category": "wide_qrs_vt",
+      "difficulty": "intro",
+      "tags": [
+        "房室分离",
+        "VT",
+        "P波"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "QRS",
+          "VT"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "宽波心动过速",
+          "title": "P波有自己的节拍",
+          "core_insight": "宽波心动过速中，较慢的P波与较快的QRS各自规律，提示VT。",
+          "bullets": [
+            {
+              "label": "找P波",
+              "text": "沿多个心搏追踪P波的间距。"
+            },
+            {
+              "label": "查相位",
+              "text": "P波在宽波序列中不断改变相对位置。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "VT也可一比一逆传到心房，出现固定房室关联。"
+          },
+          "quadrant_summary": "P波独立走，宽波更像VT",
+          "expanded": {
+            "clinical_context": "P波可落入QRS或T波而难认。用多导联和更长记录核对独立房律，以及房室各自的周期。",
+            "reference_note": "欧洲室上速指南2019 §9.2.1.1及表9"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "ultrawide_3_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ecg_egm_waveform",
+        "production_route": "code_generated_svg",
+        "svg_id": "vt-av-dissociation-diagram",
+        "visual_goal": "沿一串宽波看到较慢的P波在不同相位持续出现。",
+        "must_show_elements": [
+          "同一导联的重复宽QRS示意",
+          "独立、较慢的P波节拍线",
+          "一处P波落入宽波的预计位置",
+          "同时标注有可见P波的搏"
+        ],
+        "labels": [
+          {
+            "zh": "宽QRS",
+            "en": "Wide QRS",
+            "role": "primary"
+          },
+          {
+            "zh": "独立P波",
+            "en": "Independent P wave",
+            "role": "accent_red"
+          },
+          {
+            "zh": "预计P波位置",
+            "en": "Expected P timing",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "心房节拍",
+            "en": "Atrial timing",
+            "role": "muted"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "真实体表示意波形与时轴用黑色。",
+          "red_accent": "可辨P波用红色引线，黑白用粗虚线引线。",
+          "yellow_highlight": "预计被遮盖的P波位置用黄色，黑白用斜纹小标。"
+        },
+        "medical_accuracy_checks": [
+          "P波规则且较慢，和宽QRS不形成固定时距。",
+          "预计被遮盖的P仅用单独标记定位，不额外叠画在体表轨迹。",
+          "图示为支持VT的读图特征，不把单纯室率较快等同于证实房室分离。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§9.2.1.1及表9",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "房室分离是室速的重要线索。P可埋在宽波或T波中，室速也可能逆传而表现为房室一一对应。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第21章，pp.733、737，图21.5（本地PDF第883、887页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "典型例呈较慢且独立的窦性房律，P波在较快的宽QRS序列中落在不同时相。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "罕见室上性病例亦可能出现房室分离或室率较快。形态和心房活动仍需复核。"
+        ]
+      }
+    },
+    {
+      "id": "vt-capture-and-fusion",
+      "schema_version": "1.0.0",
+      "category": "wide_qrs_vt",
+      "difficulty": "intro",
+      "tags": [
+        "夺获搏",
+        "融合搏",
+        "VT"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "QRS",
+          "VT"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "宽波心动过速",
+          "title": "夺获搏与融合搏",
+          "core_insight": "室速中偶有窦性冲动下传，可独自或与室速波前共同激动心室。",
+          "bullets": [
+            {
+              "label": "完全夺获",
+              "text": "这一搏形态接近窦律下传的QRS。"
+            },
+            {
+              "label": "共同激动",
+              "text": "融合搏形态介于窦律和室速之间。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "室上速差传遇室早也可有融合样搏。"
+          },
+          "quadrant_summary": "夺获由窦搏下传，融合有两波前",
+          "expanded": {
+            "clinical_context": "先找下传P波和两种QRS参照。完全夺获的形态反映窦性传导，融合取决于两股波前在心室共同激动的范围。",
+            "mini_table": {
+              "headers": [
+                "观察",
+                "本拍室激动来源"
+              ],
+              "rows": [
+                [
+                  "夺获搏",
+                  "由窦性冲动下传"
+                ],
+                [
+                  "融合搏",
+                  "窦性下传与室速共同激动"
+                ]
+              ]
+            },
+            "reference_note": "Issa 3e 第21章，pp.733、737，图21.5"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "compare_two",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "comparison_pair",
+        "production_route": "code_generated_svg",
+        "svg_id": "vt-capture-and-fusion-diagram",
+        "visual_goal": "对照两个偶发搏和共同参照，从形态辨认有几股波前。",
+        "must_show_elements": [
+          "同尺度的窦律下传与规律室速参照",
+          "双图分别画完全夺获与融合搏",
+          "每格显示下传的P波与所在的VT序列",
+          "明确标示预计的下一室速时点"
+        ],
+        "labels": [
+          {
+            "zh": "窦律参照",
+            "en": "Conducted sinus reference",
+            "role": "muted"
+          },
+          {
+            "zh": "室速参照",
+            "en": "VT reference",
+            "role": "primary"
+          },
+          {
+            "zh": "夺获搏",
+            "en": "Capture beat",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "融合搏",
+            "en": "Fusion beat",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "窦性下传",
+            "en": "Sinus conduction",
+            "role": "accent_red"
+          },
+          {
+            "zh": "室速波前",
+            "en": "VT wavefront",
+            "role": "primary"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "参照搏、主波形和室速波前用黑色实线。",
+          "red_accent": "窦性下传用红色双线箭头，黑白保留粗双线。",
+          "yellow_highlight": "两格的目标搏时间窗用黄色，黑白用稀斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "完全夺获例先显示P波，窦性下传在预计下一室速搏前独自激动心室。",
+          "融合例让两股波前同时贡献室激动，画示意中间形态而不按曲线平均。",
+          "保留规律室速背景、共同窦律形态参照及相同尺度，说明本例窦律较窄。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第21章，pp.733、737，图21.5（本地PDF第883、887页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "窦性波前赶在室速波前之前可完全夺获，形态近同窦律下传。两波前共同激动形成融合。差传室上速偶遇室早也可形成相似外观。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§9.2.1.1",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "夺获搏与融合搏是宽波心动过速鉴别中支持室速的重要征象。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": true,
+        "uncertainties": [
+          "完全夺获的外观随患者的基础窦律传导形态变化。后续与教材图21.5目视比对。"
+        ]
+      }
+    },
+    {
+      "id": "ablation-junctional-rhythm",
+      "schema_version": "1.0.0",
+      "category": "ablation_safety",
+      "difficulty": "intro",
+      "tags": [
+        "慢径消融",
+        "交界性心律",
+        "射频"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "QRS"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "消融与安全",
+          "title": "慢径消融中的交界搏",
+          "core_insight": "慢径射频可引起交界性心律，可能与受热后自律性增强有关。",
+          "bullets": [
+            {
+              "label": "看反应",
+              "text": "有效部位放电时常出现交界搏。"
+            },
+            {
+              "label": "留余地",
+              "text": "无效部位也可能出现同样反应。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "交界搏是术中线索，之后还需复测能否诱发。"
+          },
+          "quadrant_summary": "交界搏提示射频作用于交界区",
+          "expanded": {
+            "clinical_context": "这里指射频期间出现的交界性异位搏或心律。组织受热后自律性增强是对其机制的解释，单凭心律难定位其具体起源。",
+            "reference_note": "Issa 3e 第17章，p.594，图17.26"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ecg_egm_waveform",
+        "production_route": "code_generated_svg",
+        "svg_id": "ablation-junctional-rhythm-diagram",
+        "visual_goal": "并排看放电前后的房室时序，用连续的交界搏识别术中反应。",
+        "must_show_elements": [
+          "放电前窦律与放电中交界搏串",
+          "同步的体表和房电图",
+          "射频时间带",
+          "以示意标签标交界搏及可见的逆传房波"
+        ],
+        "labels": [
+          {
+            "zh": "窦律",
+            "en": "Sinus rhythm",
+            "role": "primary"
+          },
+          {
+            "zh": "体表QRS",
+            "en": "Surface QRS",
+            "role": "primary"
+          },
+          {
+            "zh": "房电图",
+            "en": "Atrial electrogram",
+            "role": "primary"
+          },
+          {
+            "zh": "交界搏",
+            "en": "Junctional beat",
+            "role": "accent_red"
+          },
+          {
+            "zh": "射频时段",
+            "en": "Radiofrequency interval",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "房电图、体表QRS和基线用黑色实线。",
+          "red_accent": "交界搏用红色引线，黑白用粗虚线引线。",
+          "yellow_highlight": "射频放电时段用黄色，黑白用疏斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "射频前的窦性示例显示房波先行。",
+          "交界搏示例的房波可逆传而与QRS近同时或较迟，注明逆传可变。",
+          "标为射频相关交界性反应，在图注保留其疗效提示性。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第17章，p.594，图17.26（本地PDF第730页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "慢径射频时见交界性搏动，教材将热相关的自律性增强列作机制解释，房室时序与逆传可变化。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Jentzer 等，1994，Circulation 90:2820–2826，Results及Discussion，pp.2820–2826",
+          "identifier": "doi:10.1161/01.cir.90.6.2820",
+          "reading_scope": "full_text",
+          "supporting_quote": "有效和无效的射频应用均可伴有交界性异位搏。该征象提示组织反应，单独预测疗效的能力有限。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Katritsis 等，2019，JACC Clin Electrophysiol 5:113–119，Conclusions，pp.113–119",
+          "identifier": "doi:10.1016/j.jacep.2018.09.012",
+          "reading_scope": "full_text",
+          "supporting_quote": "交界性心律单独用来评价复发的价值有限。经诱发复测评价原心动过速能否重现。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "热相关自律性增强为可能机制；房室激动和逆传因个体及病型变化。"
+        ]
+      }
+    },
+    {
+      "id": "ablation-avoid-conduction-axis",
+      "schema_version": "1.0.0",
+      "category": "ablation_safety",
+      "difficulty": "intro",
+      "tags": [
+        "慢径消融",
+        "His",
+        "房室阻滞"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "CS",
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "消融与安全",
+          "title": "慢径靶区为何偏下",
+          "core_insight": "慢径靶区常在Koch三角下部，拉开与正常房室传导轴的距离。",
+          "bullets": [
+            {
+              "label": "常用靶区",
+              "text": "结合局部电位，寻找房室结下延伸区。"
+            },
+            {
+              "label": "辨风险",
+              "text": "留意致密房室结与His邻域。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "中间隔与CS顶部也应避让，地标需结合标测。"
+          },
+          "quadrant_summary": "靶区偏下，避开正常房室传导轴",
+          "expanded": {
+            "clinical_context": "Koch三角提供解剖参照，His记录区与三角尖端的关系可变。图上显示相对区域，术中仍以个体解剖及局部电位印证。",
+            "reference_note": "欧洲室上速指南2019 §11.2.1.2.2，p.685"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "split_right",
+        "diagram_aspect_ratio": "square_1_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "anatomy_sketch",
+        "production_route": "sketch_to_svg",
+        "svg_id": "ablation-avoid-conduction-axis-diagram",
+        "visual_goal": "用地标区分三角下部常用目标区与房室阻滞风险邻域。",
+        "must_show_elements": [
+          "右房间隔腔面斜视及Koch三角地标",
+          "冠状窦口与窦顶分开",
+          "靠近尖端的房室结及His记录邻域",
+          "偏下的房室结下延伸示意"
+        ],
+        "labels": [
+          {
+            "zh": "三角尖",
+            "en": "Triangle apex",
+            "role": "primary"
+          },
+          {
+            "zh": "CS口",
+            "en": "Coronary sinus ostium",
+            "role": "primary"
+          },
+          {
+            "zh": "His记录区",
+            "en": "His recording region",
+            "role": "accent_red"
+          },
+          {
+            "zh": "中间隔",
+            "en": "Mid-septum",
+            "role": "accent_red"
+          },
+          {
+            "zh": "CS顶部",
+            "en": "Coronary sinus roof",
+            "role": "accent_red"
+          },
+          {
+            "zh": "常用靶区",
+            "en": "Usual target area",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "三角地标、瓣叶铰链线和窦口轮廓用黑色。",
+          "red_accent": "传导轴风险邻域及两个避让参照用红色粗虚圈，黑白保留粗虚圈。",
+          "yellow_highlight": "常用三角下部目标区用黄色，黑白用疏斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "将常用靶区置于三角下部的房室结下延伸方向。",
+          "分别核对CS口、CS顶和中间隔，红色风险标记与黄色目标区位置清楚。",
+          "His以可变记录邻域呈现，图例要求结合个体标测。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§11.2.1.2.2，p.685",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "定位结合解剖和标测，通常靶向Koch三角下部的房室结下延伸，避免中间隔与冠状窦顶部。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Cabrera 等，2020，JACC Clin Electrophysiol 6:362–377，图2–3及Angiographic Analysis（本地PDF第5–6页）",
+          "identifier": "doi:10.1016/j.jacep.2019.12.004",
+          "reading_scope": "full_text",
+          "supporting_quote": "紧密房室结与穿入束的分布随个体变化，His记录区与Koch三角尖的相对关系可变。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第17章，p.596（本地PDF第732页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "越靠近致密房室结，房室传导阻滞风险越令人关注。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "个体差异影响传导轴和靶区位置。复核冠状窦顶部、三角下部与His记录邻域。"
+        ]
+      }
+    },
+    {
+      "id": "ablation-test-noninducibility",
+      "schema_version": "1.0.0",
+      "category": "ablation_safety",
+      "difficulty": "bridge",
+      "tags": [
+        "慢径消融",
+        "复测诱发",
+        "急性终点"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AVNRT"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "消融与安全",
+          "title": "消融后为何再诱发",
+          "core_insight": "原来能诱发的AVNRT，消融后复测不再诱发，支持急性成功。",
+          "bullets": [
+            {
+              "label": "术前参照",
+              "text": "用程序刺激诱出要处理的心动过速。"
+            },
+            {
+              "label": "术后复测",
+              "text": "检查相应条件下能否再启动同种持续折返。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "残余跳跃或单个房室结回波可与不可诱发并存。"
+          },
+          "quadrant_summary": "复测无法再诱发，支持急性成功",
+          "expanded": {
+            "clinical_context": "若术前需要药物激发才能诱发，应核对相应复测条件。急性终点关注原心动过速的可诱发性，长期复发需后续随访。",
+            "reference_note": "Katritsis 2019，pp.113–119"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "compare_two",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "comparison_pair",
+        "production_route": "code_generated_svg",
+        "svg_id": "ablation-test-noninducibility-diagram",
+        "visual_goal": "相似诱发条件下对照术前的持续折返与术后只出现单个回波的示例。",
+        "must_show_elements": [
+          "术前、术后并列且同时间尺度",
+          "各格表示程序刺激与观察窗",
+          "术前持续折返序列",
+          "术后一个回波后结束的例子"
+        ],
+        "labels": [
+          {
+            "zh": "术前",
+            "en": "Before ablation",
+            "role": "primary"
+          },
+          {
+            "zh": "术后",
+            "en": "After ablation",
+            "role": "primary"
+          },
+          {
+            "zh": "程序刺激",
+            "en": "Programmed stimulation",
+            "role": "primary"
+          },
+          {
+            "zh": "持续折返",
+            "en": "Sustained reentry",
+            "role": "accent_red"
+          },
+          {
+            "zh": "回波",
+            "en": "Echo beat",
+            "role": "primary"
+          },
+          {
+            "zh": "观察窗",
+            "en": "Observation window",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "起搏标记、参照电位和回波用黑色。",
+          "red_accent": "持续折返段用红色，黑白用粗双线引线。",
+          "yellow_highlight": "两格复测观察窗用黄色，黑白用斜线网纹。"
+        },
+        "medical_accuracy_checks": [
+          "术前画出被程序刺激诱发的持续折返。",
+          "术后单个回波紧随触发后终止，图例保留其他不可诱发外观。",
+          "标注是急性复测示例，刺激时距及药物条件由实验室方案决定。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Katritsis 等，2019，JACC Clin Electrophysiol 5:113–119，Mapping and ablation及Conclusions，pp.113–119",
+          "identifier": "doi:10.1016/j.jacep.2018.09.012",
+          "reading_scope": "full_text",
+          "supporting_quote": "基线可诱发的病例中，消融后经含药物激发的复测仍不可诱发，是有用的急性终点。方案允许单个房室结回波，残余双径路表现单独不能预测复发。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第17章，p.595，Endpoints of Ablation（本地PDF第731页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "术后用程序刺激查询原心动过速的可诱发性。术前需药物才能诱发者应复核相应激发条件。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": false,
+        "uncertainties": [
+          "研究纳入术前可诱发的病例；术前难诱发或药物条件不同时，急性终点要结合个体与实验室方案。"
+        ]
+      }
+    }
+  ]
+}

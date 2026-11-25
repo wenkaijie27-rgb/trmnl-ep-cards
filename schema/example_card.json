@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0.0",
+  "deck_id": "ep-cards-example-v1",
+  "generated_at": "2026-11-24T01:50:00Z",
+  "cards": [
+    {
+      "id": "svt-typical-avnrt-short-va",
+      "schema_version": "1.0.0",
+      "category": "svt_triage",
+      "difficulty": "intro",
+      "tags": ["AVNRT", "VA间期", "窄QRS", "腔内电图"],
+      "abbreviations": {
+        "whitelisted": ["AVNRT", "AVRT", "SVT", "VA", "RP", "QRS", "His", "CS"],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "室上速鉴别",
+          "title": "典型AVNRT短VA机制",
+          "core_insight": "快慢径折返上行传房与下行传室几乎同步，使腔内VA常≤70 ms。",
+          "bullets": [
+            {
+              "label": "折返特点",
+              "text": "激动经慢径前传心室，同时经快径逆传回心房。"
+            },
+            {
+              "label": "同步激动",
+              "text": "心房与心室几乎同时除极，V波常埋住逆行A波。"
+            },
+            {
+              "label": "体表线索",
+              "text": "逆行P波常藏于QRS终末，V1导联可呈假性r'。"
+            }
+          ],
+          "key_metrics": [
+            { "name": "腔内VA界值", "value": "≤ 70 ms" },
+            { "name": "体表RP界值", "value": "≤ 90 ms" },
+            { "name": "机制占比", "value": "约 56% SVT" }
+          ],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "标准导联仅约45%可见逆行P波，需与窦律对照。"
+          },
+          "quadrant_summary": "房室同步激动，腔内VA常≤70 ms",
+          "expanded": {
+            "clinical_context": "典型慢-快型AVNRT占消融SVT的绝大多数；体表常掩盖逆行P波，需结合窦律对照或腔内VA间期确认。",
+            "mini_table": {
+              "headers": ["指标", "典型AVNRT", "多数AVRT"],
+              "rows": [
+                ["腔内 VA 间期", "≤ 70 ms", "> 70 ms"],
+                ["体表 RP 间期", "≤ 90 ms (常埋没)", "> 90 ms"],
+                ["房室激动顺序", "近乎同步", "先室后房"]
+              ]
+            },
+            "reference_note": "ACC/AHA/HRS 2015 SVT指南; Katritsis 2016"
+          }
+        },
+        "en": {
+          "kicker": "SVT Triage",
+          "title": "Why Typical AVNRT Has Short VA",
+          "core_insight": "Fast-pathway retrograde A overlaps antegrade ventricular V, keeping VA ≤ 70 ms.",
+          "bullets": [
+            {
+              "label": "Circuit",
+              "text": "Slow pathway conducts down; fast pathway returns up."
+            },
+            {
+              "label": "Overlap",
+              "text": "Atria and ventricles fire together; V buries retrograde A."
+            },
+            {
+              "label": "Surface ECG",
+              "text": "Retrograde P hides in terminal QRS, creating pseudo-r' in V1."
+            }
+          ],
+          "key_metrics": [
+            { "name": "Intracardiac VA", "value": "≤ 70 ms" },
+            { "name": "Surface RP", "value": "≤ 90 ms" },
+            { "name": "Prevalence", "value": "~56% SVT" }
+          ],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "Retrograde P waves are visible on standard leads in only ~45% of cases."
+          },
+          "quadrant_summary": "Near-simultaneous A & V; VA ≤ 70 ms",
+          "expanded": {
+            "clinical_context": "Typical slow-fast AVNRT accounts for most ablated narrow-QRS SVTs; compare against baseline sinus ECG to spot terminal pseudo-r' deflections.",
+            "mini_table": {
+              "headers": ["Metric", "Typical AVNRT", "Typical AVRT"],
+              "rows": [
+                ["Intracardiac VA", "≤ 70 ms", "> 70 ms"],
+                ["Surface RP", "≤ 90 ms (buried)", "> 90 ms"],
+                ["Activation", "Simultaneous", "Sequential"]
+              ]
+            },
+            "reference_note": "ACC/AHA/HRS 2015 SVT Guideline; Katritsis 2016"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "balanced"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ecg_egm_waveform",
+        "production_route": "code_generated_svg",
+        "svg_id": "typical-avnrt-short-va",
+        "visual_goal": "在3秒内看懂体表V1假性r'与腔内His/CS通道上V波与逆行A波几乎对齐的时间关系。",
+        "must_show_elements": [
+          "体表V1导联窄QRS波及终末假性r'切迹",
+          "His束导联A波、H波、V波时序及逆行A波紧贴V波",
+          "CS导联近乎同步的V波与逆行A波",
+          "垂直虚线对齐标尺标注VA ≤ 70 ms"
+        ],
+        "labels": [
+          { "zh": "V1 假性 r'", "en": "V1 pseudo-r'", "role": "accent_red" },
+          { "zh": "His 电位", "en": "His (H)", "role": "primary" },
+          { "zh": "心室波 V", "en": "V", "role": "primary" },
+          { "zh": "逆行 A 波", "en": "Retrograde A", "role": "accent_red" },
+          { "zh": "CS 通道", "en": "CS", "role": "muted" },
+          { "zh": "VA ≤ 70 ms", "en": "VA ≤ 70 ms", "role": "highlight_yellow" }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "导联基线、窄QRS轮廓、H波与V波主峰使用实心黑线绘制",
+          "red_accent": "四色屏中逆行A波与V1假性r'切迹用红色高亮；黑白屏保留双线箭头与加粗虚线框标识",
+          "yellow_highlight": "四色屏中VA ≤ 70 ms时间带用黄色浅底条标注；黑白/灰阶屏退化为细斜线网底"
+        },
+        "medical_accuracy_checks": [
+          "体表QRS保持窄QRS形态（≤120 ms），假性r'紧接S波之后出现",
+          "His道时序满足A-H-V顺序，H波位于V波前正常HV区间",
+          "最早逆行A波起点距V波起点 ≤ 70 ms，且与V波高度重叠"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "2015 ACC/AHA/HRS Guideline for the Management of Adult Patients With Supraventricular Tachycardia (Page et al., Circulation 2016)",
+          "identifier": "doi:10.1161/CIR.0000000000000311",
+          "reading_scope": "guideline",
+          "supporting_quote": "note that the 90-ms interval is defined from the surface ECG [79], as opposed to the 70-ms ventriculoatrial interval that is used for intracardiac diagnosis [80]",
+          "verified_by_human": false
+        },
+        {
+          "source": "Katritsis DG, Josephson ME. Differential diagnosis of regular, narrow-QRS tachycardias. Card Electrophysiol Clin / Circ Arrhythm Electrophysiol (2016)",
+          "identifier": "doi:10.1002/cce2.31",
+          "reading_scope": "full_text",
+          "supporting_quote": "In a study on 1754 patients undergoing catheter ablation, atrioventricular nodal reentrant tachycardia (AVNRT) was the main etiology, 56%, followed by atrioventricular reentrant tachycardia due to an accessory pathway (AVRT) 27%, and atrial tachycardia (AT) 17% [3].",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": true,
+        "uncertainties": []
+      }
+    }
+  ]
+}

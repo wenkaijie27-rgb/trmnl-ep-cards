@@ -1,0 +1,447 @@
+{
+  "schema_version": "1.0.0",
+  "deck_id": "ep-cards-golden-3",
+  "generated_at": "2026-11-24T04:36:00Z",
+  "cards": [
+    {
+      "id": "anatomy-koch-triangle",
+      "schema_version": "1.0.0",
+      "category": "conduction_anatomy",
+      "difficulty": "intro",
+      "tags": [
+        "Koch三角",
+        "右房地标",
+        "房室传导轴"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "传导解剖",
+          "title": "Koch三角怎么找",
+          "core_insight": "从右房腔认出三条边，就能找到房室传导轴邻域。",
+          "bullets": [
+            {
+              "label": "两条侧边",
+              "text": "沿Todaro腱与三尖瓣隔瓣的附着线。"
+            },
+            {
+              "label": "找底部",
+              "text": "冠状窦口标出三角底部。"
+            },
+            {
+              "label": "找尖端",
+              "text": "两条侧边汇向膜部室间隔。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "致密房室结和His的位置随个体变化。"
+          },
+          "quadrant_summary": "右房三地标围出Koch三角",
+          "expanded": {
+            "clinical_context": "三角尖附近的三维传导轴与膜部室间隔相邻。His电位的记录区与三角尖的相对位置有变异。",
+            "reference_note": "Cabrera 2020 Results及图3",
+            "mini_table": {
+              "headers": [
+                "解剖地标",
+                "三角位置",
+                "定位作用"
+              ],
+              "rows": [
+                [
+                  "Todaro腱",
+                  "后上侧边",
+                  "纤维嵴收向三角尖"
+                ],
+                [
+                  "隔瓣附着线",
+                  "前下侧边",
+                  "分隔右房与心室侧"
+                ],
+                [
+                  "冠状窦口",
+                  "三角底部",
+                  "标定下界与慢径邻域"
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "split_left",
+        "diagram_aspect_ratio": "square_1_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "anatomy_sketch",
+        "production_route": "sketch_to_svg",
+        "svg_id": "anatomy-koch-triangle-diagram",
+        "visual_goal": "从右房腔面迅速辨认两侧边、底部和尖端。",
+        "must_show_elements": [
+          "注明右房腔内观",
+          "标三尖瓣隔瓣铰链线和Todaro腱",
+          "保留冠状窦开口轮廓",
+          "在尖端近旁标传导轴邻域"
+        ],
+        "labels": [
+          {
+            "zh": "右房腔内观",
+            "en": "Right atrial endocardial view",
+            "role": "muted"
+          },
+          {
+            "zh": "Todaro腱",
+            "en": "Tendon of Todaro",
+            "role": "accent_red"
+          },
+          {
+            "zh": "隔瓣附着线",
+            "en": "Septal leaflet hinge",
+            "role": "primary"
+          },
+          {
+            "zh": "冠状窦口",
+            "en": "Coronary sinus ostium",
+            "role": "primary"
+          },
+          {
+            "zh": "三角尖",
+            "en": "Triangle apex",
+            "role": "primary"
+          },
+          {
+            "zh": "传导轴邻域",
+            "en": "Conduction axis region",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "黑色实线画瓣叶附着、窦口和右房轮廓。",
+          "red_accent": "Todaro腱用红线，黑白用加粗断续线。",
+          "yellow_highlight": "三角尖传导轴邻域用浅黄带，黑白改为间距清晰的斜线网纹。"
+        },
+        "medical_accuracy_checks": [
+          "从右房腔观察核对腱和隔瓣附着线，尖端朝膜部室间隔。",
+          "冠状窦口位于底部，保留开口轮廓与边界提示。",
+          "显示紧密结与穿入束的邻域和变异，避免给出固定点。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Cabrera 等，2020，JACC Clin Electrophysiol 6:362–377，Results及图3（本地PDF第5–6页）",
+          "identifier": "doi:10.1016/j.jacep.2019.12.004",
+          "reading_scope": "full_text",
+          "supporting_quote": "从右房腔面辨认Todaro腱与三尖瓣隔瓣铰链线两侧边、底部冠状窦口和朝膜部室间隔的尖端。紧密房室结及穿入束和这些地标的关系存在个体差异。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": true,
+        "uncertainties": [
+          "缩简原图时需核对右房腔面方位、膜部室间隔侧的尖端和传导轴变异。"
+        ]
+      }
+    },
+    {
+      "id": "intervals-ah-hv",
+      "schema_version": "1.0.0",
+      "category": "basic_intervals",
+      "difficulty": "intro",
+      "tags": [
+        "房室结",
+        "His电位",
+        "间期量法"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AH",
+          "HV",
+          "QRS",
+          "His"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "基础间期",
+          "title": "AH与HV各量哪段",
+          "core_insight": "AH近似房室结传导时间，HV量His到最早心室激动。",
+          "bullets": [
+            {
+              "label": "量AH",
+              "text": "His导联的局部房波起点量到His起点。"
+            },
+            {
+              "label": "量HV",
+              "text": "His起点量到最早记录的室激动起点。"
+            }
+          ],
+          "key_metrics": [
+            {
+              "name": "正常HV参考",
+              "value": "35–55 ms"
+            }
+          ],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "HV的末点找最早室激动，局部室波可能较迟。"
+          },
+          "quadrant_summary": "AH跨房室结，HV到最早室激动",
+          "expanded": {
+            "clinical_context": "AH起点取His导联局部房波的首个快速偏转。成人无预激时，教材HV参考范围为35–55 ms，量取时优先对照体表QRS起点。",
+            "mini_table": {
+              "headers": [
+                "间期",
+                "起点",
+                "终点"
+              ],
+              "rows": [
+                [
+                  "AH",
+                  "His导联局部房波",
+                  "His电位起点"
+                ],
+                [
+                  "HV",
+                  "His电位起点",
+                  "最早室激动起点"
+                ]
+              ]
+            },
+            "reference_note": "Issa 3e 第4章，pp.107、109，图4.19"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "top_banner",
+        "diagram_aspect_ratio": "ultrawide_3_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "ecg_egm_waveform",
+        "production_route": "code_generated_svg",
+        "svg_id": "intervals-ah-hv-diagram",
+        "visual_goal": "在同一时间轴读到两段量尺，并找到共有的His边界。",
+        "must_show_elements": [
+          "同步的体表一导和His双极腔内轨迹",
+          "AH和HV在同一His起点首尾相接",
+          "延后的局部室电位作为核查参照"
+        ],
+        "labels": [
+          {
+            "zh": "体表QRS",
+            "en": "Surface QRS",
+            "role": "primary"
+          },
+          {
+            "zh": "局部房波",
+            "en": "Local atrial electrogram",
+            "role": "primary"
+          },
+          {
+            "zh": "His起点",
+            "en": "His onset",
+            "role": "accent_red"
+          },
+          {
+            "zh": "AH",
+            "en": "AH interval",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "HV",
+            "en": "HV interval",
+            "role": "highlight_yellow"
+          },
+          {
+            "zh": "局部室波",
+            "en": "Local ventricular electrogram",
+            "role": "muted"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "体表和腔内轨迹用黑色实线。",
+          "red_accent": "共有His起点用红色双线游标，黑白保留粗双线。",
+          "yellow_highlight": "两条量尺底带用黄色，黑白用斜纹并以标签划分两段。"
+        },
+        "medical_accuracy_checks": [
+          "AH起点落在His轨局部房波的首个快速偏转，末点为His起点。",
+          "同步示例用最早可辨体表QRS起点作为HV末点。",
+          "若标示持续时间，按同一毫秒标尺绘制，并标明示例与参考范围。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Issa、Miller 与 Zipes，Clinical Arrhythmology and Electrophysiology，第3版（2019），第4章，pp.107、109，图4.19（本地PDF第130、132页）",
+          "identifier": "textbook",
+          "reading_scope": "textbook_chapter",
+          "supporting_quote": "AH自His导联局部房波首个快速偏转量到His除极起始，近似房室结传导时间。HV量自His起点至所记录的最早室激动起点，正常参考35–55 ms。图4.19以可用的最早体表QRS作终点。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": true,
+        "uncertainties": [
+          "按参考来源和记录方式解读HV范围。卡面采用Issa第3版非预激正常参考，图稿须核对最早室激动。"
+        ]
+      }
+    },
+    {
+      "id": "wpw-avrt-directions",
+      "schema_version": "1.0.0",
+      "category": "wpw_preexcitation",
+      "difficulty": "intro",
+      "tags": [
+        "AVRT",
+        "顺向逆向",
+        "预激"
+      ],
+      "abbreviations": {
+        "whitelisted": [
+          "AVRT",
+          "QRS"
+        ],
+        "defined_in_card": []
+      },
+      "content": {
+        "zh": {
+          "kicker": "预激与旁路",
+          "title": "顺逆向AVRT看下行",
+          "core_insight": "下行经希浦时QRS通常窄，经旁路时心室完全预激而宽。",
+          "bullets": [
+            {
+              "label": "顺向型",
+              "text": "房室结与希浦下行，旁路逆传回心房。"
+            },
+            {
+              "label": "逆向型",
+              "text": "旁路下行，常经房室结系统逆传回房。"
+            }
+          ],
+          "key_metrics": [],
+          "pearl_or_pitfall": {
+            "kind": "pitfall",
+            "text": "顺向型遇到差传或束支阻滞，也能出现宽QRS。"
+          },
+          "quadrant_summary": "AVRT看下行路，理解QRS宽窄",
+          "expanded": {
+            "clinical_context": "双图采用同一条房室旁路，逆向型示例经希浦及房室结逆传。部分逆向型可用另一条旁路作为回路的逆传支。",
+            "mini_table": {
+              "headers": [
+                "方向",
+                "下行支",
+                "常见室波"
+              ],
+              "rows": [
+                [
+                  "顺向",
+                  "房室结与希浦",
+                  "窄QRS"
+                ],
+                [
+                  "逆向",
+                  "房室旁路",
+                  "宽且完全预激"
+                ]
+              ]
+            },
+            "reference_note": "Page 2015 指南 表2，p.e513"
+          }
+        }
+      },
+      "layout": {
+        "preferred_template": "compare_two",
+        "diagram_aspect_ratio": "wide_2_1",
+        "text_density": "compact"
+      },
+      "diagram": {
+        "required": true,
+        "kind": "comparison_pair",
+        "production_route": "code_generated_svg",
+        "svg_id": "wpw-avrt-directions-diagram",
+        "visual_goal": "在同构双图中看清下行支互换和QRS宽窄随之改变。",
+        "must_show_elements": [
+          "两格共用心房心室及两通路的抽象梯形布局",
+          "每格显示闭合回路及下行和返向箭头",
+          "同尺度窄QRS与宽预激QRS示意"
+        ],
+        "labels": [
+          {
+            "zh": "顺向型",
+            "en": "Orthodromic",
+            "role": "primary"
+          },
+          {
+            "zh": "逆向型",
+            "en": "Antidromic",
+            "role": "primary"
+          },
+          {
+            "zh": "房室结—希浦",
+            "en": "Node and His–Purkinje",
+            "role": "primary"
+          },
+          {
+            "zh": "旁路",
+            "en": "Accessory pathway",
+            "role": "accent_red"
+          },
+          {
+            "zh": "窄QRS",
+            "en": "Narrow QRS",
+            "role": "primary"
+          },
+          {
+            "zh": "完全预激",
+            "en": "Fully pre-excited QRS",
+            "role": "highlight_yellow"
+          }
+        ],
+        "semantic_color_plan": {
+          "black_primary": "正常系统、房室轨及QRS轮廓用黑色实线。",
+          "red_accent": "旁路走向用红色箭头，黑白用粗虚线箭头并保留箭头方向。",
+          "yellow_highlight": "两格下行到心室的出口用黄色，黑白改斜纹。"
+        },
+        "medical_accuracy_checks": [
+          "顺向格沿正常系统前传、旁路逆传，逆向示例交换上下行。",
+          "两格都回到房部形成闭环，宽格标完全预激。",
+          "短、宽示意共用时标，附上顺向型遇差传可宽的注释。"
+        ]
+      },
+      "evidence": [
+        {
+          "source": "Page 等，2015 ACC/AHA/HRS 成人室上速指南，Circulation 2016;133:e506–e574，表2，p.e513",
+          "identifier": "doi:10.1161/CIR.0000000000000311",
+          "reading_scope": "guideline",
+          "supporting_quote": "顺向型以下行房室结及希浦系统、逆传旁路成环，通常为窄QRS，差传或束支阻滞时可宽。逆向型经旁路前传，室波完全预激。",
+          "verified_by_human": false
+        },
+        {
+          "source": "Brugada（Josep）等，2019 ESC 室上速指南，Eur Heart J 2020;41:655–720，§11.3.3–4、图18，pp.688–689",
+          "identifier": "doi:10.1093/eurheartj/ehz467",
+          "reading_scope": "guideline",
+          "supporting_quote": "典型逆向型示例经旁路前传、房室结系统逆传。部分例可经另一条旁路逆传。",
+          "verified_by_human": false
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "golden_prototype_candidate": true,
+        "uncertainties": [
+          "双图采用最常见的逆向回路简化。另一旁路逆传和顺向差传宽波均保留文字说明。"
+        ]
+      }
+    }
+  ]
+}
