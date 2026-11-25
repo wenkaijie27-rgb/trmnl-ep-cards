@@ -1,0 +1,47 @@
+{
+  "id": "svt-typical-avnrt-short-va",
+  "tier": "basic",
+  "tier_label": "基础组",
+  "card_index": 10,
+  "card_total": 24,
+  "category": "svt_triage",
+  "category_label": "室上速鉴别",
+  "difficulty": "intro",
+  "difficulty_label": "入门",
+  "template": "top_banner",
+  "diagram_aspect_ratio": "wide_2_1",
+  "kicker": "室上速鉴别",
+  "title": "典型 AVNRT 为何短 VA",
+  "core_insight": "慢径前传后，快径逆传心房与希浦下传心室几乎同步。",
+  "bullets": [
+    {
+      "label": "上行",
+      "text": "快径逆传，激动心房。"
+    },
+    {
+      "label": "下行",
+      "text": "希浦系统激动心室，与房波时间相近。"
+    },
+    {
+      "label": "体表所见",
+      "text": "逆行 P 波常藏在 QRS 内或末段。"
+    }
+  ],
+  "split_note": "",
+  "key_metrics": [
+    {
+      "name": "His 导联 VA 分型",
+      "value": "≤60 ms"
+    }
+  ],
+  "callout_kind": "pitfall",
+  "callout_badge": "易错点",
+  "callout_text": "短 VA 支持典型型，少数房速或 AVRT 也可出现。",
+  "quadrant_summary": "房室近同步，典型 AVNRT 短 VA",
+  "clinical_context": "从体表 QRS 起点量到 His 导联局部房波起点。典型型分型取 ≤60 ms，窄波鉴别常以腔内 VA≤70 ms 作线索。",
+  "reference_note": "欧洲室上速指南 2019 §11.2.1.1.1–3 及表 12，p.684",
+  "mini_table": null,
+  "legend_mode": "",
+  "svg": "<svg class=\"ep-svg ep-svg--banner\" viewBox=\"0 0 740 205\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"典型AVNRT短VA与体表逆行P波埋没示意图\">\n  <rect x=\"0\" y=\"0\" width=\"740\" height=\"205\" fill=\"#ffffff\"/>\n    <line x1=\"130\" y1=\"22\" x2=\"130\" y2=\"184\" class=\"ep-grid-line\" stroke=\"#dddddd\" stroke-width=\"1\" stroke-dasharray=\"2,4\"/>\n  <line x1=\"190\" y1=\"22\" x2=\"190\" y2=\"184\" class=\"ep-grid-line\" stroke=\"#dddddd\" stroke-width=\"1\" stroke-dasharray=\"2,4\"/>\n  <line x1=\"250\" y1=\"22\" x2=\"250\" y2=\"184\" class=\"ep-grid-line\" stroke=\"#dddddd\" stroke-width=\"1\" stroke-dasharray=\"2,4\"/>\n  <line x1=\"310\" y1=\"22\" x2=\"310\" y2=\"184\" class=\"ep-grid-line\" stroke=\"#dddddd\" stroke-width=\"1\" stroke-dasharray=\"2,4\"/>\n  <line x1=\"370\" y1=\"22\" x2=\"370\" y2=\"184\" class=\"ep-grid-line\" stroke=\"#dddddd\" stroke-width=\"1\" stroke-dasharray=\"2,4\"/>\n  <line x1=\"430\" y1=\"22\" x2=\"430\" y2=\"184\" class=\"ep-grid-line\" stroke=\"#dddddd\" stroke-width=\"1\" stroke-dasharray=\"2,4\"/>\n  <line x1=\"490\" y1=\"22\" x2=\"490\" y2=\"184\" class=\"ep-grid-line\" stroke=\"#dddddd\" stroke-width=\"1\" stroke-dasharray=\"2,4\"/>\n  <line x1=\"550\" y1=\"22\" x2=\"550\" y2=\"184\" class=\"ep-grid-line\" stroke=\"#dddddd\" stroke-width=\"1\" stroke-dasharray=\"2,4\"/>\n  <line x1=\"610\" y1=\"22\" x2=\"610\" y2=\"184\" class=\"ep-grid-line\" stroke=\"#dddddd\" stroke-width=\"1\" stroke-dasharray=\"2,4\"/>\n  <line x1=\"670\" y1=\"22\" x2=\"670\" y2=\"184\" class=\"ep-grid-line\" stroke=\"#dddddd\" stroke-width=\"1\" stroke-dasharray=\"2,4\"/>\n  <text x=\"16\" y=\"50\" fill=\"#000000\" class=\"ep-svg-label ep-ink-fill\" style=\"font-size:14px;font-weight:700;\">体表导联</text>\n  <text x=\"16\" y=\"65\" fill=\"#555555\" class=\"ep-svg-label ep-muted-fill\" style=\"font-size:11.5px;font-weight:600;\">窄 QRS</text>\n  <text x=\"16\" y=\"138\" fill=\"#000000\" class=\"ep-svg-label ep-ink-fill\" style=\"font-size:14px;font-weight:700;\">His 导联</text>\n  <text x=\"16\" y=\"153\" fill=\"#555555\" class=\"ep-svg-label ep-muted-fill\" style=\"font-size:11.5px;font-weight:600;\">近同步房室波</text>\n\n  <!-- Short VA band (x=344..378 -> 34px ~ 30 ms <= 60 ms!) -->\n  <rect x=\"344\" y=\"72\" width=\"34\" height=\"28\" fill=\"#ffffff\" class=\"ep-hl-area ep-ink-stroke\" stroke=\"#000000\" stroke-width=\"1.2\"/>\n  <g class=\"ep-hatch-group\"><line x1=\"344.0\" y1=\"74.8\" x2=\"346.8\" y2=\"72.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/><line x1=\"344.0\" y1=\"80.2\" x2=\"352.2\" y2=\"72.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/><line x1=\"344.0\" y1=\"85.8\" x2=\"357.8\" y2=\"72.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/><line x1=\"344.0\" y1=\"91.2\" x2=\"363.2\" y2=\"72.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/><line x1=\"344.0\" y1=\"96.8\" x2=\"368.8\" y2=\"72.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/><line x1=\"374.2\" y1=\"72.0\" x2=\"346.2\" y2=\"100.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/><line x1=\"378.0\" y1=\"73.8\" x2=\"351.8\" y2=\"100.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/><line x1=\"378.0\" y1=\"79.2\" x2=\"357.2\" y2=\"100.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/><line x1=\"378.0\" y1=\"84.8\" x2=\"362.8\" y2=\"100.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/><line x1=\"378.0\" y1=\"90.2\" x2=\"368.2\" y2=\"100.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/><line x1=\"378.0\" y1=\"95.8\" x2=\"373.8\" y2=\"100.0\" class=\"ep-hatch-line\" stroke=\"#000000\" stroke-width=\"1.2\"/></g>\n  <rect x=\"350.0\" y=\"78.3\" width=\"22.0\" height=\"15.0\" rx=\"3\" fill=\"#ffffff\"/><text x=\"361.0\" y=\"90.0\" fill=\"#000000\" class=\"ep-svg-label ep-ink-fill\" style=\"font-size:12px;font-weight:800;text-anchor:middle;\">VA</text>\n\n  <!-- Vertical Alignment Cursors -->\n  <line x1=\"344\" y1=\"22\" x2=\"344\" y2=\"176\" class=\"ep-ink-stroke\" stroke=\"#000000\" stroke-width=\"1.8\" stroke-dasharray=\"5,3\"/>\n  <line x1=\"378\" y1=\"22\" x2=\"378\" y2=\"176\" class=\"ep-accent-stroke\" stroke=\"#000000\" stroke-width=\"2.2\"/>\n\n  <!-- Top Trace: Regular narrow QRS tachycardia (Beat 1 at x=160, Beat 2 at x=344, Beat 3 at x=530) -->\n  <path d=\"M 105 52 L 160 52 L 166 59 L 176 18 L 186 62 L 194 52 L 240 52 C 254 52, 266 38, 280 38 C 294 38, 306 52, 320 52 L 344 52 L 350 59 L 360 18 L 370 62 L 377 45 L 383 52 L 428 52 C 442 52, 454 38, 468 38 C 482 38, 494 52, 508 52 L 530 52 L 536 59 L 546 18 L 556 62 L 564 52 L 710 52\"\n        fill=\"none\" class=\"ep-ink-stroke\" stroke=\"#000000\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/>\n  <!-- Highlight buried retrograde P at terminal QRS -->\n  <path d=\"M 370 62 L 377 45 L 383 52\" fill=\"none\" class=\"ep-accent-stroke\" stroke=\"#000000\" stroke-width=\"2.8\"/>\n\n  <!-- Bottom Trace: His Channel (H precedes V, and Retrograde A sits tightly at x=378 right inside QRS!) -->\n  <path d=\"M 105 140 L 138 140 M 138.0 140.0 L 140.8 122.0 L 144.3 155.3 L 147.8 130.1 L 150.2 145.0 L 152.0 140.0 L 164 140 M 164.0 140.0 L 167.6 120.0 L 172.1 157.0 L 176.6 129.0 L 179.8 145.6 L 182.0 140.0 L 190 140 M 190.0 140.0 L 194.0 118.0 L 199.0 158.7 L 204.0 127.9 L 207.5 146.2 L 210.0 140.0 L 322 140 M 322.0 140.0 L 324.8 122.0 L 328.3 155.3 L 331.8 130.1 L 334.2 145.0 L 336.0 140.0 L 348 140 M 348.0 140.0 L 351.6 120.0 L 356.1 157.0 L 360.6 129.0 L 363.8 145.6 L 366.0 140.0 L 378 140 M 378.0 140.0 L 382.0 116.0 L 387.0 160.4 L 392.0 126.8 L 395.5 146.7 L 398.0 140.0 L 508 140 M 508.0 140.0 L 510.8 122.0 L 514.3 155.3 L 517.8 130.1 L 520.2 145.0 L 522.0 140.0 L 534 140 M 534.0 140.0 L 537.6 120.0 L 542.1 157.0 L 546.6 129.0 L 549.8 145.6 L 552.0 140.0 L 560 140 M 560.0 140.0 L 564.0 118.0 L 569.0 158.7 L 574.0 127.9 L 577.5 146.2 L 580.0 140.0 L 710 140\"\n        fill=\"none\" class=\"ep-ink-stroke\" stroke=\"#000000\" stroke-width=\"2.1\" stroke-linejoin=\"round\"/>\n\n  <rect x=\"277.0\" y=\"3.5\" width=\"62.0\" height=\"16.0\" rx=\"3\" fill=\"#ffffff\"/><text x=\"336.0\" y=\"16.0\" fill=\"#000000\" class=\"ep-svg-label ep-ink-fill\" style=\"font-size:12.5px;font-weight:700;text-anchor:end;\">QRS 起点</text>\n  <rect x=\"382.0\" y=\"3.5\" width=\"148.0\" height=\"16.0\" rx=\"3\" fill=\"#ffffff\"/><text x=\"385.0\" y=\"16.0\" fill=\"#000000\" class=\"ep-svg-label ep-accent-fill\" style=\"font-size:12.5px;font-weight:800;text-anchor:start;\">逆行房波 (几乎紧贴 QRS)</text>\n  <rect x=\"389.0\" y=\"161.5\" width=\"190.0\" height=\"16.0\" rx=\"3\" fill=\"#ffffff\"/><text x=\"392.0\" y=\"174.0\" fill=\"#000000\" class=\"ep-svg-label ep-accent-fill\" style=\"font-size:12px;font-weight:700;text-anchor:start;\">His 道逆行 A 波 (VA ≤ 60 ms 示例)</text>\n  <line x1=\"556.0\" y1=\"192.0\" x2=\"668.0\" y2=\"192.0\" class=\"ep-ink-stroke\" stroke=\"#000000\" stroke-width=\"2\"/><line x1=\"556.0\" y1=\"187.5\" x2=\"556.0\" y2=\"196.5\" class=\"ep-ink-stroke\" stroke=\"#000000\" stroke-width=\"2\"/><line x1=\"668.0\" y1=\"187.5\" x2=\"668.0\" y2=\"196.5\" class=\"ep-ink-stroke\" stroke=\"#000000\" stroke-width=\"2\"/><text x=\"675.0\" y=\"196.0\" fill=\"#000000\" class=\"ep-svg-label ep-ink-fill\" style=\"font-size:12px;font-weight:700;text-anchor:start;\">100 ms</text><text x=\"548.0\" y=\"196.0\" fill=\"#4d4d4d\" class=\"ep-svg-label ep-muted-fill\" style=\"font-size:11.5px;font-weight:600;text-anchor:end;\">短 VA 典型示例</text>\n</svg>",
+  "updated_at": "11-25 21:22"
+}

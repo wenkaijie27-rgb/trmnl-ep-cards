@@ -5,8 +5,16 @@ dark_mode: 'no'
 static_data: ''
 polling_verb: get
 framework_version: latest
-polling_url: https://wenkaijie27-rgb.github.io/trmnl-ep-cards/current.json
+polling_url: https://wenkaijie27-rgb.github.io/trmnl-ep-cards/{{ trmnl.plugin_settings.custom_fields_values.tier | default: 'basic' }}/current.json
 polling_headers: ''
 name: Cardiac EP Knowledge Cards
-description: Illustrated cardiac electrophysiology learning cards for medical students (multi-screen 1-bit/2-bit/4-bit/BWRY e-ink).
+description: Illustrated cardiac electrophysiology learning cards (Foundations & Advanced tiers) for TRMNL 1-bit, 2-bit, TRMNL X 4-bit, and 4-color BWRY screens.
 refresh_interval: 60
+custom_fields:
+  - keyname: tier
+    field_type: select
+    name: Deck Tier / 知识层级
+    default: basic
+    options:
+      - Foundations (基础组 24卡): basic
+      - Advanced (进阶组 - 即将上线): advanced

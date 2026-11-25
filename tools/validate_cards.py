@@ -26,6 +26,7 @@ CATEGORIES = {
 }
 
 DIFFICULTIES = {"intro", "bridge"}
+TIERS = {"basic", "advanced"}
 
 TEMPLATES = {
     "split_left",
@@ -132,6 +133,7 @@ BUDGETS = {
         "metric_value": 18,
         "pearl_or_pitfall": 36,
         "quadrant_summary": 22,
+        "split_note": 34,
         "clinical_context": 75,
         "table_header": 16,
         "table_cell": 24,
@@ -147,6 +149,7 @@ BUDGETS = {
         "metric_value": 24,
         "pearl_or_pitfall": 90,
         "quadrant_summary": 55,
+        "split_note": 85,
         "clinical_context": 180,
         "table_header": 24,
         "table_cell": 36,
@@ -185,7 +188,7 @@ def scan_zh_abbreviations(
     errors: list[str],
 ) -> None:
     texts: list[tuple[str, str]] = []
-    for key in ("kicker", "title", "core_insight", "quadrant_summary"):
+    for key in ("kicker", "title", "core_insight", "quadrant_summary", "split_note"):
         if isinstance(zh.get(key), str):
             texts.append((f"content.zh.{key}", zh[key]))
 
@@ -250,6 +253,9 @@ def validate_localized_block(
             errors.append(f"content.{lang}.{field}: missing required field")
         else:
             check_budget(block[field], b[field], f"content.{lang}.{field}", errors, warnings)
+
+    if "split_note" in block and block["split_note"] is not None:
+        check_budget(block["split_note"], b["split_note"], f"content.{lang}.split_note", errors, warnings)
 
     bullets = block.get("bullets")
     if not isinstance(bullets, list) or not (2 <= len(bullets) <= 3):
@@ -371,6 +377,9 @@ def validate_card(card: Any, index: int | None = None) -> tuple[str, list[str], 
 
     if card.get("difficulty") not in DIFFICULTIES:
         errors.append(f"difficulty: invalid value {card.get('difficulty')!r}")
+
+    if "tier" in card and card["tier"] is not None and card["tier"] not in TIERS:
+        errors.append(f"tier: invalid value {card.get('tier')!r}")
 
     tags = card.get("tags")
     if not isinstance(tags, list) or not (2 <= len(tags) <= 5) or any(not isinstance(t, str) or not t.strip() for t in tags):

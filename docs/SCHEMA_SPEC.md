@@ -28,6 +28,7 @@
 | `id` | kebab-case 字符串 | 卡片唯一 ID，如 `svt-typical-avnrt-short-va` |
 | `category` | 8 个领域枚举 | `conduction_anatomy` / `basic_intervals` / `ep_mechanisms` / `svt_triage` / `wpw_preexcitation` / `pacing_maneuvers` / `wide_qrs_vt` / `ablation_safety` |
 | `difficulty` | `intro` \| `bridge` | 首批 MVP 聚焦 `intro`（入门必懂），少量核心桥接为 `bridge` |
+| `tier` | `basic` \| `advanced`（可选，默认 `basic`） | 卡组层级：**基础组（`basic`）** 面向入门医学生；**进阶组（`advanced`）** 面向导管室进阶实操与高阶鉴别 |
 | `tags` | `string[2..5]` | 2–5 个短标签 |
 
 ### 2.2 本地化内容与字数预算（`content.zh` / `content.en`）
@@ -43,6 +44,7 @@
 | `key_metrics` | `0–3` 个；`name ≤ 14`，`value ≤ 18` | `name ≤ 22`，`value ≤ 24` | 紧凑数值胶囊（如 `腔内VA界值: ≤ 70 ms`） |
 | `pearl_or_pitfall` | `kind`: `pearl`\|`pitfall`；`text ≤ 36` 字 | `≤ 90` chars | 底部记忆锚点或常见临床误区提示 |
 | `quadrant_summary` | `≤ 22` 字 | `≤ 55` chars | 1/4 屏 Mashup 视图专用极简摘要 |
+| `split_note` | `≤ 34` 字（可选） | `≤ 85` chars | 仅用于 `split_left` / `split_right` 填补右侧纵向呼吸区，给出定位或临床锚点 |
 | `expanded.clinical_context` | `≤ 75` 字 | `≤ 180` chars | **仅 TRMNL X（`lg:` `1040×780`）** 解锁的进阶临床背景 |
 | `expanded.mini_table` | 最多 `3` 列 × `4` 行 | 同左 | **仅 TRMNL X（`lg:`）** 展示的对照小表 |
 | `expanded.reference_note` | `≤ 60` 字符 | `≤ 60` chars | **仅 TRMNL X（`lg:`）** 底栏精简文献出处 |

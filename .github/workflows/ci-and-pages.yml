@@ -34,6 +34,7 @@ jobs:
       - name: Validate card decks (Schema, budgets, abbreviations, layout)
         run: |
           python3 tools/validate_cards.py decks/golden-3.json
+          python3 tools/validate_cards.py decks/basic-24.json
           python3 tools/validate_cards.py decks/batch-01-draft.json
 
       - name: Build distribution artifacts (JSON API, Terminus ZIP, TRMNL Recipe)

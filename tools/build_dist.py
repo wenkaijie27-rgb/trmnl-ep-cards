@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""Build distributable artifacts for both Terminus BYOS and TRMNL Cloud Recipe:
+"""Build distributable artifacts for both Terminus BYOS and TRMNL Cloud Recipe
+from the tiered EP Knowledge Card deck (default: decks/basic-24.json):
 
-- dist/cards.json (enriched active deck for HAOS / GitHub Pages)
-- dist/current.json (deterministic UTC-rotated single card for TRMNL polling)
-- dist/cards/<id>.json (per-card pinned endpoints)
+- dist/cards.json & dist/current.json
+- dist/basic/cards.json & dist/basic/current.json
+- dist/cards/<id>.json (all 24 pinned endpoints)
 - terminus/configuration.yml & terminus/template.html.liquid
 - dist/ep-cards-terminus-extension.zip
-- trmnl-recipe/src/* (settings.yml, shared.liquid, full.liquid, half_horizontal.liquid, half_vertical.liquid, quadrant.liquid)
+- trmnl-recipe/src/*
 """
 
 from __future__ import annotations
 
 import datetime as dt
-import html
 import json
 import re
 import zipfile
@@ -21,9 +21,10 @@ from pathlib import Path
 from generate_svgs import render_svg
 
 ROOT = Path(__file__).resolve().parent.parent
-DECK_PATH = ROOT / "decks" / "golden-3.json"
+DECK_PATH = ROOT / "decks" / "basic-24.json"
 CSS_PATH = ROOT / "shared" / "ep_cards.css"
 DIST_DIR = ROOT / "dist"
+DIST_BASIC_DIR = DIST_DIR / "basic"
 DIST_CARDS_DIR = DIST_DIR / "cards"
 TERMINUS_DIR = ROOT / "terminus"
 RECIPE_SRC_DIR = ROOT / "trmnl-recipe" / "src"
@@ -40,8 +41,13 @@ CATEGORY_LABELS = {
 }
 
 DIFFICULTY_LABELS = {
-    "intro": "入门核心",
-    "bridge": "临床桥接",
+    "intro": "入门",
+    "bridge": "桥接",
+}
+
+TIER_LABELS = {
+    "basic": "基础组",
+    "advanced": "进阶组",
 }
 
 
@@ -59,6 +65,7 @@ def enrich_card(raw_card: dict, index: int, total: int, generated_at: str) -> di
 
     pop = zh["pearl_or_pitfall"]
     callout_badge = "记忆点" if pop["kind"] == "pearl" else "易错点"
+    tier = raw_card.get("tier") or "basic"
 
     expanded = zh.get("expanded") or {}
     mini_table = expanded.get("mini_table")
@@ -69,8 +76,24 @@ def enrich_card(raw_card: dict, index: int, total: int, generated_at: str) -> di
             "rows": [[cjk_space(cell) for cell in row] for row in mini_table["rows"]],
         }
 
+    legend_mode = ""
+    if raw_card["id"] == "anatomy-koch-triangle":
+        legend_mode = "koch"
+    elif raw_card["id"] == "anatomy-his-purkinje":
+        legend_mode = "his_purkinje"
+    elif raw_card["id"] == "anatomy-cs-mitral-annulus":
+        legend_mode = "cs_annulus"
+    elif raw_card["id"] == "mechanisms-reentry":
+        legend_mode = "reentry"
+    elif raw_card["id"] == "mechanisms-excitable-gap":
+        legend_mode = "excitable_gap"
+    elif raw_card["id"] == "ablation-avoid-conduction-axis":
+        legend_mode = "ablation_axis"
+
     return {
         "id": raw_card["id"],
+        "tier": tier,
+        "tier_label": TIER_LABELS.get(tier, tier),
         "card_index": index,
         "card_total": total,
         "category": raw_card["category"],
@@ -86,6 +109,7 @@ def enrich_card(raw_card: dict, index: int, total: int, generated_at: str) -> di
             {"label": cjk_space(b["label"]), "text": cjk_space(b["text"])}
             for b in zh["bullets"]
         ],
+        "split_note": cjk_space(zh["split_note"]) if zh.get("split_note") else "",
         "key_metrics": [
             {"name": cjk_space(m["name"]), "value": cjk_space(m["value"])}
             for m in zh.get("key_metrics", [])
@@ -97,130 +121,159 @@ def enrich_card(raw_card: dict, index: int, total: int, generated_at: str) -> di
         "clinical_context": cjk_space(expanded["clinical_context"]) if expanded.get("clinical_context") else "",
         "reference_note": cjk_space(expanded["reference_note"]) if expanded.get("reference_note") else "",
         "mini_table": table_payload,
-        "show_anatomy_legend": raw_card["id"] == "anatomy-koch-triangle",
+        "legend_mode": legend_mode,
         "svg": svg_markup,
         "updated_at": generated_at,
     }
 
 
+def _header_block(p: str) -> str:
+    return f"""<div class="ep-header">
+  <div class="ep-header-top">
+    <div class="ep-title-row">
+      <span class="ep-kicker">{{{{ {p}kicker }}}}</span>
+      <h1 class="ep-title">{{{{ {p}title }}}}</h1>
+    </div>
+    {{% if {p}key_metrics.size > 0 %}}
+      <div class="ep-metrics">
+        {{% for m in {p}key_metrics limit:2 %}}
+          <span class="ep-metric-pill"><span class="ep-metric-name">{{{{ m.name }}}}</span><span class="ep-metric-value">{{{{ m.value }}}}</span></span>
+        {{% endfor %}}
+      </div>
+    {{% endif %}}
+  </div>
+  <div class="ep-insight">{{{{ {p}core_insight }}}}</div>
+</div>"""
+
+
+def _expanded_block(p: str) -> str:
+    return f"""{{% if {p}clinical_context != blank %}}
+  <div class="ep-x-section hidden lg:flex">
+    <div class="ep-x-context"><strong>进阶临床视角：</strong>{{{{ {p}clinical_context }}}}</div>
+    {{% if {p}mini_table %}}
+      <table class="ep-x-table">
+        <thead><tr>{{% for h in {p}mini_table.headers %}}<th>{{{{ h }}}}</th>{{% endfor %}}</tr></thead>
+        <tbody>
+          {{% for row in {p}mini_table.rows %}}
+            <tr>{{% for cell in row %}}<td>{{{{ cell }}}}</td>{{% endfor %}}</tr>
+          {{% endfor %}}
+        </tbody>
+      </table>
+    {{% endif %}}
+    <div class="ep-x-ref">
+      <span>TRMNL X 扩展卡面（{{{{ {p}tier_label }}}} · 10.3" 4-bit）</span>
+      <span>出处：{{{{ {p}reference_note }}}}</span>
+    </div>
+  </div>
+{{% endif %}}"""
+
+
 def _full_body_liquid(var_prefix: str) -> str:
-    """Return Liquid body markup compatible with both Terminus (source_1) and TRMNL Cloud (root)."""
+    """Return Liquid body using official TRMNL Framework v3.4.6 classes."""
     p = f"{var_prefix}." if var_prefix else ""
+    header = _header_block(p)
+    expanded = _expanded_block(p)
     return f"""<div class="view view--full ep-view">
-  <div class="layout ep-layout">
-    {{% if {p}template == 'split_left' %}}
-      <div class="ep-tpl--split_left">
-        <div class="ep-diagram-box">{{{{ {p}svg }}}}</div>
-        <div class="ep-split-text">
-          <div class="ep-split-main">
-            <div class="ep-header">
-              <div class="ep-header-top">
-                <div class="ep-title-row">
-                  <span class="ep-kicker">{{{{ {p}kicker }}}}</span>
-                  <h1 class="ep-title">{{{{ {p}title }}}}</h1>
+  <div class="layout layout--col ep-layout">
+    {{% if {p}template == 'split_left' or {p}template == 'split_right' %}}
+      <div class="ep-tpl--{{{{ {p}template }}}} flex flex--col w--full h--full">
+        <div class="flex flex--row portrait:flex--col ep-split-main-row w--full">
+          {{% if {p}template == 'split_left' %}}
+            <div class="ep-diagram-box ep-split-diagram">{{{{ {p}svg }}}}</div>
+          {{% endif %}}
+          <div class="ep-split-text">
+            <div class="ep-split-main">
+              {header}
+              <ul class="ep-bullets ep-bullets--stack">
+                {{% for b in {p}bullets %}}
+                  <li class="ep-bullet"><span class="ep-bullet-label">{{{{ b.label }}}}</span><span class="ep-bullet-text">{{{{ b.text }}}}</span></li>
+                {{% endfor %}}
+              </ul>
+              {{% if {p}split_note != blank %}}
+                <div class="ep-split-note"><span class="ep-split-note-badge">临床锚点</span><span>{{{{ {p}split_note }}}}</span></div>
+              {{% endif %}}
+            </div>
+            <div class="ep-split-footer">
+              {{% if {p}legend_mode == 'koch' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-solid"></i>实线：隔瓣附着</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：Todaro 腱</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：传导轴邻域</span>
                 </div>
-                {{% if {p}key_metrics.size > 0 %}}
-                  <div class="ep-metrics">
-                    {{% for m in {p}key_metrics %}}
-                      <span class="ep-metric-pill"><span class="ep-metric-name">{{{{ m.name }}}}</span><span class="ep-metric-value">{{{{ m.value }}}}</span></span>
-                    {{% endfor %}}
-                  </div>
-                {{% endif %}}
-              </div>
-              <div class="ep-insight">{{{{ {p}core_insight }}}}</div>
+              {{% elsif {p}legend_mode == 'his_purkinje' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：纤维体</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-solid"></i>实线：His 与主干</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>虚线：远端束支网</span>
+                </div>
+              {{% elsif {p}legend_mode == 'cs_annulus' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：左房室沟</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：冠状窦走向</span>
+                </div>
+              {{% elsif {p}legend_mode == 'reentry' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>叉/虚线：单向阻滞处</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：慢传导区</span>
+                </div>
+              {{% elsif {p}legend_mode == 'excitable_gap' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：兴奋间隙</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-solid"></i>斜纹环：不应尾</span>
+                </div>
+              {{% elsif {p}legend_mode == 'ablation_axis' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：常用安全靶区</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/叉标：传导轴高危区</span>
+                </div>
+              {{% endif %}}
+              <div class="ep-callout"><span class="ep-callout-badge">{{{{ {p}callout_badge }}}}</span><span>{{{{ {p}callout_text }}}}</span></div>
             </div>
-            <ul class="ep-bullets">
-              {{% for b in {p}bullets %}}
-                <li class="ep-bullet"><span class="ep-bullet-label">{{{{ b.label }}}}</span><span class="ep-bullet-text">{{{{ b.text }}}}</span></li>
-              {{% endfor %}}
-            </ul>
           </div>
-          <div class="ep-split-footer">
-            {{% if {p}show_anatomy_legend %}}
-              <div class="ep-mini-legend">
-                <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-solid"></i>实线：隔瓣附着</span>
-                <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：Todaro 腱</span>
-                <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：传导轴邻域</span>
-              </div>
-            {{% endif %}}
-            <div class="ep-callout"><span class="ep-callout-badge">{{{{ {p}callout_badge }}}}</span><span>{{{{ {p}callout_text }}}}</span></div>
-          </div>
+          {{% if {p}template == 'split_right' %}}
+            <div class="ep-diagram-box ep-split-diagram">{{{{ {p}svg }}}}</div>
+          {{% endif %}}
         </div>
-        {{% if {p}clinical_context != blank %}}
-          <div class="ep-x-section">
-            <div class="ep-x-context"><strong>进阶临床视角：</strong>{{{{ {p}clinical_context }}}}</div>
-            {{% if {p}mini_table %}}
-              <table class="ep-x-table">
-                <thead><tr>{{% for h in {p}mini_table.headers %}}<th>{{{{ h }}}}</th>{{% endfor %}}</tr></thead>
-                <tbody>
-                  {{% for row in {p}mini_table.rows %}}
-                    <tr>{{% for cell in row %}}<td>{{{{ cell }}}}</td>{{% endfor %}}</tr>
-                  {{% endfor %}}
-                </tbody>
-              </table>
-            {{% endif %}}
-            <div class="ep-x-ref">
-              <span>TRMNL X 扩展卡面（10.3" 4-bit 实色灰阶）</span>
-              <span>出处：{{{{ {p}reference_note }}}}</span>
-            </div>
-          </div>
-        {{% endif %}}
+        {expanded}
       </div>
     {{% else %}}
       {{% if {p}template == 'compare_two' %}}
         {{% assign wrap_cls = 'ep-tpl--compare_two' %}}
-        {{% assign diag_cls = 'ep-diagram-box ep-compare-diagram' %}}
+        {{% if {p}bullets.size == 3 %}}
+          {{% assign diag_cls = 'ep-diagram-box ep-compare-diagram ep-compare-diagram--compact' %}}
+        {{% else %}}
+          {{% assign diag_cls = 'ep-diagram-box ep-compare-diagram' %}}
+        {{% endif %}}
         {{% assign body_cls = 'ep-compare-body' %}}
       {{% else %}}
         {{% assign wrap_cls = 'ep-tpl--top_banner' %}}
-        {{% assign diag_cls = 'ep-diagram-box ep-banner-diagram' %}}
+        {{% if {p}bullets.size == 3 %}}
+          {{% assign diag_cls = 'ep-diagram-box ep-banner-diagram ep-banner-diagram--compact' %}}
+        {{% else %}}
+          {{% assign diag_cls = 'ep-diagram-box ep-banner-diagram' %}}
+        {{% endif %}}
         {{% assign body_cls = 'ep-banner-body' %}}
       {{% endif %}}
-      <div class="{{{{ wrap_cls }}}}">
-        <div class="ep-header">
-          <div class="ep-header-top">
-            <div class="ep-title-row">
-              <span class="ep-kicker">{{{{ {p}kicker }}}}</span>
-              <h1 class="ep-title">{{{{ {p}title }}}}</h1>
-            </div>
-            {{% if {p}key_metrics.size > 0 %}}
-              <div class="ep-metrics">
-                {{% for m in {p}key_metrics %}}
-                  <span class="ep-metric-pill"><span class="ep-metric-name">{{{{ m.name }}}}</span><span class="ep-metric-value">{{{{ m.value }}}}</span></span>
-                {{% endfor %}}
-              </div>
-            {{% endif %}}
-          </div>
-          <div class="ep-insight">{{{{ {p}core_insight }}}}</div>
-        </div>
+      <div class="{{{{ wrap_cls }}}} flex flex--col w--full h--full">
+        {header}
         <div class="{{{{ diag_cls }}}}">{{{{ {p}svg }}}}</div>
         <div class="{{{{ body_cls }}}}">
-          <ul class="ep-bullets ep-bullets--row">
-            {{% for b in {p}bullets %}}
-              <li class="ep-bullet"><span class="ep-bullet-label">{{{{ b.label }}}}</span><span class="ep-bullet-text">{{{{ b.text }}}}</span></li>
-            {{% endfor %}}
-          </ul>
+          {{% if {p}bullets.size == 3 %}}
+            <ul class="ep-bullets ep-bullets--row3 grid grid--cols-3 w--full">
+              {{% for b in {p}bullets %}}
+                <li class="ep-bullet"><span class="ep-bullet-label">{{{{ b.label }}}}</span><span class="ep-bullet-text">{{{{ b.text }}}}</span></li>
+              {{% endfor %}}
+            </ul>
+          {{% else %}}
+            <ul class="ep-bullets ep-bullets--row2 grid grid--cols-2 w--full">
+              {{% for b in {p}bullets %}}
+                <li class="ep-bullet"><span class="ep-bullet-label">{{{{ b.label }}}}</span><span class="ep-bullet-text">{{{{ b.text }}}}</span></li>
+              {{% endfor %}}
+            </ul>
+          {{% endif %}}
           <div class="ep-callout"><span class="ep-callout-badge">{{{{ {p}callout_badge }}}}</span><span>{{{{ {p}callout_text }}}}</span></div>
         </div>
-        {{% if {p}clinical_context != blank %}}
-          <div class="ep-x-section">
-            <div class="ep-x-context"><strong>进阶临床视角：</strong>{{{{ {p}clinical_context }}}}</div>
-            {{% if {p}mini_table %}}
-              <table class="ep-x-table">
-                <thead><tr>{{% for h in {p}mini_table.headers %}}<th>{{{{ h }}}}</th>{{% endfor %}}</tr></thead>
-                <tbody>
-                  {{% for row in {p}mini_table.rows %}}
-                    <tr>{{% for cell in row %}}<td>{{{{ cell }}}}</td>{{% endfor %}}</tr>
-                  {{% endfor %}}
-                </tbody>
-              </table>
-            {{% endif %}}
-            <div class="ep-x-ref">
-              <span>TRMNL X 扩展卡面（10.3" 4-bit 实色灰阶）</span>
-              <span>出处：{{{{ {p}reference_note }}}}</span>
-            </div>
-          </div>
-        {{% endif %}}
+        {expanded}
       </div>
     {{% endif %}}
   </div>
@@ -229,8 +282,8 @@ def _full_body_liquid(var_prefix: str) -> str:
     <svg class="ep-title-icon" viewBox="0 0 24 24">
       <polyline points="2 12 6 12 8.5 5 11.5 19 14.5 9 17 12 22 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="title">心脏电生理卡片 · {{{{ {p}category_label }}}}</span>
-    <span class="instance">{{{{ {p}difficulty_label }}}} · {{{{ {p}card_index }}}}/{{{{ {p}card_total }}}} · {{{{ {p}updated_at }}}}</span>
+    <span class="title">心脏电生理 · {{{{ {p}category_label }}}}</span>
+    <span class="instance">{{{{ {p}tier_label }}}} · {{{{ {p}card_index }}}}/{{{{ {p}card_total }}}} · {{{{ {p}updated_at }}}}</span>
   </div>
 </div>"""
 
@@ -240,7 +293,7 @@ def build_terminus_files(css_text: str) -> None:
     config_yml = """version: "0.84.0"
 name: "ep_cards"
 label: "心脏电生理知识卡"
-description: "面向入门医学生的心脏电生理知识卡片（TRMNL Framework + 语义内联 SVG，兼容 1-bit / 2-bit / TRMNL X / 四色墨水屏）"
+description: "面向医学生的心脏电生理知识卡片（基础组 24 卡 + TRMNL Framework 3.4 + 语义内联 SVG）"
 mode: "text"
 kind: "poll"
 tags: []
@@ -283,11 +336,19 @@ dark_mode: 'no'
 static_data: ''
 polling_verb: get
 framework_version: latest
-polling_url: https://wenkaijie27-rgb.github.io/trmnl-ep-cards/current.json
+polling_url: https://wenkaijie27-rgb.github.io/trmnl-ep-cards/{{ trmnl.plugin_settings.custom_fields_values.tier | default: 'basic' }}/current.json
 polling_headers: ''
 name: Cardiac EP Knowledge Cards
-description: Illustrated cardiac electrophysiology learning cards for medical students (multi-screen 1-bit/2-bit/4-bit/BWRY e-ink).
+description: Illustrated cardiac electrophysiology learning cards (Foundations & Advanced tiers) for TRMNL 1-bit, 2-bit, TRMNL X 4-bit, and 4-color BWRY screens.
 refresh_interval: 60
+custom_fields:
+  - keyname: tier
+    field_type: select
+    name: Deck Tier / 知识层级
+    default: basic
+    options:
+      - Foundations (基础组 24卡): basic
+      - Advanced (进阶组 - 即将上线): advanced
 """
     (RECIPE_SRC_DIR / "settings.yml").write_text(settings_yml, encoding="utf-8")
     (RECIPE_SRC_DIR / "shared.liquid").write_text(f"<style>\n{css_text.strip()}\n</style>\n", encoding="utf-8")
@@ -310,8 +371,8 @@ refresh_interval: 60
     <div class="ep-callout"><span class="ep-callout-badge">{{ callout_badge }}</span><span>{{ callout_text }}</span></div>
   </div>
   <div class="title_bar ep-title-bar">
-    <span class="title">心脏电生理卡片 · {{ category_label }}</span>
-    <span class="instance">{{ card_index }}/{{ card_total }}</span>
+    <span class="title">心脏电生理 · {{ category_label }}</span>
+    <span class="instance">{{ tier_label }} · {{ card_index }}/{{ card_total }}</span>
   </div>
 </div>
 """
@@ -326,7 +387,7 @@ refresh_interval: 60
       <h1 class="ep-title" style="font-size:21px;">{{ title }}</h1>
       <div class="ep-insight" style="font-size:14.5px;">{{ core_insight }}</div>
     </div>
-    <ul class="ep-bullets">
+    <ul class="ep-bullets ep-bullets--stack">
       {% for b in bullets limit:2 %}
         <li class="ep-bullet"><span class="ep-bullet-label">{{ b.label }}</span><span class="ep-bullet-text">{{ b.text }}</span></li>
       {% endfor %}
@@ -335,7 +396,7 @@ refresh_interval: 60
   </div>
   <div class="title_bar ep-title-bar">
     <span class="title">心脏电生理 · {{ category_label }}</span>
-    <span class="instance">{{ card_index }}/{{ card_total }}</span>
+    <span class="instance">{{ tier_label }} · {{ card_index }}/{{ card_total }}</span>
   </div>
 </div>
 """
@@ -356,7 +417,7 @@ refresh_interval: 60
   </div>
   <div class="title_bar ep-title-bar">
     <span class="title">EP 卡片</span>
-    <span class="instance">{{ card_index }}/{{ card_total }}</span>
+    <span class="instance">{{ tier_label }} · {{ card_index }}/{{ card_total }}</span>
   </div>
 </div>
 """
@@ -366,6 +427,7 @@ refresh_interval: 60
 
 def main() -> None:
     DIST_DIR.mkdir(parents=True, exist_ok=True)
+    DIST_BASIC_DIR.mkdir(parents=True, exist_ok=True)
     DIST_CARDS_DIR.mkdir(parents=True, exist_ok=True)
 
     deck = json.loads(DECK_PATH.read_text(encoding="utf-8"))
@@ -382,14 +444,14 @@ def main() -> None:
     cards_payload = {
         "schema_version": deck["schema_version"],
         "deck_id": deck["deck_id"],
+        "tier": "basic",
         "generated_at": now_iso,
         "count": total,
         "cards": enriched,
     }
-    (DIST_DIR / "cards.json").write_text(
-        json.dumps(cards_payload, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    cards_json_str = json.dumps(cards_payload, ensure_ascii=False, indent=2)
+    (DIST_DIR / "cards.json").write_text(cards_json_str, encoding="utf-8")
+    (DIST_BASIC_DIR / "cards.json").write_text(cards_json_str, encoding="utf-8")
 
     for item in enriched:
         (DIST_CARDS_DIR / f"{item['id']}.json").write_text(
@@ -399,10 +461,9 @@ def main() -> None:
 
     slot = int(now_utc.timestamp() // 3600) % total
     current_card = enriched[slot]
-    (DIST_DIR / "current.json").write_text(
-        json.dumps(current_card, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    current_str = json.dumps(current_card, ensure_ascii=False, indent=2)
+    (DIST_DIR / "current.json").write_text(current_str, encoding="utf-8")
+    (DIST_BASIC_DIR / "current.json").write_text(current_str, encoding="utf-8")
 
     build_terminus_files(css_text)
     build_trmnl_recipe(css_text)

@@ -1,0 +1,44 @@
+<svg class="ep-svg ep-svg--square" viewBox="0 0 360 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="折返三要素：单向阻滞、慢传导与环行闭合示意图">
+  <rect x="0" y="0" width="360" height="350" fill="#ffffff"/>
+
+  <!-- Premature trigger impulse from top -->
+  <line x1="180" y1="22" x2="180" y2="70" class="ep-ink-stroke" stroke="#000000" stroke-width="3.2"/>
+  <polygon points="180.0,74.0 175.6,65.0 184.4,65.0" class="ep-ink-fill" fill="#000000"/>
+
+  <!-- Ring Circuit Outer & Inner Boundaries -->
+  <ellipse cx="180" cy="175" rx="94" ry="96" fill="none" class="ep-muted-stroke" stroke="#555555" stroke-width="1.4" stroke-dasharray="3,3"/>
+  <ellipse cx="180" cy="175" rx="54" ry="56" fill="#ffffff" class="ep-ink-stroke" stroke="#000000" stroke-width="2.0"/>
+
+  <!-- Slow Conduction Zone on Right Limb -->
+  <ellipse cx="255" cy="175" rx="18" ry="52" fill="#ffffff" class="ep-hl-area ep-ink-stroke" stroke="#000000" stroke-width="1.3" stroke-dasharray="4,2.5"/>
+  <g class="ep-hatch-group"><line x1="243.9" y1="138.0" x2="255.8" y2="126.2" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="241.2" y1="146.9" x2="259.9" y2="128.2" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="239.6" y1="154.5" x2="262.7" y2="131.5" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="238.7" y1="161.5" x2="264.9" y2="135.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="238.2" y1="168.1" x2="266.7" y2="139.7" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="238.1" y1="174.4" x2="268.2" y2="144.3" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="238.2" y1="180.4" x2="269.4" y2="149.2" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="238.5" y1="186.2" x2="270.3" y2="154.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="239.1" y1="191.7" x2="271.1" y2="159.7" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="239.9" y1="197.0" x2="271.6" y2="165.3" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="240.9" y1="202.1" x2="271.9" y2="171.2" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="242.2" y1="207.0" x2="271.9" y2="177.2" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="243.8" y1="211.5" x2="271.7" y2="183.6" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="245.6" y1="215.7" x2="271.1" y2="190.3" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="248.0" y1="219.5" x2="270.0" y2="197.5" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="251.1" y1="222.5" x2="268.3" y2="205.3" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/></g>
+
+  <!-- Left Limb: Unidirectional Antegrade Block (Red X / Double Bar) -->
+  <path d="M 164 80 C 122 86, 104 114, 102 142" fill="none" class="ep-accent-stroke" stroke="#000000" stroke-width="2.8" stroke-dasharray="6,4"/>
+  <!-- Block bar + X -->
+  <line x1="88" y1="146" x2="118" y2="146" class="ep-accent-stroke" stroke="#000000" stroke-width="3.4"/>
+  <line x1="94" y1="132" x2="112" y2="150" class="ep-accent-stroke" stroke="#000000" stroke-width="2.6"/>
+  <line x1="112" y1="132" x2="94" y2="150" class="ep-accent-stroke" stroke="#000000" stroke-width="2.6"/>
+
+  <!-- Right Limb: Slow Antegrade Propagation (wavy/stepped slow arrow down) -->
+  <path d="M 196 80 C 236 88, 255 120, 255 162" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="3.0"/>
+  <polygon points="255.0,168.0 250.6,159.0 259.4,159.0" class="ep-ink-fill" fill="#000000"/>
+  <path d="M 255 186 C 254 230, 228 258, 190 264" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="3.0"/>
+  <polygon points="184.0,265.0 192.6,259.8 193.3,268.6" class="ep-ink-fill" fill="#000000"/>
+
+  <!-- Return Limb: Retrograde up recovered Left Limb closing the loop -->
+  <path d="M 166 264 C 122 256, 104 222, 104 178" fill="none" class="ep-accent-stroke" stroke="#000000" stroke-width="3.0" stroke-dasharray="8,4"/>
+  <polygon points="104.0,172.0 108.4,181.0 99.6,181.0" class="ep-accent-fill" fill="#000000"/>
+  <!-- Distal exit arrow downward -->
+  <line x1="180" y1="272" x2="180" y2="314" class="ep-ink-stroke" stroke="#000000" stroke-width="2.6"/>
+  <polygon points="180.0,320.0 176.0,311.5 184.0,311.5" class="ep-ink-fill" fill="#000000"/>
+
+  <!-- Labels (5 schema labels) -->
+  <rect x="127.0" y="3.0" width="106.0" height="18.0" rx="3" fill="#ffffff"/><text x="180.0" y="17.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:13px;font-weight:700;text-anchor:middle;">触发波前 (早搏)</text>
+  <rect x="142.0" y="164.2" width="76.0" height="19.0" rx="3" fill="#ffffff" class="ep-muted-stroke" stroke="#555555" stroke-width="1.2"/><text x="180.0" y="179.0" fill="#444444" class="ep-svg-label ep-muted-fill" style="font-size:12.5px;font-weight:700;text-anchor:middle;">中心隔离区</text>
+  <rect x="25.0" y="108.0" width="66.0" height="18.0" rx="3" fill="#ffffff"/><text x="58.0" y="122.0" fill="#000000" class="ep-svg-label ep-accent-fill" style="font-size:13px;font-weight:700;text-anchor:middle;">单向阻滞</text>
+  <rect x="12.0" y="192.0" width="88.0" height="18.0" rx="3" fill="#ffffff"/><text x="56.0" y="206.0" fill="#000000" class="ep-svg-label ep-accent-fill" style="font-size:13px;font-weight:700;text-anchor:middle;">绕行波前返回</text>
+  <rect x="17.0" y="152.0" width="74.0" height="18.0" rx="3" fill="#ffffff"/><text x="54.0" y="166.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:12.5px;font-weight:700;text-anchor:middle;">已恢复可传</text>
+  <rect x="263.0" y="157.8" width="58.0" height="22.0" rx="3" fill="#ffffff" class="ep-hl-area ep-ink-stroke" stroke="#000000" stroke-width="1.2"/><g class="ep-hatch-group"><line x1="321.0" y1="160.8" x2="318.0" y2="157.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="321.0" y1="166.8" x2="312.0" y2="157.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="321.0" y1="172.8" x2="306.0" y2="157.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="321.0" y1="178.8" x2="300.0" y2="157.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="294.0" y1="157.8" x2="316.0" y2="179.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="288.0" y1="157.8" x2="310.0" y2="179.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="282.0" y1="157.8" x2="304.0" y2="179.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="276.0" y1="157.8" x2="298.0" y2="179.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="270.0" y1="157.8" x2="292.0" y2="179.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="264.0" y1="157.8" x2="286.0" y2="179.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="263.0" y1="162.8" x2="280.0" y2="179.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="263.0" y1="168.8" x2="274.0" y2="179.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="263.0" y1="174.8" x2="268.0" y2="179.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/></g><rect x="267.0" y="159.8" width="50.0" height="18.0" rx="2" fill="#ffffff" class="ep-hl-label-bg"/><text x="292.0" y="175.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:13px;font-weight:700;text-anchor:middle;">慢传导</text>
+  <rect x="132.0" y="326.0" width="96.0" height="18.0" rx="3" fill="#ffffff"/><text x="180.0" y="340.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:13px;font-weight:700;text-anchor:middle;">环形通路传出</text>
+</svg>

@@ -1,9 +1,10 @@
 /* =========================================================
-   EP Knowledge Cards - Terminus-Sanitizer-Proof Stylesheet
-   Explicit per-mode overrides without custom CSS variables.
+   EP Knowledge Cards - Official TRMNL Framework v3.4.6 Companion CSS
+   Terminus-Sanitizer-Proof (no custom --* CSS variables).
+   Relies on .view--full, .layout--col, .flex, .grid, .grid--cols-2/3,
+   .portrait:flex--col, .hidden, .lg:flex, .w--full, .h--full, .title_bar.
    ========================================================= */
 
-/* Base / Default (2-bit / neutral e-ink baseline) */
 .ep-svg {
   display: block;
   width: 100%;
@@ -50,7 +51,7 @@
   flex-direction: column !important;
   align-items: stretch !important;
   justify-content: flex-start !important;
-  gap: 10px;
+  gap: 8px;
   overflow: hidden;
   padding: 0 !important;
   margin-bottom: 6px !important;
@@ -98,20 +99,20 @@
 .ep-header {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 
 .ep-header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
 }
 
 .ep-title-row {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   min-width: 0;
 }
 
@@ -131,7 +132,7 @@
 
 .ep-title {
   margin: 0;
-  font-size: 23px;
+  font-size: 22px;
   line-height: 1.18;
   font-weight: 800;
   letter-spacing: -0.01em;
@@ -148,12 +149,12 @@
 .ep-metric-pill {
   display: inline-flex;
   align-items: baseline;
-  gap: 5px;
-  padding: 3px 9px;
+  gap: 4px;
+  padding: 3px 8px;
   border: 1.5px solid #000000;
   border-radius: 5px;
   background: #e6e6e6;
-  font-size: 13px;
+  font-size: 12.5px;
   white-space: nowrap;
 }
 
@@ -168,7 +169,7 @@
 }
 
 .ep-insight {
-  padding: 6px 10px;
+  padding: 7px 10px;
   border-left: 4px solid #000000;
   border-top: 1px solid #000000;
   border-right: 1px solid #000000;
@@ -181,21 +182,30 @@
   color: #000000;
 }
 
-/* Bullets & Callout */
+/* Bullets, Split Anchor Note & Callout */
 .ep-bullets {
   margin: 0;
   padding: 0;
   list-style: none;
+  gap: 8px;
+}
+
+.ep-bullets--stack {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.ep-bullets--row2,
+.ep-bullets--row3 {
+  gap: 8px 12px;
 }
 
 .ep-bullet {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  padding: 7px 10px;
+  padding: 8px 10px;
   border: 1.2px solid #000000;
   border-radius: 6px;
   background: #f2f2f2;
@@ -203,6 +213,14 @@
   line-height: 1.4;
   font-weight: 500;
   color: #000000;
+}
+
+.ep-bullets--row3 .ep-bullet {
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 8px;
+  font-size: 14px;
+  line-height: 1.35;
 }
 
 .ep-bullet-label {
@@ -217,6 +235,12 @@
   line-height: 1.35;
   background: #ffffff;
   color: #000000;
+  white-space: nowrap;
+}
+
+.ep-bullets--row3 .ep-bullet-label {
+  margin-top: 0;
+  font-size: 12px;
 }
 
 .ep-bullet-text {
@@ -224,16 +248,41 @@
   min-width: 0;
 }
 
+.ep-split-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1.2px solid #000000;
+  border-left: 3.5px solid #000000;
+  border-radius: 0 5px 5px 0;
+  background: #ffffff;
+  font-size: 14.5px;
+  line-height: 1.38;
+  font-weight: 600;
+  color: #000000;
+}
+
+.ep-split-note-badge {
+  flex-shrink: 0;
+  padding: 1px 5px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  background: #e6e6e6;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .ep-split-footer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
 }
 
 .ep-mini-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 12px;
+  gap: 6px 12px;
   padding: 6px 10px;
   border: 1px dashed #000000;
   border-radius: 5px;
@@ -301,14 +350,19 @@
 }
 
 /* =========================================================
-   Layout Templates (Full View)
+   Layout Templates (Full View — Flex + Official Grid)
    ========================================================= */
-.ep-tpl--split_left {
-  display: grid;
-  grid-template-columns: 46% 1fr;
-  gap: 16px;
-  height: 100%;
+.ep-tpl--split_left,
+.ep-tpl--split_right {
+  flex: 1 1 auto;
   min-height: 0;
+  gap: 14px;
+}
+
+.ep-split-main-row {
+  flex: 1 1 auto;
+  min-height: 0;
+  gap: 14px;
   align-items: stretch;
 }
 
@@ -325,67 +379,56 @@
   min-height: 0;
 }
 
+.ep-split-diagram {
+  flex: 0 0 46%;
+  min-width: 0;
+}
+
 .ep-split-text {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 8px;
-  min-width: 0;
-  min-height: 0;
 }
 
 .ep-split-main {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 9px;
 }
 
-.ep-tpl--top_banner {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 8px;
-  height: 100%;
+.ep-tpl--top_banner,
+.ep-tpl--compare_two {
+  flex: 1 1 auto;
   min-height: 0;
+  gap: 8px;
 }
 
 .ep-banner-diagram {
-  height: 214px;
+  height: 220px;
   flex-shrink: 0;
   padding: 2px 4px;
 }
 
-.ep-banner-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 8px;
-  flex: 1 1 auto;
-  min-height: 0;
-}
-
-.ep-bullets--row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 14px;
-}
-
-.ep-tpl--compare_two {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 8px;
-  height: 100%;
-  min-height: 0;
+.ep-banner-diagram--compact {
+  height: 196px;
 }
 
 .ep-compare-diagram {
-  height: 224px;
+  height: 226px;
   flex-shrink: 0;
   border: none;
   padding: 0;
 }
 
+.ep-compare-diagram--compact {
+  height: 204px;
+}
+
+.ep-banner-body,
 .ep-compare-body {
   display: flex;
   flex-direction: column;
@@ -396,7 +439,7 @@
 }
 
 /* =========================================================
-   Mode Overrides: 1-bit Monochrome (strict pure B&W)
+   Mode Overrides: 1-bit Monochrome
    ========================================================= */
 .screen--1bit .ep-muted-stroke { stroke: #000000; }
 .screen--1bit .ep-muted-fill { fill: #000000; }
@@ -404,6 +447,8 @@
 .screen--1bit .ep-metric-pill,
 .screen--1bit .ep-insight,
 .screen--1bit .ep-bullet,
+.screen--1bit .ep-split-note,
+.screen--1bit .ep-split-note-badge,
 .screen--1bit .ep-callout {
   background: #ffffff;
 }
@@ -460,6 +505,11 @@
   border-left-color: #B81D1D;
   background: #ffffff;
 }
+.screen--color-4bwry .ep-split-note,
+.screen--color-6a .ep-split-note {
+  border-left-color: #B81D1D;
+  background: #ffffff;
+}
 .screen--color-4bwry .ep-bullet,
 .screen--color-6a .ep-bullet {
   background: #ffffff;
@@ -467,9 +517,11 @@
 .screen--color-4bwry .ep-metric-pill,
 .screen--color-4bwry .ep-callout,
 .screen--color-4bwry .ep-leg-hl,
+.screen--color-4bwry .ep-split-note-badge,
 .screen--color-6a .ep-metric-pill,
 .screen--color-6a .ep-callout,
-.screen--color-6a .ep-leg-hl {
+.screen--color-6a .ep-leg-hl,
+.screen--color-6a .ep-split-note-badge {
   background: #F2DF4A;
 }
 .screen--color-4bwry .ep-callout-badge,
@@ -483,17 +535,14 @@
 
 /* =========================================================
    TRMNL X (10.3" screen--lg 1040x780) Progressive Disclosure
+   Uses official `hidden lg:flex` utility for visibility.
    ========================================================= */
-.ep-x-section {
-  display: none;
-}
-
 .screen--lg .ep-view {
   padding: 18px 24px 10px 24px;
 }
 
 .screen--lg .ep-layout {
-  gap: 14px;
+  gap: 12px;
 }
 
 .screen--lg .ep-kicker {
@@ -502,7 +551,7 @@
 }
 
 .screen--lg .ep-title {
-  font-size: 29px;
+  font-size: 28px;
 }
 
 .screen--lg .ep-insight {
@@ -511,13 +560,22 @@
 }
 
 .screen--lg .ep-bullet {
-  font-size: 17.5px;
-  line-height: 1.48;
+  font-size: 17px;
+  line-height: 1.46;
+}
+
+.screen--lg .ep-bullets--row3 .ep-bullet {
+  font-size: 15.5px;
+  padding: 8px 10px;
 }
 
 .screen--lg .ep-bullet-label {
   font-size: 14px;
   padding: 2px 8px;
+}
+
+.screen--lg .ep-split-note {
+  font-size: 16px;
 }
 
 .screen--lg .ep-callout {
@@ -539,34 +597,25 @@
 }
 
 .screen--lg .ep-compare-diagram {
-  height: 286px;
+  height: 284px;
 }
 
-.screen--lg .ep-tpl--split_left {
-  grid-template-columns: 44% 1fr;
-  grid-template-rows: auto 1fr;
-  gap: 16px 20px;
-}
-
-.screen--lg .ep-tpl--split_left .ep-diagram-box {
+.screen--lg .ep-split-diagram {
+  flex: 0 0 44%;
   max-height: 410px;
 }
 
-.screen--lg .ep-x-section {
-  display: flex;
+.ep-x-section {
   flex-direction: column;
-  gap: 10px;
+  gap: 9px;
   padding-top: 10px;
   border-top: 1.5px dashed #000000;
-}
-
-.screen--lg .ep-tpl--split_left .ep-x-section {
-  grid-column: 1 / -1;
+  flex-shrink: 0;
 }
 
 .ep-x-context {
-  font-size: 16px;
-  line-height: 1.48;
+  font-size: 15.5px;
+  line-height: 1.46;
   font-weight: 500;
   color: #000000;
   background: #f2f2f2;
@@ -582,7 +631,7 @@
 .ep-x-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: 14.5px;
 }
 
 .ep-x-table th,

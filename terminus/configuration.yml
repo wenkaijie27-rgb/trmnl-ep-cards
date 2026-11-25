@@ -1,7 +1,7 @@
 version: "0.84.0"
 name: "ep_cards"
 label: "心脏电生理知识卡"
-description: "面向入门医学生的心脏电生理知识卡片（TRMNL Framework + 语义内联 SVG，兼容 1-bit / 2-bit / TRMNL X / 四色墨水屏）"
+description: "面向医学生的心脏电生理知识卡片（基础组 24 卡 + TRMNL Framework 3.4 + 语义内联 SVG）"
 mode: "text"
 kind: "poll"
 tags: []

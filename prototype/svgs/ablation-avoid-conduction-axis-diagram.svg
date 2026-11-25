@@ -1,0 +1,56 @@
+<svg class="ep-svg ep-svg--square" viewBox="0 0 360 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Koch三角安全慢径靶区与房室阻滞高危区分布图">
+  <rect x="0" y="0" width="360" height="350" fill="#ffffff"/>
+
+  <!-- Subtle Right Atrial Endocardial Context -->
+  <path d="M 22 252 C 18 168, 56 88, 146 42 C 208 12, 282 14, 336 42" fill="none" class="ep-muted-stroke" stroke="#555555" stroke-width="1.3" stroke-dasharray="3,3"/>
+  <path d="M 22 252 C 38 302, 86 328, 174 328 C 242 328, 294 318, 326 308" fill="none" class="ep-muted-stroke" stroke="#555555" stroke-width="1.3" stroke-dasharray="3,3"/>
+
+  <!-- Koch Triangle Landmarks (Septal Leaflet Hinge + Tendon of Todaro + CS Ostium) -->
+  <path d="M 286 292 C 268 236, 266 164, 268 94" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="3.0" stroke-linecap="round"/>
+  <path d="M 60 256 C 118 206, 194 142, 263 92" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="2.6" stroke-dasharray="7,4" stroke-linecap="round"/>
+
+  <!-- CS Ostium at base -->
+  <g transform="translate(116, 262) rotate(-14)">
+    <ellipse cx="0" cy="0" rx="28" ry="18" fill="#ffffff" class="ep-ink-stroke" stroke="#000000" stroke-width="2.6"/>
+  </g>
+
+  <!-- SAFE INFERIOR TARGET ZONE (Yellow / Hatch) near base between CS ostium & septal leaflet -->
+  <ellipse cx="196" cy="232" rx="34" ry="20" transform="rotate(-10 196 232)"
+           fill="#ffffff" class="ep-hl-area ep-ink-stroke" stroke="#000000" stroke-width="2.0"/>
+  <g class="ep-hatch-group"><line x1="164.4" y1="236.0" x2="175.8" y2="219.7" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/><line x1="165.9" y1="241.3" x2="183.7" y2="215.9" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/><line x1="168.8" y1="244.8" x2="190.3" y2="214.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/><line x1="172.3" y1="247.3" x2="196.3" y2="213.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/><line x1="176.3" y1="249.1" x2="201.8" y2="212.7" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/><line x1="180.7" y1="250.4" x2="206.9" y2="212.9" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/><line x1="185.4" y1="251.1" x2="211.6" y2="213.7" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/><line x1="190.5" y1="251.3" x2="216.0" y2="215.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/><line x1="196.1" y1="251.0" x2="220.0" y2="216.9" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/><line x1="202.1" y1="249.9" x2="223.4" y2="219.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/><line x1="208.7" y1="247.9" x2="226.2" y2="223.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.4"/></g>
+
+  <!-- HIGH-RISK AVOIDANCE ZONES (Red / Double-dashed danger markers) -->
+  <!-- 1. Apex / His recording zone -->
+  <circle cx="256" cy="112" r="22" fill="#ffffff" class="ep-accent-stroke" stroke="#000000" stroke-width="2.4" stroke-dasharray="5,3"/>
+  <line x1="244" y1="100" x2="268" y2="124" class="ep-accent-stroke" stroke="#000000" stroke-width="2.0"/>
+  <line x1="268" y1="100" x2="244" y2="124" class="ep-accent-stroke" stroke="#000000" stroke-width="2.0"/>
+
+  <!-- 2. Mid-septum risk zone -->
+  <circle cx="222" cy="166" r="16" fill="#ffffff" class="ep-accent-stroke" stroke="#000000" stroke-width="2.2" stroke-dasharray="4,3"/>
+  <line x1="213" y1="157" x2="231" y2="175" class="ep-accent-stroke" stroke="#000000" stroke-width="1.8"/>
+  <line x1="231" y1="157" x2="213" y2="175" class="ep-accent-stroke" stroke="#000000" stroke-width="1.8"/>
+
+  <!-- 3. CS Roof (superior rim of CS) -->
+  <path d="M 92 238 C 108 228, 128 228, 144 238" fill="none" class="ep-accent-stroke" stroke="#000000" stroke-width="3.2" stroke-dasharray="4,3"/>
+
+  <!-- Labels (6 schema labels) -->
+  <rect x="9.0" y="9.6" width="98.0" height="21.0" rx="3" fill="#ffffff" class="ep-muted-stroke" stroke="#555555" stroke-width="1.2"/><text x="58.0" y="26.0" fill="#444444" class="ep-svg-label ep-muted-fill" style="font-size:12px;font-weight:700;text-anchor:middle;">避让房室传导轴</text>
+
+  <line x1="268" y1="90" x2="294" y2="56" class="ep-ink-stroke" stroke="#000000" stroke-width="1.3"/>
+  <rect x="271.0" y="36.0" width="50.0" height="18.0" rx="3" fill="#ffffff"/><text x="296.0" y="50.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:13.5px;font-weight:700;text-anchor:middle;">三角尖</text>
+
+  <line x1="236" y1="104" x2="172" y2="76" class="ep-accent-stroke" stroke="#000000" stroke-width="1.3"/>
+  <rect x="81.0" y="58.0" width="106.0" height="18.0" rx="3" fill="#ffffff"/><text x="134.0" y="72.0" fill="#000000" class="ep-svg-label ep-accent-fill" style="font-size:12.5px;font-weight:800;text-anchor:middle;">His 记录区 (高危)</text>
+
+  <line x1="206" y1="162" x2="148" y2="136" class="ep-accent-stroke" stroke="#000000" stroke-width="1.3"/>
+  <rect x="59.0" y="118.0" width="94.0" height="18.0" rx="3" fill="#ffffff"/><text x="106.0" y="132.0" fill="#000000" class="ep-svg-label ep-accent-fill" style="font-size:12.5px;font-weight:700;text-anchor:middle;">中间隔 (慎融)</text>
+
+  <line x1="116" y1="232" x2="72" y2="196" class="ep-accent-stroke" stroke="#000000" stroke-width="1.3"/>
+  <rect x="18.0" y="176.0" width="92.0" height="18.0" rx="3" fill="#ffffff"/><text x="64.0" y="190.0" fill="#000000" class="ep-svg-label ep-accent-fill" style="font-size:12.5px;font-weight:700;text-anchor:middle;">CS 顶部 (避让)</text>
+
+  <line x1="112" y1="282" x2="88" y2="314" class="ep-ink-stroke" stroke="#000000" stroke-width="1.3"/>
+  <rect x="58.0" y="316.0" width="52.0" height="18.0" rx="3" fill="#ffffff"/><text x="84.0" y="330.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:13.5px;font-weight:700;text-anchor:middle;">CS 口</text>
+
+  <line x1="204" y1="252" x2="216" y2="296" class="ep-ink-stroke" stroke="#000000" stroke-width="1.3"/>
+  <rect x="162.0" y="296.8" width="124.0" height="22.0" rx="3" fill="#ffffff" class="ep-hl-area ep-ink-stroke" stroke="#000000" stroke-width="1.2"/><g class="ep-hatch-group"><line x1="286.0" y1="299.8" x2="283.0" y2="296.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="286.0" y1="305.8" x2="277.0" y2="296.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="286.0" y1="311.8" x2="271.0" y2="296.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="286.0" y1="317.8" x2="265.0" y2="296.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="259.0" y1="296.8" x2="281.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="253.0" y1="296.8" x2="275.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="247.0" y1="296.8" x2="269.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="241.0" y1="296.8" x2="263.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="235.0" y1="296.8" x2="257.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="229.0" y1="296.8" x2="251.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="223.0" y1="296.8" x2="245.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="217.0" y1="296.8" x2="239.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="211.0" y1="296.8" x2="233.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="205.0" y1="296.8" x2="227.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="199.0" y1="296.8" x2="221.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="193.0" y1="296.8" x2="215.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="187.0" y1="296.8" x2="209.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="181.0" y1="296.8" x2="203.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="175.0" y1="296.8" x2="197.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="169.0" y1="296.8" x2="191.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="163.0" y1="296.8" x2="185.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="162.0" y1="301.8" x2="179.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="162.0" y1="307.8" x2="173.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="162.0" y1="313.8" x2="167.0" y2="318.8" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/></g><rect x="166.0" y="298.8" width="116.0" height="18.0" rx="2" fill="#ffffff" class="ep-hl-label-bg"/><text x="224.0" y="314.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:12.5px;font-weight:700;text-anchor:middle;">常用安全靶区 (偏下)</text>
+</svg>

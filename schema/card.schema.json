@@ -73,6 +73,11 @@
           "type": "string",
           "enum": ["intro", "bridge"]
         },
+        "tier": {
+          "type": "string",
+          "enum": ["basic", "advanced"],
+          "default": "basic"
+        },
         "tags": {
           "type": "array",
           "minItems": 2,
@@ -360,6 +365,7 @@
           }
         },
         "quadrant_summary": { "type": "string", "minLength": 4, "maxLength": 22 },
+        "split_note": { "type": "string", "minLength": 4, "maxLength": 34 },
         "expanded": {
           "type": "object",
           "additionalProperties": false,
@@ -448,6 +454,7 @@
           }
         },
         "quadrant_summary": { "type": "string", "minLength": 4, "maxLength": 55 },
+        "split_note": { "type": "string", "minLength": 4, "maxLength": 85 },
         "expanded": {
           "type": "object",
           "additionalProperties": false,

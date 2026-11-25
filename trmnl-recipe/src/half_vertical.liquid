@@ -7,7 +7,7 @@
       <h1 class="ep-title" style="font-size:21px;">{{ title }}</h1>
       <div class="ep-insight" style="font-size:14.5px;">{{ core_insight }}</div>
     </div>
-    <ul class="ep-bullets">
+    <ul class="ep-bullets ep-bullets--stack">
       {% for b in bullets limit:2 %}
         <li class="ep-bullet"><span class="ep-bullet-label">{{ b.label }}</span><span class="ep-bullet-text">{{ b.text }}</span></li>
       {% endfor %}
@@ -16,6 +16,6 @@
   </div>
   <div class="title_bar ep-title-bar">
     <span class="title">心脏电生理 · {{ category_label }}</span>
-    <span class="instance">{{ card_index }}/{{ card_total }}</span>
+    <span class="instance">{{ tier_label }} · {{ card_index }}/{{ card_total }}</span>
   </div>
 </div>

@@ -1,118 +1,170 @@
 <div class="view view--full ep-view">
-  <div class="layout ep-layout">
-    {% if template == 'split_left' %}
-      <div class="ep-tpl--split_left">
-        <div class="ep-diagram-box">{{ svg }}</div>
-        <div class="ep-split-text">
-          <div class="ep-split-main">
-            <div class="ep-header">
-              <div class="ep-header-top">
-                <div class="ep-title-row">
-                  <span class="ep-kicker">{{ kicker }}</span>
-                  <h1 class="ep-title">{{ title }}</h1>
-                </div>
-                {% if key_metrics.size > 0 %}
-                  <div class="ep-metrics">
-                    {% for m in key_metrics %}
-                      <span class="ep-metric-pill"><span class="ep-metric-name">{{ m.name }}</span><span class="ep-metric-value">{{ m.value }}</span></span>
-                    {% endfor %}
-                  </div>
-                {% endif %}
-              </div>
-              <div class="ep-insight">{{ core_insight }}</div>
+  <div class="layout layout--col ep-layout">
+    {% if template == 'split_left' or template == 'split_right' %}
+      <div class="ep-tpl--{{ template }} flex flex--col w--full h--full">
+        <div class="flex flex--row portrait:flex--col ep-split-main-row w--full">
+          {% if template == 'split_left' %}
+            <div class="ep-diagram-box ep-split-diagram">{{ svg }}</div>
+          {% endif %}
+          <div class="ep-split-text">
+            <div class="ep-split-main">
+              <div class="ep-header">
+  <div class="ep-header-top">
+    <div class="ep-title-row">
+      <span class="ep-kicker">{{ kicker }}</span>
+      <h1 class="ep-title">{{ title }}</h1>
+    </div>
+    {% if key_metrics.size > 0 %}
+      <div class="ep-metrics">
+        {% for m in key_metrics limit:2 %}
+          <span class="ep-metric-pill"><span class="ep-metric-name">{{ m.name }}</span><span class="ep-metric-value">{{ m.value }}</span></span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="ep-insight">{{ core_insight }}</div>
+</div>
+              <ul class="ep-bullets ep-bullets--stack">
+                {% for b in bullets %}
+                  <li class="ep-bullet"><span class="ep-bullet-label">{{ b.label }}</span><span class="ep-bullet-text">{{ b.text }}</span></li>
+                {% endfor %}
+              </ul>
+              {% if split_note != blank %}
+                <div class="ep-split-note"><span class="ep-split-note-badge">临床锚点</span><span>{{ split_note }}</span></div>
+              {% endif %}
             </div>
-            <ul class="ep-bullets">
-              {% for b in bullets %}
-                <li class="ep-bullet"><span class="ep-bullet-label">{{ b.label }}</span><span class="ep-bullet-text">{{ b.text }}</span></li>
-              {% endfor %}
-            </ul>
+            <div class="ep-split-footer">
+              {% if legend_mode == 'koch' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-solid"></i>实线：隔瓣附着</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：Todaro 腱</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：传导轴邻域</span>
+                </div>
+              {% elsif legend_mode == 'his_purkinje' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：纤维体</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-solid"></i>实线：His 与主干</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>虚线：远端束支网</span>
+                </div>
+              {% elsif legend_mode == 'cs_annulus' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：左房室沟</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：冠状窦走向</span>
+                </div>
+              {% elsif legend_mode == 'reentry' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>叉/虚线：单向阻滞处</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：慢传导区</span>
+                </div>
+              {% elsif legend_mode == 'excitable_gap' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：兴奋间隙</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-solid"></i>斜纹环：不应尾</span>
+                </div>
+              {% elsif legend_mode == 'ablation_axis' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：常用安全靶区</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/叉标：传导轴高危区</span>
+                </div>
+              {% endif %}
+              <div class="ep-callout"><span class="ep-callout-badge">{{ callout_badge }}</span><span>{{ callout_text }}</span></div>
+            </div>
           </div>
-          <div class="ep-split-footer">
-            {% if show_anatomy_legend %}
-              <div class="ep-mini-legend">
-                <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-solid"></i>实线：隔瓣附着</span>
-                <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：Todaro 腱</span>
-                <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：传导轴邻域</span>
-              </div>
-            {% endif %}
-            <div class="ep-callout"><span class="ep-callout-badge">{{ callout_badge }}</span><span>{{ callout_text }}</span></div>
-          </div>
+          {% if template == 'split_right' %}
+            <div class="ep-diagram-box ep-split-diagram">{{ svg }}</div>
+          {% endif %}
         </div>
         {% if clinical_context != blank %}
-          <div class="ep-x-section">
-            <div class="ep-x-context"><strong>进阶临床视角：</strong>{{ clinical_context }}</div>
-            {% if mini_table %}
-              <table class="ep-x-table">
-                <thead><tr>{% for h in mini_table.headers %}<th>{{ h }}</th>{% endfor %}</tr></thead>
-                <tbody>
-                  {% for row in mini_table.rows %}
-                    <tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-            {% endif %}
-            <div class="ep-x-ref">
-              <span>TRMNL X 扩展卡面（10.3" 4-bit 实色灰阶）</span>
-              <span>出处：{{ reference_note }}</span>
-            </div>
-          </div>
-        {% endif %}
+  <div class="ep-x-section hidden lg:flex">
+    <div class="ep-x-context"><strong>进阶临床视角：</strong>{{ clinical_context }}</div>
+    {% if mini_table %}
+      <table class="ep-x-table">
+        <thead><tr>{% for h in mini_table.headers %}<th>{{ h }}</th>{% endfor %}</tr></thead>
+        <tbody>
+          {% for row in mini_table.rows %}
+            <tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+    <div class="ep-x-ref">
+      <span>TRMNL X 扩展卡面（{{ tier_label }} · 10.3" 4-bit）</span>
+      <span>出处：{{ reference_note }}</span>
+    </div>
+  </div>
+{% endif %}
       </div>
     {% else %}
       {% if template == 'compare_two' %}
         {% assign wrap_cls = 'ep-tpl--compare_two' %}
-        {% assign diag_cls = 'ep-diagram-box ep-compare-diagram' %}
+        {% if bullets.size == 3 %}
+          {% assign diag_cls = 'ep-diagram-box ep-compare-diagram ep-compare-diagram--compact' %}
+        {% else %}
+          {% assign diag_cls = 'ep-diagram-box ep-compare-diagram' %}
+        {% endif %}
         {% assign body_cls = 'ep-compare-body' %}
       {% else %}
         {% assign wrap_cls = 'ep-tpl--top_banner' %}
-        {% assign diag_cls = 'ep-diagram-box ep-banner-diagram' %}
+        {% if bullets.size == 3 %}
+          {% assign diag_cls = 'ep-diagram-box ep-banner-diagram ep-banner-diagram--compact' %}
+        {% else %}
+          {% assign diag_cls = 'ep-diagram-box ep-banner-diagram' %}
+        {% endif %}
         {% assign body_cls = 'ep-banner-body' %}
       {% endif %}
-      <div class="{{ wrap_cls }}">
+      <div class="{{ wrap_cls }} flex flex--col w--full h--full">
         <div class="ep-header">
-          <div class="ep-header-top">
-            <div class="ep-title-row">
-              <span class="ep-kicker">{{ kicker }}</span>
-              <h1 class="ep-title">{{ title }}</h1>
-            </div>
-            {% if key_metrics.size > 0 %}
-              <div class="ep-metrics">
-                {% for m in key_metrics %}
-                  <span class="ep-metric-pill"><span class="ep-metric-name">{{ m.name }}</span><span class="ep-metric-value">{{ m.value }}</span></span>
-                {% endfor %}
-              </div>
-            {% endif %}
-          </div>
-          <div class="ep-insight">{{ core_insight }}</div>
-        </div>
+  <div class="ep-header-top">
+    <div class="ep-title-row">
+      <span class="ep-kicker">{{ kicker }}</span>
+      <h1 class="ep-title">{{ title }}</h1>
+    </div>
+    {% if key_metrics.size > 0 %}
+      <div class="ep-metrics">
+        {% for m in key_metrics limit:2 %}
+          <span class="ep-metric-pill"><span class="ep-metric-name">{{ m.name }}</span><span class="ep-metric-value">{{ m.value }}</span></span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="ep-insight">{{ core_insight }}</div>
+</div>
         <div class="{{ diag_cls }}">{{ svg }}</div>
         <div class="{{ body_cls }}">
-          <ul class="ep-bullets ep-bullets--row">
-            {% for b in bullets %}
-              <li class="ep-bullet"><span class="ep-bullet-label">{{ b.label }}</span><span class="ep-bullet-text">{{ b.text }}</span></li>
-            {% endfor %}
-          </ul>
+          {% if bullets.size == 3 %}
+            <ul class="ep-bullets ep-bullets--row3 grid grid--cols-3 w--full">
+              {% for b in bullets %}
+                <li class="ep-bullet"><span class="ep-bullet-label">{{ b.label }}</span><span class="ep-bullet-text">{{ b.text }}</span></li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <ul class="ep-bullets ep-bullets--row2 grid grid--cols-2 w--full">
+              {% for b in bullets %}
+                <li class="ep-bullet"><span class="ep-bullet-label">{{ b.label }}</span><span class="ep-bullet-text">{{ b.text }}</span></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
           <div class="ep-callout"><span class="ep-callout-badge">{{ callout_badge }}</span><span>{{ callout_text }}</span></div>
         </div>
         {% if clinical_context != blank %}
-          <div class="ep-x-section">
-            <div class="ep-x-context"><strong>进阶临床视角：</strong>{{ clinical_context }}</div>
-            {% if mini_table %}
-              <table class="ep-x-table">
-                <thead><tr>{% for h in mini_table.headers %}<th>{{ h }}</th>{% endfor %}</tr></thead>
-                <tbody>
-                  {% for row in mini_table.rows %}
-                    <tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-            {% endif %}
-            <div class="ep-x-ref">
-              <span>TRMNL X 扩展卡面（10.3" 4-bit 实色灰阶）</span>
-              <span>出处：{{ reference_note }}</span>
-            </div>
-          </div>
-        {% endif %}
+  <div class="ep-x-section hidden lg:flex">
+    <div class="ep-x-context"><strong>进阶临床视角：</strong>{{ clinical_context }}</div>
+    {% if mini_table %}
+      <table class="ep-x-table">
+        <thead><tr>{% for h in mini_table.headers %}<th>{{ h }}</th>{% endfor %}</tr></thead>
+        <tbody>
+          {% for row in mini_table.rows %}
+            <tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+    <div class="ep-x-ref">
+      <span>TRMNL X 扩展卡面（{{ tier_label }} · 10.3" 4-bit）</span>
+      <span>出处：{{ reference_note }}</span>
+    </div>
+  </div>
+{% endif %}
       </div>
     {% endif %}
   </div>
@@ -121,7 +173,7 @@
     <svg class="ep-title-icon" viewBox="0 0 24 24">
       <polyline points="2 12 6 12 8.5 5 11.5 19 14.5 9 17 12 22 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="title">心脏电生理卡片 · {{ category_label }}</span>
-    <span class="instance">{{ difficulty_label }} · {{ card_index }}/{{ card_total }} · {{ updated_at }}</span>
+    <span class="title">心脏电生理 · {{ category_label }}</span>
+    <span class="instance">{{ tier_label }} · {{ card_index }}/{{ card_total }} · {{ updated_at }}</span>
   </div>
 </div>
