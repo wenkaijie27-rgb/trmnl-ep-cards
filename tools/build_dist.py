@@ -21,10 +21,13 @@ from pathlib import Path
 from generate_svgs import render_svg
 
 ROOT = Path(__file__).resolve().parent.parent
-DECK_PATH = ROOT / "decks" / "basic-24.json"
+BASIC_DECK_PATH = ROOT / "decks" / "basic-24.json"
+ADV_DECK_PATH = ROOT / "decks" / "advanced-24.json"
 CSS_PATH = ROOT / "shared" / "ep_cards.css"
 DIST_DIR = ROOT / "dist"
+DIST_ALL_DIR = DIST_DIR / "all"
 DIST_BASIC_DIR = DIST_DIR / "basic"
+DIST_ADV_DIR = DIST_DIR / "advanced"
 DIST_CARDS_DIR = DIST_DIR / "cards"
 TERMINUS_DIR = ROOT / "terminus"
 RECIPE_SRC_DIR = ROOT / "trmnl-recipe" / "src"
@@ -89,6 +92,18 @@ def enrich_card(raw_card: dict, index: int, total: int, generated_at: str) -> di
         legend_mode = "excitable_gap"
     elif raw_card["id"] == "ablation-avoid-conduction-axis":
         legend_mode = "ablation_axis"
+    elif raw_card["id"] == "anatomy-inferoseptal-recess":
+        legend_mode = "inferoseptal_recess"
+    elif raw_card["id"] == "anatomy-marshall-cs-sleeve":
+        legend_mode = "marshall_sleeve"
+    elif raw_card["id"] == "anatomy-left-bundle-variants":
+        legend_mode = "left_bundle_variants"
+    elif raw_card["id"] == "wpw-mahaim-insertions":
+        legend_mode = "mahaim_insertions"
+    elif raw_card["id"] == "ablation-para-hisian-target":
+        legend_mode = "para_hisian_target"
+    elif raw_card["id"] == "ablation-coronary-vein-distance":
+        legend_mode = "coronary_vein_distance"
 
     return {
         "id": raw_card["id"],
@@ -226,6 +241,36 @@ def _full_body_liquid(var_prefix: str) -> str:
                   <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：常用安全靶区</span>
                   <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/叉标：传导轴高危区</span>
                 </div>
+              {{% elsif {p}legend_mode == 'inferoseptal_recess' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：左室隐窝 (腔内)</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：房室传导轴</span>
+                </div>
+              {{% elsif {p}legend_mode == 'marshall_sleeve' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：Marshall 肌束</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：肌性接入点</span>
+                </div>
+              {{% elsif {p}legend_mode == 'left_bundle_variants' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：间隔纤维变异</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：后间隔标测区</span>
+                </div>
+              {{% elsif {p}legend_mode == 'mahaim_insertions' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：常见房束支旁路</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：远端右束支接入</span>
+                </div>
+              {{% elsif {p}legend_mode == 'para_hisian_target' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：正常传导轴</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：靶端 His 观察窗</span>
+                </div>
+              {{% elsif {p}legend_mode == 'coronary_vein_distance' %}}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：邻近冠状动脉</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：最近分离距离</span>
+                </div>
               {{% endif %}}
               <div class="ep-callout"><span class="ep-callout-badge">{{{{ {p}callout_badge }}}}</span><span>{{{{ {p}callout_text }}}}</span></div>
             </div>
@@ -283,7 +328,7 @@ def _full_body_liquid(var_prefix: str) -> str:
       <polyline points="2 12 6 12 8.5 5 11.5 19 14.5 9 17 12 22 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <span class="title">心脏电生理 · {{{{ {p}category_label }}}}</span>
-    <span class="instance">{{{{ {p}tier_label }}}} · {{{{ {p}card_index }}}}/{{{{ {p}card_total }}}} · {{{{ {p}updated_at }}}}</span>
+    <span class="instance"><span class="ep-tier-tag ep-tier-tag--{{{{ {p}tier }}}}">{{{{ {p}tier_label }}}}</span><span>{{{{ {p}card_index }}}}/{{{{ {p}card_total }}}} · {{{{ {p}updated_at }}}}</span></span>
   </div>
 </div>"""
 
@@ -293,7 +338,7 @@ def build_terminus_files(css_text: str) -> None:
     config_yml = """version: "0.84.0"
 name: "ep_cards"
 label: "心脏电生理知识卡"
-description: "面向医学生的心脏电生理知识卡片（基础组 24 卡 + TRMNL Framework 3.4 + 语义内联 SVG）"
+description: "面向医学生与青年EP医师的心脏电生理知识卡片（基础组 24 卡 + 进阶组 24 卡 = 48 卡）"
 mode: "text"
 kind: "poll"
 tags: []
@@ -336,19 +381,20 @@ dark_mode: 'no'
 static_data: ''
 polling_verb: get
 framework_version: latest
-polling_url: https://wenkaijie27-rgb.github.io/trmnl-ep-cards/{{ trmnl.plugin_settings.custom_fields_values.tier | default: 'basic' }}/current.json
+polling_url: https://wenkaijie27-rgb.github.io/trmnl-ep-cards/{{ trmnl.plugin_settings.custom_fields_values.tier | default: 'all' }}/current.json
 polling_headers: ''
 name: Cardiac EP Knowledge Cards
-description: Illustrated cardiac electrophysiology learning cards (Foundations & Advanced tiers) for TRMNL 1-bit, 2-bit, TRMNL X 4-bit, and 4-color BWRY screens.
+description: Illustrated cardiac electrophysiology learning cards (48 cards: Foundations + Advanced tiers) for TRMNL 1-bit, 2-bit, TRMNL X 4-bit, and 4-color BWRY screens.
 refresh_interval: 60
 custom_fields:
   - keyname: tier
     field_type: select
     name: Deck Tier / 知识层级
-    default: basic
+    default: all
     options:
-      - Foundations (基础组 24卡): basic
-      - Advanced (进阶组 - 即将上线): advanced
+      - All Tiers (全部 48 卡): all
+      - Foundations (基础组 24 卡): basic
+      - Advanced (进阶组 24 卡): advanced
 """
     (RECIPE_SRC_DIR / "settings.yml").write_text(settings_yml, encoding="utf-8")
     (RECIPE_SRC_DIR / "shared.liquid").write_text(f"<style>\n{css_text.strip()}\n</style>\n", encoding="utf-8")
@@ -425,49 +471,77 @@ custom_fields:
     print(f"Built TRMNL Recipe in: {RECIPE_SRC_DIR}")
 
 
+def _write_tier_outputs(
+    out_dir: Path,
+    deck_id: str,
+    tier_name: str,
+    schema_version: str,
+    raw_cards: list[dict],
+    now_iso: str,
+    now_hhmm: str,
+    slot_hour: int,
+) -> tuple[list[dict], dict]:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    total = len(raw_cards)
+    enriched = [enrich_card(c, i + 1, total, now_hhmm) for i, c in enumerate(raw_cards)]
+    payload = {
+        "schema_version": schema_version,
+        "deck_id": deck_id,
+        "tier": tier_name,
+        "generated_at": now_iso,
+        "count": total,
+        "cards": enriched,
+    }
+    (out_dir / "cards.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    current_card = enriched[slot_hour % total]
+    (out_dir / "current.json").write_text(json.dumps(current_card, ensure_ascii=False, indent=2), encoding="utf-8")
+    return enriched, current_card
+
+
 def main() -> None:
     DIST_DIR.mkdir(parents=True, exist_ok=True)
-    DIST_BASIC_DIR.mkdir(parents=True, exist_ok=True)
     DIST_CARDS_DIR.mkdir(parents=True, exist_ok=True)
 
-    deck = json.loads(DECK_PATH.read_text(encoding="utf-8"))
+    basic_deck = json.loads(BASIC_DECK_PATH.read_text(encoding="utf-8"))
+    adv_deck = json.loads(ADV_DECK_PATH.read_text(encoding="utf-8"))
     css_text = CSS_PATH.read_text(encoding="utf-8")
 
     now_utc = dt.datetime.now(dt.timezone.utc)
     now_iso = now_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
     now_hhmm = (now_utc + dt.timedelta(hours=8)).strftime("%m-%d %H:%M")
+    slot_hour = int(now_utc.timestamp() // 3600)
 
-    raw_cards = deck["cards"]
-    total = len(raw_cards)
-    enriched = [enrich_card(c, i + 1, total, now_hhmm) for i, c in enumerate(raw_cards)]
+    basic_raw = basic_deck["cards"]
+    adv_raw = adv_deck["cards"]
+    # Interleave or concatenate? Keep basic (1..24) followed by advanced (1..24 -> 25..48) deterministically,
+    # and assign tier-specific 1..24 indices in /basic/ & /advanced/!
+    all_raw = basic_raw + adv_raw
 
-    cards_payload = {
-        "schema_version": deck["schema_version"],
-        "deck_id": deck["deck_id"],
-        "tier": "basic",
-        "generated_at": now_iso,
-        "count": total,
-        "cards": enriched,
-    }
-    cards_json_str = json.dumps(cards_payload, ensure_ascii=False, indent=2)
-    (DIST_DIR / "cards.json").write_text(cards_json_str, encoding="utf-8")
-    (DIST_BASIC_DIR / "cards.json").write_text(cards_json_str, encoding="utf-8")
+    all_enriched, all_current = _write_tier_outputs(
+        DIST_DIR, "ep-cards-all-48", "all", basic_deck["schema_version"], all_raw, now_iso, now_hhmm, slot_hour
+    )
+    _write_tier_outputs(
+        DIST_ALL_DIR, "ep-cards-all-48", "all", basic_deck["schema_version"], all_raw, now_iso, now_hhmm, slot_hour
+    )
+    basic_enriched, _ = _write_tier_outputs(
+        DIST_BASIC_DIR, basic_deck["deck_id"], "basic", basic_deck["schema_version"], basic_raw, now_iso, now_hhmm, slot_hour
+    )
+    adv_enriched, _ = _write_tier_outputs(
+        DIST_ADV_DIR, adv_deck["deck_id"], "advanced", adv_deck["schema_version"], adv_raw, now_iso, now_hhmm, slot_hour
+    )
 
-    for item in enriched:
+    for item in all_enriched:
         (DIST_CARDS_DIR / f"{item['id']}.json").write_text(
             json.dumps(item, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
 
-    slot = int(now_utc.timestamp() // 3600) % total
-    current_card = enriched[slot]
-    current_str = json.dumps(current_card, ensure_ascii=False, indent=2)
-    (DIST_DIR / "current.json").write_text(current_str, encoding="utf-8")
-    (DIST_BASIC_DIR / "current.json").write_text(current_str, encoding="utf-8")
-
     build_terminus_files(css_text)
     build_trmnl_recipe(css_text)
-    print(f"Built dist/cards.json ({total} cards) and dist/current.json (active={current_card['id']})")
+    print(
+        f"Built dist/cards.json ({len(all_enriched)} cards: {len(basic_enriched)} basic + {len(adv_enriched)} advanced) "
+        f"and dist/current.json (active={all_current['id']})"
+    )
 
 
 if __name__ == "__main__":

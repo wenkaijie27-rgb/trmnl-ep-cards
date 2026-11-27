@@ -1,0 +1,34 @@
+<svg class="ep-svg ep-svg--banner" viewBox="0 0 740 205" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="长RP窄QRS心动过速三类来源与慢返回机制对比梯形图">
+  <rect x="0" y="0" width="740" height="205" fill="#ffffff"/>
+  <text x="166" y="16" fill="#555555" class="ep-svg-label ep-muted-fill" style="font-size:11px;font-weight:700;text-anchor:middle;">心房 / 房波源</text>
+  <text x="317" y="16" fill="#555555" class="ep-svg-label ep-muted-fill" style="font-size:11px;font-weight:700;text-anchor:middle;">房室结 / 传导链路</text>
+  <text x="479" y="16" fill="#555555" class="ep-svg-label ep-muted-fill" style="font-size:11px;font-weight:700;text-anchor:middle;">心室</text>
+    <g transform="translate(0, 48)">
+    <rect x="10" y="-22" width="720" height="44" rx="6" fill="#ffffff" class="ep-muted-stroke" stroke="#555555" stroke-width="1.1"/>
+    <text x="22" y="4" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:13px;font-weight:800;">1. 局灶房速</text>
+    <circle cx="166" cy="0" r="10" fill="#ffffff" class="ep-hl-area ep-ink-stroke" stroke="#000000" stroke-width="2.0"/><g class="ep-hatch-group"><line x1="159.0" y1="-4.8" x2="161.2" y2="-7.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="159.0" y1="-0.2" x2="165.8" y2="-7.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="159.0" y1="4.2" x2="170.2" y2="-7.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="173.0" y1="-5.2" x2="160.8" y2="7.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="173.0" y1="-0.8" x2="165.2" y2="7.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="173.0" y1="3.8" x2="169.8" y2="7.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/></g>
+    <path d="M 178 0 L 254 0" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="2.2"/><polygon points="258.0,0.0 250.5,3.4 250.5,-3.4" class="ep-ink-fill" fill="#000000"/><rect x="262" y="-12" width="110" height="24" rx="5" fill="#ffffff" class="ep-muted-stroke" stroke="#555555" stroke-width="1.3"/><text x="317" y="4" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:11px;font-weight:700;text-anchor:middle;">顺行结下传</text><path d="M 374 0 L 452 0" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="2.2"/><polygon points="456.0,0.0 448.5,3.4 448.5,-3.4" class="ep-ink-fill" fill="#000000"/>
+    <rect x="460" y="-12" width="38" height="24" rx="4" fill="#ffffff" class="ep-ink-stroke" stroke="#000000" stroke-width="1.6"/>
+    <text x="479" y="4" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:11px;font-weight:800;text-anchor:middle;">QRS</text>
+    <text x="720" y="4" fill="#4d4d4d" class="ep-svg-label ep-muted-fill" style="font-size:11px;font-weight:600;text-anchor:end;">房内首放 → 依下传定 RP</text>
+  </g>
+    <g transform="translate(0, 102)">
+    <rect x="10" y="-22" width="720" height="44" rx="6" fill="#ffffff" class="ep-muted-stroke" stroke="#555555" stroke-width="1.1"/>
+    <text x="22" y="4" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:13px;font-weight:800;">2. 结区折返</text>
+    <circle cx="166" cy="0" r="8" fill="#ffffff" class="ep-ink-stroke" stroke="#000000" stroke-width="1.8"/>
+    <rect x="258" y="-14" width="118" height="28" rx="12" fill="#ffffff" class="ep-ink-stroke" stroke="#000000" stroke-width="1.8"/><text x="317" y="4" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:11px;font-weight:800;text-anchor:middle;">结内折返环</text><path d="M 256 -4 L 180 -4" fill="none" class="ep-accent-stroke" stroke="#000000" stroke-width="2.8" stroke-dasharray="5,3"/><polygon points="176.0,-4.0 183.5,-7.5 183.5,-0.5" class="ep-accent-fill" fill="#000000"/><path d="M 378 0 L 452 0" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="2.2"/><polygon points="456.0,0.0 448.5,3.4 448.5,-3.4" class="ep-ink-fill" fill="#000000"/>
+    <rect x="460" y="-12" width="38" height="24" rx="4" fill="#ffffff" class="ep-ink-stroke" stroke="#000000" stroke-width="1.6"/>
+    <text x="479" y="4" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:11px;font-weight:800;text-anchor:middle;">QRS</text>
+    <text x="720" y="4" fill="#4d4d4d" class="ep-svg-label ep-muted-fill" style="font-size:11px;font-weight:600;text-anchor:end;">结内慢径逆传，心室在环外</text>
+  </g>
+    <g transform="translate(0, 156)">
+    <rect x="10" y="-22" width="720" height="44" rx="6" fill="#ffffff" class="ep-muted-stroke" stroke="#555555" stroke-width="1.1"/>
+    <text x="22" y="4" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:13px;font-weight:800;">3. 旁路折返</text>
+    <circle cx="166" cy="0" r="8" fill="#ffffff" class="ep-ink-stroke" stroke="#000000" stroke-width="1.8"/>
+    <path d="M 176 -7 L 452 -7" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="2.2"/><polygon points="456.0,-7.0 448.5,-3.6 448.5,-10.4" class="ep-ink-fill" fill="#000000"/><rect x="262" y="-16" width="110" height="17" rx="4" fill="#ffffff" class="ep-muted-stroke" stroke="#555555" stroke-width="1.2"/><text x="317" y="-4" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:10.5px;font-weight:700;text-anchor:middle;">正常结下传</text><path d="M 456 10 L 180 10" fill="none" class="ep-accent-stroke" stroke="#000000" stroke-width="2.8" stroke-dasharray="6,3"/><polygon points="176.0,10.0 183.5,6.5 183.5,13.5" class="ep-accent-fill" fill="#000000"/><rect x="270.0" y="3.1" width="94.0" height="14.0" rx="3" fill="#ffffff"/><text x="317.0" y="14.0" fill="#000000" class="ep-svg-label ep-accent-fill" style="font-size:10.5px;font-weight:800;text-anchor:middle;">递减旁路慢返回</text>
+    <rect x="460" y="-12" width="38" height="24" rx="4" fill="#ffffff" class="ep-ink-stroke" stroke="#000000" stroke-width="1.6"/>
+    <text x="479" y="4" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:11px;font-weight:800;text-anchor:middle;">QRS</text>
+    <text x="720" y="4" fill="#4d4d4d" class="ep-svg-label ep-muted-fill" style="font-size:11px;font-weight:600;text-anchor:end;">经结下传心室，慢旁路回房</text>
+  </g>
+  <text x="370" y="196" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:11.5px;font-weight:700;text-anchor:middle;">黄/网纹：房波源 · 粗虚/红线：慢返回通路 · 体表长 RP 还需结合腔内时序验证</text>
+</svg>

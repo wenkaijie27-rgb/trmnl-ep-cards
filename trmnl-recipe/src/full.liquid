@@ -66,6 +66,36 @@
                   <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：常用安全靶区</span>
                   <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/叉标：传导轴高危区</span>
                 </div>
+              {% elsif legend_mode == 'inferoseptal_recess' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：左室隐窝 (腔内)</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：房室传导轴</span>
+                </div>
+              {% elsif legend_mode == 'marshall_sleeve' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：Marshall 肌束</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：肌性接入点</span>
+                </div>
+              {% elsif legend_mode == 'left_bundle_variants' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：间隔纤维变异</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：后间隔标测区</span>
+                </div>
+              {% elsif legend_mode == 'mahaim_insertions' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：常见房束支旁路</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：远端右束支接入</span>
+                </div>
+              {% elsif legend_mode == 'para_hisian_target' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：正常传导轴</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：靶端 His 观察窗</span>
+                </div>
+              {% elsif legend_mode == 'coronary_vein_distance' %}
+                <div class="ep-mini-legend">
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-accent"></i>红/虚线：邻近冠状动脉</span>
+                  <span class="ep-leg-item"><i class="ep-leg-swatch ep-leg-hl"></i>黄/网纹：最近分离距离</span>
+                </div>
               {% endif %}
               <div class="ep-callout"><span class="ep-callout-badge">{{ callout_badge }}</span><span>{{ callout_text }}</span></div>
             </div>
@@ -174,6 +204,6 @@
       <polyline points="2 12 6 12 8.5 5 11.5 19 14.5 9 17 12 22 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <span class="title">心脏电生理 · {{ category_label }}</span>
-    <span class="instance">{{ tier_label }} · {{ card_index }}/{{ card_total }} · {{ updated_at }}</span>
+    <span class="instance"><span class="ep-tier-tag ep-tier-tag--{{ tier }}">{{ tier_label }}</span><span>{{ card_index }}/{{ card_total }} · {{ updated_at }}</span></span>
   </div>
 </div>

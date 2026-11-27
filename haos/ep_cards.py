@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""HAOS TRMNL Custom Serve generator for Cardiac EP Knowledge Cards."""
+"""HAOS TRMNL Custom Serve generator for Cardiac EP Knowledge Cards (Basic + Advanced tiers)."""
 
 from __future__ import annotations
 
@@ -37,7 +37,44 @@ def _load_state() -> dict:
                 return data
         except Exception:
             pass
-    return {"index": 0, "last_updated": None}
+    return {"index": 0, "basic_index": 0, "advanced_index": 0, "last_updated": None}
+
+
+def _write_tier_slice(
+    out_dir: Path,
+    base_deck: dict,
+    tier_name: str,
+    cards: list[dict],
+    idx_key: str,
+    state: dict,
+    advance: bool,
+    now_local: str,
+) -> tuple[int, dict]:
+    total = len(cards)
+    idx = int(state.get(idx_key, 0)) % total
+    if advance and state.get("last_updated") is not None:
+        idx = (idx + 1) % total
+
+    reindexed = []
+    for i, item in enumerate(cards):
+        c = dict(item)
+        c["card_index"] = i + 1
+        c["card_total"] = total
+        c["updated_at"] = now_local
+        reindexed.append(c)
+
+    tier_deck = {
+        "schema_version": base_deck.get("schema_version", "1.0.0"),
+        "deck_id": f"ep-cards-{tier_name}-{total}",
+        "tier": tier_name,
+        "generated_at": base_deck.get("generated_at", ""),
+        "count": total,
+        "cards": reindexed,
+    }
+    _atomic_write_json(out_dir / "cards.json", tier_deck)
+    active = reindexed[idx]
+    _atomic_write_json(out_dir / "card.json", active)
+    return idx, active
 
 
 def generate(advance: bool = True) -> dict:
@@ -49,31 +86,39 @@ def generate(advance: bool = True) -> dict:
     if not cards:
         raise ValueError("EP cards deck is empty")
 
-    total = len(cards)
-    state = _load_state()
-    idx = int(state.get("index", 0)) % total
-    if advance and state.get("last_updated") is not None:
-        idx = (idx + 1) % total
-
     now_local = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).strftime("%m-%d %H:%M")
+    state = _load_state()
 
-    # Write deck index & per-card pinned files
-    PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
-    _atomic_write_json(PUBLIC_DIR / "cards.json", deck)
+    # Combined 48-card endpoints (/EPCards/cards.json & /EPCards/card.json)
+    all_idx, active_card = _write_tier_slice(
+        PUBLIC_DIR, deck, "all", cards, "index", state, advance, now_local
+    )
 
-    active_card = None
-    for i, item in enumerate(cards):
+    # Individual pinned card endpoints (/EPCards/<id>.json)
+    for item in cards:
         card_copy = dict(item)
         card_copy["updated_at"] = now_local
         _atomic_write_json(PUBLIC_DIR / f"{card_copy['id']}.json", card_copy)
-        if i == idx:
-            active_card = card_copy
 
-    assert active_card is not None
-    _atomic_write_json(PUBLIC_DIR / "card.json", active_card)
+    # Tier-specific endpoints (/EPCards/basic/ & /EPCards/advanced/)
+    basic_cards = [c for c in cards if c.get("tier", "basic") == "basic"]
+    adv_cards = [c for c in cards if c.get("tier") == "advanced"]
+
+    basic_idx = 0
+    if basic_cards:
+        basic_idx, _ = _write_tier_slice(
+            PUBLIC_DIR / "basic", deck, "basic", basic_cards, "basic_index", state, advance, now_local
+        )
+    adv_idx = 0
+    if adv_cards:
+        adv_idx, _ = _write_tier_slice(
+            PUBLIC_DIR / "advanced", deck, "advanced", adv_cards, "advanced_index", state, advance, now_local
+        )
 
     new_state = {
-        "index": idx,
+        "index": all_idx,
+        "basic_index": basic_idx,
+        "advanced_index": adv_idx,
         "active_id": active_card["id"],
         "last_updated": now_local,
     }

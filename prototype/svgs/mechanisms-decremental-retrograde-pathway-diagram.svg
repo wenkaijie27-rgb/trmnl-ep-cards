@@ -1,0 +1,60 @@
+<svg class="ep-svg ep-svg--compare" viewBox="0 0 740 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="典型非递减与递减逆传旁路随着室性联律提前局部VA变化对比图">
+  <rect x="0" y="0" width="740" height="215" fill="#ffffff"/>
+    <g transform="translate(0, 0)">
+    <rect x="6" y="6" width="346" height="203" rx="8" fill="#ffffff" class="ep-ink-stroke" stroke="#000000" stroke-width="1.6"/>
+    <text x="18" y="26" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:13.5px;font-weight:800;">典型非递减旁路 (相对固定)</text>
+    <text x="338" y="26" fill="#555555" class="ep-svg-label ep-muted-fill" style="font-size:10.5px;font-weight:600;text-anchor:end;">联律提前但局部 VA 几乎不变</text>
+
+    <!-- Track 1: Baseline Ventricular Beat (V1 at 66, V2 at 178, A at 228) -->
+    <text x="16" y="64" fill="#555555" class="ep-svg-label ep-muted-fill" style="font-size:11px;font-weight:700;">常规室搏</text>
+    <path d="M 74 62 L 88 62 M 88.0 62.0 L 91.2 44.0 L 95.2 77.3 L 99.2 52.1 L 102.0 67.0 L 104.0 62.0 L 176 62 M 176.0 62.0 L 179.6 42.0 L 184.1 79.0 L 188.6 51.0 L 191.8 67.6 L 194.0 62.0 L 228 62 M 228.0 62.0 L 231.6 44.0 L 236.1 77.3 L 240.6 52.1 L 243.8 67.0 L 246.0 62.0 L 332 62"
+          fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="2.0" stroke-linejoin="round"/>
+    <line x1="178" y1="42" x2="178" y2="98" class="ep-muted-stroke" stroke="#555555" stroke-width="1.2" stroke-dasharray="3,3"/>
+    <line x1="178" y1="84" x2="228" y2="84" class="ep-ink-stroke" stroke="#000000" stroke-width="1.6"/>
+    <text x="203" y="96" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:10.5px;font-weight:700;text-anchor:middle;">局部 VA</text>
+
+    <line x1="16" y1="108" x2="338" y2="108" class="ep-muted-stroke" stroke="#555555" stroke-width="1" stroke-dasharray="2,3"/>
+
+    <!-- Track 2: Earlier Ventricular Beat (Coupling shortened x=178 -> 138) -->
+    <text x="16" y="138" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:11px;font-weight:700;">较早室搏</text>
+    <rect x="138" y="118" width="40" height="26" fill="#ffffff" class="ep-hl-area ep-ink-stroke" stroke="#000000" stroke-width="1.1"/>
+    <g class="ep-hatch-group"><line x1="138.0" y1="121.0" x2="141.0" y2="118.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="138.0" y1="127.0" x2="147.0" y2="118.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="138.0" y1="133.0" x2="153.0" y2="118.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="138.0" y1="139.0" x2="159.0" y2="118.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="165.0" y1="118.0" x2="139.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="171.0" y1="118.0" x2="145.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="177.0" y1="118.0" x2="151.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="178.0" y1="123.0" x2="157.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="178.0" y1="129.0" x2="163.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="178.0" y1="135.0" x2="169.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="178.0" y1="141.0" x2="175.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/></g>
+    <path d="M 74 148 L 88 148 M 88.0 148.0 L 91.2 130.0 L 95.2 163.3 L 99.2 138.1 L 102.0 153.0 L 104.0 148.0 L 136 148 M 136.0 148.0 L 139.6 128.0 L 144.1 165.0 L 148.6 137.0 L 151.8 153.6 L 154.0 148.0 L 188 148 M 188.0 148.0 L 191.6 130.0 L 196.1 163.3 L 200.6 138.1 L 203.8 153.0 L 206.0 148.0 L 332 148"
+          fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="2.0" stroke-linejoin="round"/>
+    <line x1="138" y1="114" x2="138" y2="180" class="ep-ink-stroke" stroke="#000000" stroke-width="1.4" stroke-dasharray="3,2"/>
+    <line x1="178" y1="114" x2="178" y2="144" class="ep-muted-stroke" stroke="#555555" stroke-width="1.1" stroke-dasharray="2,2"/>
+    <line x1="138" y1="172" x2="188" y2="172" class="ep-ink-stroke" stroke="#000000" stroke-width="2.2" stroke-dasharray="5,2.5"/>
+    <polygon points="138.0,172.0 143.5,169.2 143.5,174.8" class="ep-ink-fill" fill="#000000"/>
+    <polygon points="188.0,172.0 182.5,174.8 182.5,169.2" class="ep-ink-fill" fill="#000000"/>
+    <rect x="125.0" y="174.3" width="76.0" height="15.0" rx="3" fill="#ffffff"/><text x="163.0" y="186.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:11px;font-weight:800;text-anchor:middle;">局部 VA 接近</text>
+  </g>
+  <line x1="370" y1="14" x2="370" y2="201" class="ep-muted-stroke" stroke="#555555" stroke-width="1.4" stroke-dasharray="4,4"/>
+    <g transform="translate(382, 0)">
+    <rect x="6" y="6" width="346" height="203" rx="8" fill="#ffffff" class="ep-ink-stroke" stroke="#000000" stroke-width="1.6"/>
+    <text x="18" y="26" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:13.5px;font-weight:800;">递减逆传旁路 (越早越慢)</text>
+    <text x="338" y="26" fill="#555555" class="ep-svg-label ep-muted-fill" style="font-size:10.5px;font-weight:600;text-anchor:end;">局部 VA 随提前明显延长</text>
+
+    <!-- Track 1: Baseline Ventricular Beat (V1 at 66, V2 at 178, A at 228) -->
+    <text x="16" y="64" fill="#555555" class="ep-svg-label ep-muted-fill" style="font-size:11px;font-weight:700;">常规室搏</text>
+    <path d="M 74 62 L 88 62 M 88.0 62.0 L 91.2 44.0 L 95.2 77.3 L 99.2 52.1 L 102.0 67.0 L 104.0 62.0 L 176 62 M 176.0 62.0 L 179.6 42.0 L 184.1 79.0 L 188.6 51.0 L 191.8 67.6 L 194.0 62.0 L 228 62 M 228.0 62.0 L 231.6 44.0 L 236.1 77.3 L 240.6 52.1 L 243.8 67.0 L 246.0 62.0 L 332 62"
+          fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="2.0" stroke-linejoin="round"/>
+    <line x1="178" y1="42" x2="178" y2="98" class="ep-muted-stroke" stroke="#555555" stroke-width="1.2" stroke-dasharray="3,3"/>
+    <line x1="178" y1="84" x2="228" y2="84" class="ep-ink-stroke" stroke="#000000" stroke-width="1.6"/>
+    <text x="203" y="96" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:10.5px;font-weight:700;text-anchor:middle;">局部 VA</text>
+
+    <line x1="16" y1="108" x2="338" y2="108" class="ep-muted-stroke" stroke="#555555" stroke-width="1" stroke-dasharray="2,3"/>
+
+    <!-- Track 2: Earlier Ventricular Beat (Coupling shortened x=178 -> 138) -->
+    <text x="16" y="138" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:11px;font-weight:700;">较早室搏</text>
+    <rect x="138" y="118" width="40" height="26" fill="#ffffff" class="ep-hl-area ep-ink-stroke" stroke="#000000" stroke-width="1.1"/>
+    <g class="ep-hatch-group"><line x1="138.0" y1="121.0" x2="141.0" y2="118.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="138.0" y1="127.0" x2="147.0" y2="118.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="138.0" y1="133.0" x2="153.0" y2="118.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="138.0" y1="139.0" x2="159.0" y2="118.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="165.0" y1="118.0" x2="139.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="171.0" y1="118.0" x2="145.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="177.0" y1="118.0" x2="151.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="178.0" y1="123.0" x2="157.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="178.0" y1="129.0" x2="163.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="178.0" y1="135.0" x2="169.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/><line x1="178.0" y1="141.0" x2="175.0" y2="144.0" class="ep-hatch-line" stroke="#000000" stroke-width="1.1"/></g>
+    <path d="M 74 148 L 88 148 M 88.0 148.0 L 91.2 130.0 L 95.2 163.3 L 99.2 138.1 L 102.0 153.0 L 104.0 148.0 L 136 148 M 136.0 148.0 L 139.6 128.0 L 144.1 165.0 L 148.6 137.0 L 151.8 153.6 L 154.0 148.0 L 258 148 M 258.0 148.0 L 261.6 130.0 L 266.1 163.3 L 270.6 138.1 L 273.8 153.0 L 276.0 148.0 L 332 148"
+          fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="2.0" stroke-linejoin="round"/>
+    <line x1="138" y1="114" x2="138" y2="180" class="ep-ink-stroke" stroke="#000000" stroke-width="1.4" stroke-dasharray="3,2"/>
+    <line x1="178" y1="114" x2="178" y2="144" class="ep-muted-stroke" stroke="#555555" stroke-width="1.1" stroke-dasharray="2,2"/>
+    <line x1="138" y1="172" x2="258" y2="172" class="ep-accent-stroke" stroke="#000000" stroke-width="2.2" stroke-dasharray="5,2.5"/>
+    <polygon points="138.0,172.0 143.5,169.2 143.5,174.8" class="ep-accent-fill" fill="#000000"/>
+    <polygon points="258.0,172.0 252.5,174.8 252.5,169.2" class="ep-accent-fill" fill="#000000"/>
+    <rect x="138.0" y="174.3" width="120.0" height="15.0" rx="3" fill="#ffffff"/><text x="198.0" y="186.0" fill="#000000" class="ep-svg-label ep-accent-fill" style="font-size:11px;font-weight:800;text-anchor:middle;">局部 VA 明显延长</text>
+  </g>
+</svg>

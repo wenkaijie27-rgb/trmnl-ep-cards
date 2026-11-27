@@ -79,6 +79,8 @@
   font-weight: 700 !important;
   color: #000000 !important;
   -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  filter: none !important;
 }
 
 .ep-title-bar .instance {
@@ -86,7 +88,38 @@
   font-size: 12.5px !important;
   font-weight: 600 !important;
   color: #4d4d4d !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  filter: none !important;
   margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ep-tier-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.25;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.ep-tier-tag--basic {
+  border: 1px solid #000000;
+  background: #ffffff;
+  color: #000000;
+}
+
+.ep-tier-tag--advanced {
+  border: 1px solid #000000;
+  background: #000000;
+  color: #ffffff;
 }
 
 .ep-title-icon {
@@ -107,7 +140,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px 8px;
 }
 
 .ep-title-row {
@@ -143,19 +177,21 @@
 .ep-metrics {
   display: flex;
   align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px;
+  flex-shrink: 1;
 }
 
 .ep-metric-pill {
   display: inline-flex;
   align-items: baseline;
   gap: 4px;
-  padding: 3px 8px;
+  padding: 2px 7px;
   border: 1.5px solid #000000;
   border-radius: 5px;
   background: #e6e6e6;
-  font-size: 12.5px;
+  font-size: 12px;
   white-space: nowrap;
 }
 
@@ -526,8 +562,12 @@
   background: #F2DF4A;
 }
 .screen--color-4bwry .ep-callout-badge,
-.screen--color-6a .ep-callout-badge {
+.screen--color-6a .ep-callout-badge,
+.screen--color-4bwry .ep-tier-tag--advanced,
+.screen--color-6a .ep-tier-tag--advanced {
   background: #B81D1D;
+  border-color: #B81D1D;
+  color: #ffffff;
 }
 .screen--color-4bwry .ep-leg-accent,
 .screen--color-6a .ep-leg-accent {

@@ -1,0 +1,49 @@
+<svg class="ep-svg ep-svg--square" viewBox="0 0 360 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="左室间隔面左束支前后分支与可变间隔纤维示意图">
+  <rect x="0" y="0" width="360" height="350" fill="#ffffff"/>
+
+  <!-- Left Ventricular Septal Endocardial Surface Outline -->
+  <path d="M 78 58 C 122 36, 224 36, 272 62 C 306 116, 294 234, 212 318 C 192 332, 166 332, 146 318 C 72 238, 52 122, 78 58 Z"
+        fill="#ffffff" class="ep-muted-stroke" stroke="#555555" stroke-width="2.0"/>
+  <!-- Aortic root upper landmark -->
+  <path d="M 144 48 C 166 72, 198 72, 220 48" fill="none" class="ep-muted-stroke" stroke="#555555" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+  <!-- Highlighted Posterior-Septal Mapping Area (for local Purkinje signals) -->
+  <ellipse cx="206" cy="232" rx="46" ry="30" transform="rotate(-15 206 232)" fill="#ffffff" class="ep-hl-area ep-ink-stroke" stroke="#000000" stroke-width="1.4" stroke-dasharray="4,2.5"/>
+  <g class="ep-hatch-group"><line x1="163.6" y1="237.6" x2="176.0" y2="216.2" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="164.6" y1="244.5" x2="184.2" y2="210.6" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="167.0" y1="249.1" x2="191.1" y2="207.3" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="170.0" y1="252.5" x2="197.3" y2="205.1" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="173.4" y1="255.2" x2="203.1" y2="203.7" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="177.1" y1="257.4" x2="208.6" y2="202.9" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="181.2" y1="259.0" x2="213.8" y2="202.6" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="185.5" y1="260.2" x2="218.7" y2="202.7" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="190.0" y1="261.0" x2="223.4" y2="203.2" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="194.8" y1="261.4" x2="227.9" y2="204.1" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="199.8" y1="261.4" x2="232.1" y2="205.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="205.0" y1="260.9" x2="236.0" y2="207.2" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="210.6" y1="259.9" x2="239.7" y2="209.5" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="216.5" y1="258.3" x2="243.0" y2="212.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="222.9" y1="255.8" x2="245.8" y2="216.2" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/><line x1="230.1" y1="252.1" x2="247.9" y2="221.3" class="ep-hatch-line" stroke="#000000" stroke-width="1.3"/></g>
+
+  <!-- Left Bundle Trunk -->
+  <path d="M 184 74 C 180 94, 178 112, 176 126" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="4.2" stroke-linecap="round"/>
+
+  <!-- Anterior Fascicle fan (leftward/anterior) -->
+  <path d="M 176 126 C 146 150, 114 196, 98 248" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="3.0" stroke-linecap="round"/>
+  <path d="M 134 176 C 118 196, 108 214, 102 232" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="1.8"/>
+  <polygon points="97.0,252.0 96.3,242.7 103.5,245.3" class="ep-ink-fill" fill="#000000"/>
+
+  <!-- Posterior Fascicle fan (rightward/inferior-posterior) -->
+  <path d="M 176 126 C 208 152, 240 198, 252 248" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="3.0" stroke-linecap="round"/>
+  <path d="M 218 176 C 234 198, 244 218, 248 234" fill="none" class="ep-ink-stroke" stroke="#000000" stroke-width="1.8"/>
+  <polygon points="253.0,252.0 247.0,244.9 254.3,242.8" class="ep-ink-fill" fill="#000000"/>
+
+  <!-- Variable Interconnecting Septal Fibers (from common trunk, anterior, & posterior network) -->
+  <path d="M 176 126 C 174 170, 172 216, 174 268" fill="none" class="ep-accent-stroke" stroke="#000000" stroke-width="2.8" stroke-dasharray="6,3.5" stroke-linecap="round"/>
+  <path d="M 142 170 C 160 186, 172 198, 198 202" fill="none" class="ep-accent-stroke" stroke="#000000" stroke-width="2.2" stroke-dasharray="4,3"/>
+  <path d="M 216 172 C 198 192, 186 218, 152 240" fill="none" class="ep-accent-stroke" stroke="#000000" stroke-width="2.2" stroke-dasharray="4,3"/>
+  <path d="M 174 236 C 194 244, 212 240, 232 224" fill="none" class="ep-accent-stroke" stroke="#000000" stroke-width="2.0" stroke-dasharray="4,3"/>
+
+  <!-- Labels -->
+  <rect x="10.0" y="10.4" width="96.0" height="20.0" rx="3" fill="#ffffff" class="ep-muted-stroke" stroke="#555555" stroke-width="1.2"/><text x="58.0" y="26.0" fill="#444444" class="ep-svg-label ep-muted-fill" style="font-size:12px;font-weight:700;text-anchor:middle;">室间隔左侧观</text>
+  <rect x="208.0" y="72.0" width="80.0" height="18.0" rx="3" fill="#ffffff"/><text x="248.0" y="86.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:12.5px;font-weight:700;text-anchor:middle;">左束支主干</text>
+  <line x1="208" y1="86" x2="186" y2="96" class="ep-ink-stroke" stroke="#000000" stroke-width="1.2"/>
+
+  <rect x="40.0" y="146.0" width="52.0" height="18.0" rx="3" fill="#ffffff"/><text x="66.0" y="160.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:12.5px;font-weight:700;text-anchor:middle;">前分支</text>
+  <line x1="94" y1="162" x2="128" y2="174" class="ep-ink-stroke" stroke="#000000" stroke-width="1.2"/>
+
+  <rect x="260.0" y="142.0" width="52.0" height="18.0" rx="3" fill="#ffffff"/><text x="286.0" y="156.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:12.5px;font-weight:700;text-anchor:middle;">后分支</text>
+  <line x1="260" y1="158" x2="224" y2="172" class="ep-ink-stroke" stroke="#000000" stroke-width="1.2"/>
+
+  <rect x="44.0" y="272.0" width="124.0" height="18.0" rx="3" fill="#ffffff"/><text x="106.0" y="286.0" fill="#000000" class="ep-svg-label ep-accent-fill" style="font-size:12px;font-weight:800;text-anchor:middle;">间隔纤维 (多变互联)</text>
+  <line x1="154" y1="274" x2="170" y2="254" class="ep-accent-stroke" stroke="#000000" stroke-width="1.2"/>
+
+  <rect x="233.0" y="272.4" width="62.0" height="20.0" rx="3" fill="#ffffff" class="ep-hl-area ep-ink-stroke" stroke="#000000" stroke-width="1.2"/><g class="ep-hatch-group"><line x1="295.0" y1="275.4" x2="292.0" y2="272.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="295.0" y1="281.4" x2="286.0" y2="272.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="295.0" y1="287.4" x2="280.0" y2="272.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="274.0" y1="272.4" x2="294.0" y2="292.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="268.0" y1="272.4" x2="288.0" y2="292.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="262.0" y1="272.4" x2="282.0" y2="292.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="256.0" y1="272.4" x2="276.0" y2="292.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="250.0" y1="272.4" x2="270.0" y2="292.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="244.0" y1="272.4" x2="264.0" y2="292.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="238.0" y1="272.4" x2="258.0" y2="292.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="233.0" y1="273.4" x2="252.0" y2="292.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="233.0" y1="279.4" x2="246.0" y2="292.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/><line x1="233.0" y1="285.4" x2="240.0" y2="292.4" class="ep-hatch-line" stroke="#000000" stroke-width="1.0"/></g><rect x="237.0" y="274.4" width="54.0" height="16.0" rx="2" fill="#ffffff" class="ep-hl-label-bg"/><text x="264.0" y="288.0" fill="#000000" class="ep-svg-label ep-ink-fill" style="font-size:12.5px;font-weight:700;text-anchor:middle;">标测区</text>
+  <line x1="242" y1="274" x2="222" y2="256" class="ep-ink-stroke" stroke="#000000" stroke-width="1.2"/>
+</svg>

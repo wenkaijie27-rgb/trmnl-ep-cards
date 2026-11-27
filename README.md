@@ -1,10 +1,21 @@
 # TRMNL 心脏电生理知识卡片 · Cardiac EP Knowledge Cards
 
-面向**刚进入心脏电生理（EP）领域的医学生**的墨水屏学习卡片插件。现已完成**基础组全量 24 张卡片（8 大电生理主题 × 3 张）**，每张卡片聚焦一个临床或腔内电图顿悟点，以**语义化极简矢量简笔画 / 参数化电生理波形图 + 严格字数控制的中英排版**构建，并基于 **TRMNL Framework v3.4.6 官方布局类**适配从 `7.5"` 黑白屏到 `10.3"` TRMNL X 与四色墨水屏的多代硬件。
+面向**刚进入心脏电生理（EP）领域的医学生与青年电生理医师**的墨水屏学习卡片插件。现已完整上线 **基础组 24 张 + 进阶组 24 张 = 48 张双层级卡片（覆盖 8 大电生理主题）**，每张卡片聚焦一个临床或腔内电图顿悟点，以**语义化极简矢量简笔画 / 参数化电生理波形图 + 严格字数控制的中英排版**构建，并基于 **TRMNL Framework v3.4.6 官方布局类**适配从 `7.5"` 黑白屏到 `10.3"` TRMNL X 与四色墨水屏的多代硬件。
 
 ---
 
-## 全量 24 张基础组总览（800×480 实拍级渲染）
+## 全量 48 张双层级卡片总览（800×480 实拍级渲染）
+
+### 进阶组 24 张（`tier: "advanced"`）
+
+| 分组 | 涵盖主题（每组 6 张） | 预览总览 |
+| :--- | :--- | :---: |
+| **传导解剖 · 间期陷阱** | #1 左室下间隔隐窝、#2 Marshall 肌束、#3 左束支间隔纤维、#4 RP vs VA 量尺、#5 假短 HV、#6 CS 深置貌似同步 | ![adv1](docs/previews/adv_contact_sheet_1.png) |
+| **电生理机制 · 室上速鉴别** | #7 非典型 AVNRT 时距、#8 心脏电记忆、#9 递减逆传旁路、#10 漏室搏仍持续、#11 长 RP 驱动源、#12 交界灶 vs 结折返 | ![adv2](docs/previews/adv_contact_sheet_2.png) |
+| **预激风险 · 拖带与旁 His** | #13 Mahaim 端点、#14 预激突断与渐淡、#15 无症状预激两把尺、#16 PPI−TCL 扣 AH 增量、#17 基底减心尖、#18 旁 His 遮蔽与捕获 | ![adv3](docs/previews/adv_contact_sheet_3.png) |
+| **宽波鉴别 · 消融安全** | #19 Ashman 长短周期、#20 流出道移行对比、#21 乳头肌 vs 分支宽度、#22 旁路靶端 His、#23 静脉靶点冠脉距、#24 回波窗与连发 | ![adv4](docs/previews/adv_contact_sheet_4.png) |
+
+### 基础组 24 张（`tier: "basic"`）
 
 | 分组 | 涵盖主题（每组 6 张） | 预览总览 |
 | :--- | :--- | :---: |
@@ -17,9 +28,9 @@
 
 | 样板卡片 | 7.5" 黑白 1-bit (`800×480`) | 四色墨水屏 BWRY (`800×480`) | 10.3" TRMNL X 4-bit (`1040×780`) |
 | :--- | :---: | :---: | :---: |
-| **Koch 三角怎么找**<br>`anatomy-koch-triangle` (`split_left`) | ![1bit](docs/previews/anatomy-koch-triangle__og_1bit.png) | ![4bwry](docs/previews/anatomy-koch-triangle__og_4bwry.png) | ![trmnl_x](docs/previews/anatomy-koch-triangle__trmnl_x.png) |
-| **AH 与 HV 各量哪段**<br>`intervals-ah-hv` (`top_banner`) | ![1bit](docs/previews/intervals-ah-hv__og_1bit.png) | ![4bwry](docs/previews/intervals-ah-hv__og_4bwry.png) | ![trmnl_x](docs/previews/intervals-ah-hv__trmnl_x.png) |
-| **顺逆向 AVRT 看下行**<br>`wpw-avrt-directions` (`compare_two`) | ![1bit](docs/previews/wpw-avrt-directions__og_1bit.png) | ![4bwry](docs/previews/wpw-avrt-directions__og_4bwry.png) | ![trmnl_x](docs/previews/wpw-avrt-directions__trmnl_x.png) |
+| **左室下间隔隐窝**（进阶样板）<br>`anatomy-inferoseptal-recess` | ![1bit](docs/previews/anatomy-inferoseptal-recess__og_1bit.png) | ![4bwry](docs/previews/anatomy-inferoseptal-recess__og_4bwry.png) | ![trmnl_x](docs/previews/anatomy-inferoseptal-recess__trmnl_x.png) |
+| **回归间期扣 AH 增量**（进阶样板）<br>`pace-corrected-ppi-tcl` | ![1bit](docs/previews/pace-corrected-ppi-tcl__og_1bit.png) | ![4bwry](docs/previews/pace-corrected-ppi-tcl__og_4bwry.png) | ![trmnl_x](docs/previews/pace-corrected-ppi-tcl__trmnl_x.png) |
+| **Koch 三角怎么找**（基础样板）<br>`anatomy-koch-triangle` | ![1bit](docs/previews/anatomy-koch-triangle__og_1bit.png) | ![4bwry](docs/previews/anatomy-koch-triangle__og_4bwry.png) | ![trmnl_x](docs/previews/anatomy-koch-triangle__trmnl_x.png) |
 
 ---
 
@@ -41,19 +52,21 @@
 ### 方式一：自托管 Terminus (BYOS) + 本地数据源
 
 1. **导入扩展包**：下载或使用本仓库生成的 [`dist/ep-cards-terminus-extension.zip`](dist/ep-cards-terminus-extension.zip)，在 Terminus Web UI (`Extensions → Import`) 导入（`mode: "text"`）。
-2. **连接数据源**：默认轮询 `http://192.168.10.135:8080/EPCards/card.json`（由 `haos/ep_cards.py` 托管在 HAOS `local_trmnl_serve`）。
-   - 若想在调试时固定查看某一张卡，可将 Exchange URL 改为 `/EPCards/anatomy-koch-triangle.json`、`/EPCards/intervals-ah-hv.json` 或 `/EPCards/wpw-avrt-directions.json`。
-   - 访问 `GET http://<HAOS_IP>:8080/EPCards/rotate` 可立即切换到下一张卡片。
-3. **手动渲染与绑定设备**：在 Terminus 中点击 `Build` 立即渲染 800×480 PNG，并将该 Extension 加入目标设备（如实验机）的 Playlist。
+2. **连接数据源**（HAOS `local_trmnl_serve` 按层级提供 3 套独立轮播入口）：
+   - 全部 48 张混播（默认）：`http://192.168.10.135:8080/EPCards/card.json`（索引 `/EPCards/cards.json`）
+   - 仅基础组 24 张：`http://192.168.10.135:8080/EPCards/basic/card.json`（索引 `/EPCards/basic/cards.json`）
+   - 仅进阶组 24 张：`http://192.168.10.135:8080/EPCards/advanced/card.json`（索引 `/EPCards/advanced/cards.json`）
+   - 单卡直连调试：`/EPCards/<card_id>.json`（例如 `/EPCards/anatomy-inferoseptal-recess.json`、`pace-corrected-ppi-tcl.json`）；访问 `GET http://<HAOS_IP>:8080/EPCards/rotate` 立即切换下一张。
+3. **手动渲染与绑定设备**：在 Terminus 中点击 `Build` 立即渲染 800×480 PNG，并将该 Extension 加入目标设备的 Playlist。
 
 ### 方式二：官方 TRMNL Cloud Recipe（零自建服务器）
 
 1. 本仓库通过 GitHub Actions + GitHub Pages 每 2 小时自动构建并轮换静态 JSON 接口：
-   - 当前激活卡片：`https://wenkaijie27-rgb.github.io/trmnl-ep-cards/current.json`
-   - 完整卡组索引：`https://wenkaijie27-rgb.github.io/trmnl-ep-cards/cards.json`
-   - 基础组专属接口：`https://wenkaijie27-rgb.github.io/trmnl-ep-cards/basic/current.json` 与 `/basic/cards.json`
+   - 全部 48 张混播：`https://wenkaijie27-rgb.github.io/trmnl-ep-cards/current.json`（与 `/all/current.json`、`/cards.json`）
+   - 基础组 24 张：`https://wenkaijie27-rgb.github.io/trmnl-ep-cards/basic/current.json` 与 `/basic/cards.json`
+   - 进阶组 24 张：`https://wenkaijie27-rgb.github.io/trmnl-ep-cards/advanced/current.json` 与 `/advanced/cards.json`
    - 单卡直连：`https://wenkaijie27-rgb.github.io/trmnl-ep-cards/cards/<id>.json`
-2. [`trmnl-recipe/src/`](trmnl-recipe/src/) 包含完整的 `settings.yml`（含 `tier` 分组字段）、`shared.liquid`、`full.liquid`、`half_horizontal.liquid`、`half_vertical.liquid` 与 `quadrant.liquid`，可直接用于 `trmnlp` 本地预览或创建 Private Plugin / Recipe。
+2. [`trmnl-recipe/src/`](trmnl-recipe/src/) 包含完整的 `settings.yml`（支持在插件设置中选择 `all` / `basic` / `advanced`）、`shared.liquid`、`full.liquid`、`half_horizontal.liquid`、`half_vertical.liquid` 与 `quadrant.liquid`。
 
 ---
 
@@ -63,26 +76,28 @@
 ├── .github/workflows/ci-and-pages.yml  # 校验 + 构建 + GitHub Pages 自动部署
 ├── decks/
 │   ├── basic-24.json                   # 基础组全量 24 张卡片（8 主题×3 卡，tier="basic"）
-│   ├── golden-3.json                   # 首批 3 张黄金样板卡
-│   └── batch-01-draft.json             # 首批 24 张内容初稿
+│   ├── advanced-24.json                # 进阶组全量 24 张卡片（8 主题×3 卡，tier="advanced"）
+│   ├── golden-3.json                   # 首批 3 张基础样板卡
+│   ├── batch-01-draft.json             # 基础组初稿存档
+│   └── advanced-24-draft.json          # 进阶组初稿存档
 ├── docs/
 │   ├── SCHEMA_SPEC.md                  # 数据契约、字数预算与多屏配色规范
-│   └── previews/                       # 24 张总览表与多屏验收截图
+│   └── previews/                       # 基础组 + 进阶组 48 卡总览图与多屏验收截图
 ├── prompts/
 │   └── gpt-ep-cards-advanced-prompt.md # 进阶组 24 张卡片 GPT 文献筛选 Prompt
-├── haos/ep_cards.py                    # HAOS local_trmnl_serve 数据轮换脚本
-├── prototype/                          # 本地 Chrome 多屏截图预览器与 24 卡批渲染脚本
+├── haos/ep_cards.py                    # HAOS local_trmnl_serve 双层级轮换脚本
+├── prototype/                          # 本地 Chrome 多屏预览器与基础/进阶批渲染脚本
 ├── schema/card.schema.json             # JSON Schema (Draft 2020-12)
 ├── shared/ep_cards.css                 # Terminus Sanitizer 安全多屏样式表
 ├── terminus/                           # Terminus configuration.yml & template.html.liquid
 ├── trmnl-recipe/src/                   # TRMNL Cloud Recipe (full/half/quadrant)
 ├── tools/
 │   ├── validate_cards.py               # Schema、字数、缩写与版式校验器
-│   ├── svgs/                           # 24 张卡的模块化 Sanitizer 安全语义 SVG 构建器
-│   ├── generate_svgs.py                # 导出 24 张 SVG 预览资源
-│   ├── build_dist.py                   # 构建 dist/ JSON、ZIP 与 Recipe
+│   ├── svgs/                           # 48 张卡的模块化 Sanitizer 安全语义 SVG 构建器
+│   ├── generate_svgs.py                # 导出 48 张 SVG 预览资源
+│   ├── build_dist.py                   # 构建 dist/ JSON (all/basic/advanced)、ZIP 与 Recipe
 │   └── check_terminus_sanitize.py      # Terminus sanitize.yml 合规审计
-└── dist/                               # 构建输出 (current.json, cards.json, basic/, cards/, ZIP)
+└── dist/                               # 构建输出 (current.json, all/, basic/, advanced/, cards/, ZIP)
 ```
 
 ---
@@ -92,6 +107,7 @@
 ```bash
 python3 tools/validate_cards.py decks/golden-3.json
 python3 tools/validate_cards.py decks/basic-24.json
+python3 tools/validate_cards.py decks/advanced-24.json
 python3 tools/generate_svgs.py
 python3 tools/build_dist.py
 python3 tools/check_terminus_sanitize.py
